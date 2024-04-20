@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://joyoshish.github.io/sitemap.xml
