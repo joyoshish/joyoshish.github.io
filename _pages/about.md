@@ -1,8 +1,10 @@
 ---
 layout: about
-title: about
+title: Home
 permalink: /
 subtitle: 
+# nav: true
+# nav_order: 2
 
 profile:
   align: right
@@ -17,18 +19,6 @@ social: true # includes social icons at the bottom of the page
 ---
 
 
-Here's a bit about my journey so far:
+Welcome to my multifaceted digital space, where you'll discover not only my professional portfolio but also a canvas for my personal tech endeavors, reflective musings, and spontaneous thoughts. Currently serving as a Risk Analyst at American Express, I thrive in the dynamic realm of data analysis and decision science, crafting risk-free enterprise solutions to drive seamless business processes. Armed with a B.Tech. in Information Technology from IIEST Shibpur and an M.Tech. in Computer Science with a specialization in Data Science from ISI Kolkata, I possess a strong foundation in technical skills and a fervent passion for data-driven insights. With expertise in Machine Learning and Deep Learning, alongside proficiency in Data Analysis tools, I excel in building and validating robust models that transform data into actionable strategies. Fueled by a love for algorithmic problem-solving, I relish challenges and thrive on innovative solutions. 
 
-💼 Current Role: I am currently working as an Analyst at American Express. In this dynamic role, I leverage data analysis and decision science to provide invaluable insights to the business. My primary focus is on creating risk-free enterprise solutions that enable smooth transactions and seamless business processes.
-
-🎓 Education: I hold a B.Tech. in Information Technology from IIEST Shibpur, where I laid the foundation of my technical skills and developed a strong understanding of Computer Science. Subsequently, I pursued my M.Tech. in Computer Science with a specialization in Data Science from ISI Kolkata. This journey not only enriched my knowledge but also ignited my passion for data-driven insights.
-
-🧠 Expertise: My core expertise lies in Machine Learning and Deep Learning. I have a knack for building and validating robust models that turn data into actionable insights. My deep understanding of the statistical and mathematical principles behind machine learning empowers me to make data-driven decisions effectively.
-
-💻 Programming Skills: I am proficient in C++ and Python, which are my go-to languages for developing cutting-edge solutions. Whether it's implementing algorithms or crafting elegant code, I enjoy the creative process of solving technical challenges.
-
-🔍 Problem-Solving: I possess a high level of quantitative aptitude and a strong analytical mindset. I thrive in algorithmic problem-solving scenarios, relishing the opportunity to tackle intricate challenges head-on.
-
-🌐 Hobbies: Outside of the professional realm, I have a diverse set of hobbies. I find joy in writing technical blogs about Data Science ([Medium](https://medium.com/@joyoshish)) and subjects related to the GATE Computer Science exam ([GATE_CSE_BY_JS](https://gatecsebyjs.github.io/)). This not only allows me to share knowledge but also fosters continuous learning. Additionally, I'm a culinary enthusiast who loves to experiment in the kitchen, whipping up delectable dishes. And when it's time to unwind, you'll often find me binge-watching web series, exploring new narratives and perspectives.
-
-🤝 Let's Connect: I'm always open to connecting with like-minded professionals, discussing innovative ideas, and exploring potential collaborations. Feel free to reach out if you share my enthusiasm for technology, data, and problem-solving.
+Beyond my professional pursuits, I engage in writing technical blogs, exploring culinary adventures, and immersing myself in captivating narratives through web series and non-fiction reads. Let's connect and explore the endless possibilities of technology, data, and problem-solving together!

@@ -1,10 +1,10 @@
 ---
 layout: page
 permalink: /musings/
-title: musings
+title: Musings
 description: Food for thought
-nav: true
-nav_order: 9
+nav: false
+nav_order: 
 ---
 
 My random thoughts go here!

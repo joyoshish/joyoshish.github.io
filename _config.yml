@@ -208,7 +208,19 @@ kramdown:
 # Includes & excludes
 # include: ["_pages"]
 include:
+  - _pages/home.md
   - _pages/about.md
+  - _pages/cv.md
+  - _pages/blogging.md
+  - _pages/scitechblog.md
+  - _pages/musings.md
+  - _pages/projects.md
+  - _pages/research.md
+  - _pages/resource.md
+  - _pages/acadresrc.md
+  - _pages/rndmresrc.md
+  - _pages/gallery.md
+  - _pages/contact.md
 exclude:
   - _pages/repositories.md
   - bin/

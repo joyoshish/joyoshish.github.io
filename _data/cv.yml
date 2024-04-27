@@ -2,11 +2,11 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
+      value: Joyoshish Saha
     - name: Date of Birth
-      value: 14th March 1879
+      value: 16th February 1998
     - name: Languages
-      value: English, German
+      value: English, Bengali, Hindi
 
 - title: Education
   type: time_table
