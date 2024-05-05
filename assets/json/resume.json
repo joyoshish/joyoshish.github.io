@@ -1,25 +1,185 @@
 {
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "Joyoshish Saha",
-    "role": "Risk Analyst, American Express",
+    "label": "Risk Analyst @ American Express || M.Tech. CS (Spec. Data Science) '23 @ ISI Kolkata || B.Tech. IT '21 @ IIEST Shibpur",
     "image": "",
     "email": "joyoshish@protonmail.com",
     "phone": "",
-    "url": "https://joyoshish.github.io/",
-    "summary": "",
+    "url": "",
+    "summary": "As a Risk Analyst at American Express, I specialize in data analysis and decision science, crafting solutions to ensure smooth business operations. With a B.Tech. in Information Technology from IIEST Shibpur and an M.Tech. in Computer Science from ISI Kolkata, I possess strong technical skills and a passion for data-driven insights. I excel in Machine Learning, Deep Learning, and Data Analysis tools, creating robust models for actionable strategies. I enjoy algorithmic problem-solving and thrive on innovative solutions.\n\nOutside of work, I write technical blogs, enjoy culinary adventures, and indulge in web series and non-fiction reads. Let's connect and explore the possibilities of technology and problem-solving together!",
     "location": {
-      "address": "Cyber City, DLF Phase 3",
-      "postalCode": "HA 122010",
-      "city": "Gurugram",
-      "countryCode": "IN",
-      "region": "Gurugram"
+      "countryCode": "US",
+      "address": "India"
     },
     "profiles": [
       {
-        "network": "",
-        "username": "",
-        "url": ""
+        "network": "LinkedIn",
+        "username": "joyoshishsaha",
+        "url": "https://www.linkedin.com/in/joyoshishsaha/"
       }
     ]
+  },
+  "work": [
+    {
+      "name": "American Express",
+      "position": "Risk Analyst",
+      "startDate": "2023",
+      "endDate": "",
+      "highlights": [],
+      "summary": null,
+      "url": "https://www.linkedin.com/company/1277",
+      "location": "India"
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "Indian Statistical Institute, Kolkata",
+      "area": "Computer Science",
+      "studyType": "M.Tech.",
+      "startDate": "2021",
+      "endDate": "2023",
+      "score": "",
+      "courses": []
+    },
+    {
+      "institution": "Indian Institute of Engineering Science and Technology (IIEST), Shibpur",
+      "area": "Information Technology",
+      "studyType": "B.Tech.",
+      "startDate": "2017",
+      "endDate": "2021",
+      "score": "",
+      "courses": []
+    }
+  ],
+  "awards": [],
+  "certificates": [
+    {
+      "name": "Machine Learning by Stanford University on Coursera",
+      "issuer": "Coursera",
+      "startDate": "2019-03-31",
+      "url": "https://www.coursera.org/account/accomplishments/verify/U68TSJ3XA4L9"
+    },
+    {
+      "name": "PadhAi - Deep Learning Course",
+      "issuer": "One Fourth Labs",
+      "startDate": "2019-09-30",
+      "url": "https://www.credential.net/w3uupz5u"
+    },
+    {
+      "name": "Neural Networks and Deep Learning",
+      "issuer": "Coursera",
+      "startDate": "2020-05-31",
+      "url": "https://www.coursera.org/account/accomplishments/certificate/TPQZLKBTGEBW"
+    },
+    {
+      "name": "Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization",
+      "issuer": "Coursera",
+      "startDate": "2020-05-31",
+      "url": "https://www.coursera.org/account/accomplishments/certificate/Q8S26RRAAVC2"
+    },
+    {
+      "name": "Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning",
+      "issuer": "Coursera",
+      "startDate": "2020-05-31",
+      "url": "https://www.coursera.org/account/accomplishments/certificate/EXGEGSL9PG4R"
+    }
+  ],
+  "publications": [],
+  "skills": [
+    {
+      "name": "Machine Learning",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Deep Learning",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Python (Programming Language)",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Data Analysis",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "pandas",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "SQL",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "fast.ai",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "C (Programming Language)",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Matlab",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Computer Vision",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "SciPy",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Matplotlib",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Linux",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "C++",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "NumPy",
+      "level": "",
+      "keywords": []
+    }
+  ],
+  "languages": [
+    {
+      "language": "English"
+    },
+    {
+      "language": "Bengali"
+    },
+    {
+      "language": "Hindi"
+    }
+  ],
+  "interests": [],
+  "references": [],
+  "projects": [],
+  "meta": {
+    "version": "v1.0.0",
+    "canonical": "https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json"
   }
 }
