@@ -56,6 +56,12 @@
   "awards": [],
   "certificates": [
     {
+        "name": "Amazon ML Summer School 2022",
+        "issuer": "Amazon",
+        "url": "https://drive.google.com/file/d/1ExnE4X8GVJYYym_XpdIb5w8NDvVWpOJa/view"
+      },
+
+    {
       "name": "Machine Learning by Stanford University on Coursera",
       "issuer": "Coursera",
       "startDate": "2019-03-31",
@@ -86,6 +92,8 @@
       "url": "https://www.coursera.org/account/accomplishments/certificate/EXGEGSL9PG4R"
     }
   ],
+
+
   "publications": [],
   "skills": [
     {
