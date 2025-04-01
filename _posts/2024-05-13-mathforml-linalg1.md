@@ -3,15 +3,18 @@ layout: post
 title: Linear Algebra Basics for ML - Vector Operations, Norms, and Projections
 date: 2024-05-13 11:20:00
 description: Linear Algebra 1 - Mathematics for Machine Learning
-tags: ml ai linear_algebra math
+tags: ml ai linear-algebra math
 math: true
 categories: machine-learning math
 # thumbnail: assets/img/linalg_banner.png
 giscus_comments: true
 related_posts: true
+chart:
+  plotly: true
 toc:
   beginning: true
 ---
+
 
 In machine learning, every problem—whether it’s image recognition, natural language processing, or anomaly detection—begins with how we represent data. In this post, we’ll take a deep dive into vectors and vector spaces, exploring the underlying mathematics that enables ML algorithms to learn from data. We’ll follow a problem-driven approach: each section starts with a real-world ML challenge, introduces the mathematical tool needed, explains the theory from the ground up, and concludes with a detailed solution along with Python coding examples and real-world applications in NLP and Computer Vision.
 
@@ -36,6 +39,7 @@ Adding two vectors $$\mathbf{u}$$ and $$\mathbf{v}$$ looks like this:
 $$
 \mathbf{u} + \mathbf{v} = \begin{bmatrix} u_1 + v_1 \\ u_2 + v_2 \\ \vdots \\ u_n + v_n \end{bmatrix}
 $$
+
 
 This operation is performed element-wise. You can think of it as combining two data points or updating a parameter by adding the change suggested by a gradient.
 
@@ -72,10 +76,11 @@ print("Updated Weights:", new_weights)
 
 Running this snippet simulates one step of gradient descent. Each component of the weight vector is nudged slightly in the direction opposite to the gradient, scaled by how aggressively you want to learn (i.e., the learning rate).
 
-These same operations show up everywhere. In NLP, we update word embeddings using gradients—every word vector in a model like Word2Vec gets refined through such updates. In Computer Vision, convolutional filters (which are essentially matrices or higher-dimensional tensors made up of vector-like slices) are tuned via backpropagation, relying on vector addition and scaling.
+These operations form the computational backbone of most optimization routines in machine learning. For example, gradient descent, stochastic gradient descent (SGD), and their variants (like Adam or RMSProp) all rely on vector addition and scalar multiplication to iteratively update model parameters.
 
-Whether you’re fine-tuning the weights of a deep network or learning dense word representations, these basic operations—vector addition and scalar multiplication—are always in play. They may seem simple, but they’re fundamental to everything that follows in the world of machine learning.
+In reinforcement learning, policy gradients are updated via vector-based gradient steps to maximize expected returns. In graph neural networks (GNNs), feature propagation across nodes often involves combining node and neighbor vectors—again using addition and scaling operations.
 
+Even in time-series forecasting, models like LSTMs and GRUs perform cell updates using vector operations that combine new and past information. These operations are not only simple but also form the atomic operations used to build and train large-scale models across supervised, unsupervised, and self-supervised learning paradigms.
 
 ---
 
@@ -117,11 +122,11 @@ print("New Vector from Linear Combination:", new_vector)
 
 This gives us the vector $$[3, 4]$$ as a combination of the basis vectors $$[1, 0]$$ and $$[0, 1]$$.
 
-In practice, especially in NLP, we apply dimensionality reduction techniques like PCA to compress high-dimensional word vectors into more manageable sizes. This helps in both visualization and reducing complexity for downstream models.
+The idea of expressing data using a minimal set of representative directions is ubiquitous in ML. Autoencoders, for instance, learn a compressed latent space—a learned basis—into which input data is encoded and later decoded. This compressed representation reduces dimensionality and noise while preserving the key structure of the input.
 
-In computer vision, PCA is used for image compression—transforming large image data into a smaller set of values that still retain the key visual features. This can drastically reduce storage and computation without sacrificing much accuracy in tasks like recognition or classification.
+In signal processing, sparse coding and dictionary learning aim to represent signals as linear combinations of a few basis elements. In finance, factor models such as PCA or ICA are used to explain asset returns through a few economic factors.
 
-So whether you’re dealing with text or pixels, these foundational ideas—linear combinations, span, basis, and dimension—are what let us tame the curse of dimensionality and make sense of our data in smarter ways.
+Dimensionality reduction is also crucial in medical imaging, where thousands of features (pixels or voxels) are compressed into fewer latent variables for classification tasks like tumor detection. In genomics, where gene expression data is high-dimensional, basis discovery helps in clustering, feature selection, and disease classification.
 
 ---
 
@@ -162,7 +167,124 @@ projection = proj_scalar * principal_component
 print("Projection of Data Point onto Principal Component:", projection)
 ```
 
-In real-world NLP tasks, we use projections to reduce the dimensionality of word vectors, helping to clean up noisy embeddings and improve interpretability. In computer vision, orthogonal projections help extract relevant image features, enabling better classification, detection, or compression.
+<div style="display: flex; justify-content: center;">
+  <div id="projectionEnhanced"></div>
+</div>
+<div id="projectionEnhanced"></div>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+  // Original point and principal component
+  const point = [3, 4];
+  const pc = [1, 0]; // principal component vector
+
+  // Projection calculation
+  const dot = point[0]*pc[0] + point[1]*pc[1];
+  const pcNorm2 = pc[0]*pc[0] + pc[1]*pc[1];
+  const scale = dot / pcNorm2;
+  const proj = [scale * pc[0], scale * pc[1]]; // [3, 0]
+
+  // Helper function to make an arrow shape
+  function arrow(x0, y0, x1, y1, color, width = 3, dash = "solid") {
+    return {
+      type: "line",
+      x0: x0, y0: y0,
+      x1: x1, y1: y1,
+      line: {
+        color: color,
+        width: width,
+        dash: dash
+      },
+      xref: "x",
+      yref: "y"
+    };
+  }
+
+  const layout = {
+    title: {
+      text: "",
+      font: { size: 20 }
+    },
+    width: 650,
+    height: 600,
+    showlegend: false,
+    plot_bgcolor: "#fcfcfc",
+    paper_bgcolor: "#ffffff",
+    xaxis: {
+      title: "X-axis",
+      range: [-1, 5],
+      showgrid: true,
+      gridcolor: "#eaeaea",
+      zeroline: true,
+    },
+    yaxis: {
+      title: "Y-axis",
+      range: [-1, 5],
+      showgrid: true,
+      gridcolor: "#eaeaea",
+      zeroline: true,
+    },
+    shapes: [
+      // Principal component direction (dashed)
+      arrow(0, 0, 4.5, 0, "orange", 2, "dot"),
+
+      // Arrow from origin to original point
+      arrow(0, 0, point[0], point[1], "blue", 4),
+
+      // Arrow from origin to projection
+      arrow(0, 0, proj[0], proj[1], "green", 4),
+
+      // Dashed perpendicular connector
+      arrow(point[0], point[1], proj[0], proj[1], "gray", 2, "dot")
+    ],
+    annotations: [
+      {
+        x: point[0], y: point[1],
+        text: "Data Point (3, 4)",
+        showarrow: true,
+        arrowhead: 2,
+        ax: -40, ay: -40,
+        font: { color: "blue", size: 14 }
+      },
+      {
+        x: proj[0], y: proj[1],
+        text: "Projection (3, 0)",
+        showarrow: true,
+        arrowhead: 2,
+        ax: -20, ay: 40,
+        font: { color: "green", size: 14 }
+      },
+      {
+        x: 4.5, y: -0.2,
+        text: "Principal Component (PC₁)",
+        showarrow: false,
+        font: { color: "orange", size: 13 }
+      }
+    ]
+  };
+
+  const data = [
+    {
+      type: "scatter",
+      mode: "markers",
+      x: [point[0], proj[0]],
+      y: [point[1], proj[1]],
+      marker: {
+        size: 10,
+        color: ["blue", "green"]
+      }
+    }
+  ];
+
+  Plotly.newPlot("projectionEnhanced", data, layout);
+</script>
+
+
+Orthogonality is a core concept in many areas of ML that deal with feature decorrelation. For instance, independent component analysis (ICA) extends PCA by aiming for statistically independent (not just uncorrelated) components, which is useful in blind source separation tasks like speech signal decomposition.
+
+In computer vision, projections are used in dimensionality reduction pipelines (e.g., PCA, t-SNE, UMAP) to extract visually salient features. Orthogonality also plays a role in orthogonal initialization of deep neural networks, which helps preserve variance and avoid vanishing gradients in very deep architectures.
+
+In physics-informed ML and scientific computing, projections are used to map complex nonlinear states into simpler bases for simulation or differential equation modeling. This helps compress high-dimensional simulations like fluid dynamics into learnable latent dynamics.
 
 ---
 
@@ -208,7 +330,13 @@ print("L2 Norm:", l2_norm)
 print("L∞ Norm:", linf_norm)
 ```
 
-In NLP, we use norm-based regularization to keep our word embeddings generalizable. In computer vision, we regularize convolutional filters to avoid overfitting to noise in the training images. Measuring and controlling vector magnitude is key to making our models not just accurate, but robust.
+
+
+Regularization using norms is a widely adopted strategy to prevent overfitting and improve generalization. In logistic regression and linear classifiers, L1 and L2 regularization help constrain the coefficient space, thereby simplifying the decision boundary and increasing robustness.
+
+In deep learning, the weight decay trick (essentially L2 norm penalty) is used alongside batch normalization and dropout to stabilize training. In federated learning, client updates are sometimes clipped using norm thresholds to avoid noisy or adversarial contributions.
+
+Beyond regularization, norms are also used in anomaly detection (e.g., distance from cluster centroids), metric learning (contrastive and triplet losses depend on Euclidean or cosine distances), and adversarial robustness (where L∞, L2, and L1 norms define allowed perturbation bounds). Whether you're compressing models for edge deployment or defending them against attacks, norms guide and constrain model behavior effectively.
 
 ---
 
@@ -257,7 +385,11 @@ outer_product = np.outer(u, v)
 print("Outer Product:\n", outer_product)
 ```
 
-In NLP, we use inner products to compare embeddings and cluster similar words or documents. Outer products come in handy when building attention mechanisms or covariance matrices that model relationships between features. In computer vision, outer products are used to analyze spatial patterns in images, enabling algorithms to detect textures, faces, and more.
+The inner product is at the heart of similarity calculations across many algorithms—whether it's comparing embeddings in a semantic space or computing attention weights in transformers. Cosine similarity, a normalized inner product, is frequently used in clustering, information retrieval, and question-answering systems.
+
+In kernel methods, such as support vector machines (SVMs), the inner product is generalized into kernel functions to measure similarity in high-dimensional (sometimes infinite-dimensional) spaces. The outer product, on the other hand, forms the basis of covariance matrices, used in PCA, Gaussian processes, and multivariate statistics.
+
+In deep learning, attention mechanisms use scaled dot-product attention, which essentially involves outer products to compute weighted combinations across key-query-value triplets. Outer products are also fundamental to tensor factorization and bilinear pooling methods used in multi-modal learning, such as combining image and text inputs in visual question answering (VQA).
 
 ---
 
