@@ -26,6 +26,8 @@ pagination:
   <div class="header-bar">
     <h1>{{ site.blog_name }}</h1>
     <h2>{{ site.blog_description }}</h2>
+
+
   </div>
   {% endif %}
 
@@ -98,6 +100,8 @@ pagination:
       </div>
     </div>
     <hr>
+
+
 
 {% endif %}
 
@@ -186,5 +190,8 @@ pagination:
 {% if page.pagination.enabled %}
 {% include pagination.liquid %}
 {% endif %}
+<p style="text-align: center;">
+  <a href="https://joyoshish.github.io/journal/" target="_blank">You may find my musings here</a>
+</p>
 
 </div>
