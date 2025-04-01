@@ -9,6 +9,8 @@ categories: machine-learning math
 # thumbnail: assets/img/linalg_banner.png
 giscus_comments: true
 related_posts: true
+toc:
+  beginning: true
 ---
 
 In machine learning, every problem—whether it’s image recognition, natural language processing, or anomaly detection—begins with how we represent data. In this post, we’ll take a deep dive into vectors and vector spaces, exploring the underlying mathematics that enables ML algorithms to learn from data. We’ll follow a problem-driven approach: each section starts with a real-world ML challenge, introduces the mathematical tool needed, explains the theory from the ground up, and concludes with a detailed solution along with Python coding examples and real-world applications in NLP and Computer Vision.
