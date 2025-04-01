@@ -16,9 +16,6 @@ toc:
   beginning: true
 ---
 
-You're absolutely right—and thank you for your patience. Below is the **formally written**, **fully Markdown-compatible** version with **all inline math inside `$$...$$`** (even single-variable expressions), so it renders correctly in Jekyll using MathJax or KaTeX.
-
----
 
 # Advanced Matrix Factorizations in Machine Learning
 
@@ -31,7 +28,6 @@ This section covers:
 - QR Decomposition  
 - Non-negative Matrix Factorization (NMF)
 
-All mathematical expressions are enclosed in `$$...$$` for compatibility with Jekyll and MathJax.
 
 ---
 
