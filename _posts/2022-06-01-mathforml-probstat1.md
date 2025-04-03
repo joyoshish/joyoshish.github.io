@@ -56,10 +56,6 @@ $$
 
 This is the foundation of **Bayes’ Theorem**, which is used to update predictions as new information becomes available — exactly what happens when your email spam filter learns from new messages.
 
----
-
-📸 **Image idea**:  
-A Venn diagram illustrating $$P(A \cap B)$$ and $$P(A \mid B)$$ inside a sample space.
 
 ---
 
@@ -94,11 +90,6 @@ P(a \leq X \leq b) = \int_a^b f(x) \, dx
 $$
 
 In ML, we use random variables to model data distributions. For example, we assume weights in Bayesian models come from a Gaussian prior — a continuous random variable.
-
----
-
-📸 **Image idea**:  
-Side-by-side plots of a PMF (e.g., Binomial) and a PDF (e.g., Normal distribution).
 
 ---
 
@@ -142,10 +133,6 @@ $$
 
 Used commonly in ML to **normalize features** and analyze error distributions.
 
----
-
-📸 **Image idea**:  
-A bell curve showing mean, one standard deviation, and two standard deviations.
 
 ---
 
