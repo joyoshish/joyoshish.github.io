@@ -309,24 +309,24 @@ This visualization shows how the prior belief and the observed data interact to 
 
 This prior-likelihood-posterior triad is a universal framework used across many data science workflows:
 
-#### ✅ **Bayesian A/B Testing**
+#### **Bayesian A/B Testing**
 - Prior: Encodes historical conversion rates for variants.
 - Likelihood: Comes from observed clicks or conversions (e.g., Binomial model).
 - Posterior: Used to make probabilistic comparisons like $$P(\theta_A > \theta_B \mid \text{data})$$.
 
 This leads to more robust and interpretable decisions compared to traditional p-values.
 
-#### ✅ **Bayesian Regression**
+#### **Bayesian Regression**
 - Prior: Places distributions (e.g., Normal) over regression coefficients.
 - Likelihood: Based on residuals from training data.
 - Posterior: Yields not just point estimates, but full predictive intervals — crucial for risk-aware applications like pricing, forecasting, or credit scoring.
 
-#### ✅ **Fraud Detection**
+#### **Fraud Detection**
 - Prior: Reflects expected fraud rate (e.g., from industry benchmarks).
 - Likelihood: Comes from behavioral or transactional data.
 - Posterior: Quantifies the probability of fraud for new transactions in real time.
 
-#### ✅ **Recommender Systems**
+#### **Recommender Systems**
 - Prior: Reflects assumed user preferences or item popularity.
 - Likelihood: Derived from user-item interaction data (ratings, clicks).
 - Posterior: Enables personalized predictions with uncertainty quantification, improving exploration in recommendation.
@@ -589,7 +589,7 @@ plt.show()
 
 ### Applications in Data Science
 
-#### ✅ Logistic Regression
+#### Logistic Regression
 
 MLE finds weights that minimize the negative log-likelihood. However, MAP estimation adds a prior over the weights (usually Gaussian), which leads to **regularized logistic regression**:
 
@@ -599,7 +599,7 @@ $$
 
 This helps control overfitting, especially in high-dimensional spaces.
 
-#### ✅ Bayesian Linear Regression
+#### Bayesian Linear Regression
 
 In linear regression, MAP estimation with a Gaussian prior yields **Ridge regression**:
 
@@ -609,7 +609,7 @@ $$
 
 This provides stability when data is sparse or multicollinearity is present.
 
-#### ✅ Cold Start and Sparse Data Problems
+#### Cold Start and Sparse Data Problems
 
 MAP estimators are essential when:
 
@@ -779,7 +779,7 @@ This visualization shows how the prior belief (centered at 0.5) gets updated bas
 
 ### Applications in Data Science
 
-#### ✅ Bayesian A/B Testing
+#### Bayesian A/B Testing
 
 In online experimentation:
 
@@ -789,7 +789,7 @@ In online experimentation:
 
 Conjugate priors enable this with fast, closed-form updates and interpretable distributions.
 
-#### ✅ Real-Time User Modeling
+#### Real-Time User Modeling
 
 Click-through rates, open rates, fraud likelihoods — all modeled as binary outcomes. Beta priors can be updated on-the-fly as new data arrives, powering systems like:
 
@@ -797,7 +797,7 @@ Click-through rates, open rates, fraud likelihoods — all modeled as binary out
 - Spam filtering
 - Risk scoring in transactions
 
-#### ✅ Bayesian Filtering and Probabilistic Robotics
+#### Bayesian Filtering and Probabilistic Robotics
 
 In robotics and control systems, conjugate priors are used for recursive Bayesian filters (e.g., Kalman filters, where Gaussians are conjugate to themselves) to update beliefs about position, velocity, or sensor noise.
 
@@ -925,11 +925,11 @@ This visualization illustrates:
 
 ### Applications in Data Science
 
-#### ✅ **Bayesian Optimization**
+#### **Bayesian Optimization**
 
 GPs are often used as **surrogate models** in Bayesian Optimization, where the goal is to optimize a black-box function that is expensive to evaluate. The GP captures both the function estimate and its uncertainty, enabling **exploration vs. exploitation** strategies.
 
-#### ✅ **Uncertainty-Aware Regression**
+#### **Uncertainty-Aware Regression**
 
 GPs naturally model **predictive uncertainty**. This is vital in:
 
@@ -937,11 +937,11 @@ GPs naturally model **predictive uncertainty**. This is vital in:
 - Sensor fusion in robotics (merging noisy measurements),
 - Scientific modeling (where understanding the confidence of predictions is key).
 
-#### ✅ **Small-Data Regimes**
+#### **Small-Data Regimes**
 
 In cases where data is expensive or scarce (e.g., drug discovery, experimental physics), GPs shine because they can learn complex patterns without overfitting and provide principled uncertainty.
 
-#### ✅ **Active Learning**
+#### **Active Learning**
 
 Because GPs quantify uncertainty, they are ideal for **active learning** — selecting new data points where the model is uncertain to improve learning efficiency.
 
