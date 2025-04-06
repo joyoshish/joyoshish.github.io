@@ -23,7 +23,7 @@ toc:
 </figure>
 
 
-In the world of data science, where uncertainty is not an exception but the norm, reasoning under uncertainty becomes a core necessity. While traditional frequentist approaches have long provided a framework for estimating parameters and testing hypotheses, the Bayesian paradigm brings an alternative—and in many ways, more intuitive—framework to model beliefs, incorporate prior knowledge, and update our understanding as new data arrives.
+In data science, where uncertainty is not an exception but the norm, reasoning under uncertainty becomes a core necessity. While traditional frequentist approaches have long provided a framework for estimating parameters and testing hypotheses, the Bayesian paradigm brings an alternative—and in many ways, more intuitive—framework to model beliefs, incorporate prior knowledge, and update our understanding as new data arrives.
 
 Bayesian inference treats unknown parameters as random variables and uses probability distributions to express uncertainty. This philosophical shift opens the door to a rich array of techniques and tools that power everything from spam filters to hyperparameter tuning in deep learning.
 
@@ -253,7 +253,7 @@ This posterior reflects our updated belief about the coin's bias after observing
 
 ---
 
-### Python Code and Visualization
+### Visualization
 
 ```python
 import numpy as np
@@ -546,7 +546,7 @@ This corresponds to a **Beta(5, 4)** posterior.
 
 ---
 
-### Python Code and Visualization
+### Visualization
 
 ```python
 import numpy as np
@@ -584,6 +584,66 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 ```
+
+The plot below demonstrates how **Maximum Likelihood Estimation (MLE)** and **Maximum A Posteriori (MAP)** estimation differ when estimating the bias $$\theta$$ of a coin (i.e., the probability of getting heads).
+
+The goal is to estimate the most likely value of $$\theta$$ based on:
+
+- A prior belief about the coin’s fairness (a Beta distribution),
+- A small sample of observed data (3 heads out of 5 tosses).
+
+<div style="text-align: center; margin: 2rem 0;">
+  {% include figure.liquid 
+      path="assets/img/probstat3_4.png" 
+      class="img-fluid rounded shadow-sm" 
+      loading="eager" 
+      zoomable=true 
+      alt="MAP vs MLE Estimation for Coin Bias" 
+  %}
+  <p style="font-style: italic; font-size: 0.95rem; color: #666; margin-top: 0.5rem;">
+    Figure: MAP vs MLE Estimation for Coin Bias
+  </p>
+</div>
+
+- **Prior**: A $$\text{Beta}(2,2)$$ distribution, centered at 0.5, representing a **mild belief** that the coin is fair.
+- **Observed Data**: 5 tosses, with **3 heads** and **2 tails**.
+- **Likelihood**: Based on the Binomial model:
+  
+  $$
+  P(D \mid \theta) \propto \theta^3 (1 - \theta)^2
+  $$
+
+- **Posterior**: With a conjugate Beta prior and Binomial likelihood, the posterior becomes:
+  
+  $$
+  \text{Beta}(\alpha + k, \beta + n - k) = \text{Beta}(5, 4)
+  $$
+
+### Inferences we can make:
+
+1. **MLE Ignores Prior Knowledge**:  
+   The likelihood peaks at $$\theta = 0.6$$—which is simply the empirical ratio $$k/n = 3/5$$. This is the MLE and represents the estimate **purely from data**.
+
+2. **MAP Blends Prior and Data**:  
+   The posterior peaks at around $$\theta = 0.571$$. The MAP estimate is slightly **pulled toward the prior mean (0.5)** compared to MLE. This reflects the influence of the prior, which assumed the coin is more likely to be fair.
+
+3. **Priors Act as Regularizers**:  
+   The MAP estimator essentially acts like a **regularized version of MLE**—biasing the estimate toward prior beliefs, especially when sample size is small. With more data, the MAP and MLE would converge.
+
+4. **Posterior Reflects Uncertainty More Holistically**:  
+   Compared to the sharper likelihood, the posterior incorporates both **data and prior uncertainty**, making it slightly wider and smoother—especially relevant in low-data settings.
+
+5. **MAP ≠ MLE When Priors Are Informative**:  
+   This visualization is a concrete demonstration of how **MAP ≠ MLE** when the prior is not flat. It's a critical concept when explaining regularization, Bayesian learning, or when modeling with limited data.
+
+---
+
+To summarize, this plot provides a visual comparison of two common estimation strategies:
+
+- **MLE**: Trusts only the data.
+- **MAP**: Trusts both the data and a prior belief.
+
+When data is scarce (as it often is in real-world applications), the regularization effect of the prior becomes particularly useful. Bayesian methods provide a principled way to implement this regularization through **posterior inference**, and this example makes that visible and intuitive.
 
 ---
 
@@ -738,7 +798,9 @@ This rule makes it easy to perform sequential updates — as new observations co
 
 ---
 
-### Python Implementation and Visualization
+### Visualization
+
+To better understand how conjugate priors simplify Bayesian updating, let’s visualize how a **Beta prior** gets updated after observing data from a **Binomial process**. In this example, we assume a weakly informative prior belief about a coin’s fairness (Beta(2, 2)) and then observe 10 coin tosses with 7 heads. Because the Beta distribution is conjugate to the Binomial likelihood, we can compute the posterior analytically—resulting in another Beta distribution with updated parameters. This makes it easy to see how the prior and data interact to form the posterior.
 
 ```python
 import numpy as np
@@ -774,6 +836,60 @@ plt.show()
 ```
 
 This visualization shows how the prior belief (centered at 0.5) gets updated based on data favoring higher success probability.
+
+<div style="text-align: center; margin: 2rem 0;">
+  {% include figure.liquid 
+      path="assets/img/probstat3_5.png" 
+      class="img-fluid rounded shadow-sm" 
+      loading="eager" 
+      zoomable=true 
+      alt="Posterior Update with Conjugate Beta Prior" 
+  %}
+  <p style="font-style: italic; font-size: 0.95rem; color: #666; margin-top: 0.5rem;">
+    Figure: Posterior Update with Conjugate Beta Prior
+  </p>
+</div>
+
+This plot compares two distributions:
+
+- The **prior**: $$\text{Beta}(2, 2)$$ — symmetric around 0.5, representing mild uncertainty about the coin being fair.
+- The **posterior**: $$\text{Beta}(9, 5)$$ — updated belief after observing **7 heads out of 10 flips**.
+
+#### What’s Happening Under the Hood:
+
+- The **prior parameters** $$\alpha = 2, \beta = 2$$ represent 1 prior success and 1 prior failure (Beta counts start from one).
+- After observing the data, we apply the conjugate update:
+
+  $$
+  \alpha_{\text{posterior}} = \alpha_{\text{prior}} + k = 2 + 7 = 9
+  $$
+
+  $$
+  \beta_{\text{posterior}} = \beta_{\text{prior}} + (n - k) = 2 + 3 = 5
+  $$
+
+- The posterior is thus $$\text{Beta}(9, 5)$$ — a distribution that favors $$\theta > 0.5$$, aligning with the observed data, but still shaped by the prior.
+
+The Plot Shows:
+
+- The **prior curve** is flat-ish and centered at 0.5, reflecting openness to a range of $$\theta$$ values.
+- The **posterior curve** is steeper and shifted right, peaking around $$\theta \approx 0.64$$.
+- The update is **not overconfident** — the posterior still acknowledges uncertainty but now leans toward higher $$\theta$$ based on evidence.
+
+#### Inferences to make:
+
+1. **Bayesian updating is additive and intuitive**:  
+   With conjugate priors, updating is just a matter of adjusting counts. This keeps the math clean and interpretability high.
+
+2. **The prior influences the posterior more when data is limited**:  
+   In this example, with only 10 trials, the prior still has a noticeable effect. Had we used Beta(1, 1), the posterior would shift even further toward the empirical proportion (0.7).
+
+3. **Posterior reflects a refined belief**:  
+   The posterior balances **prior belief and observed data**, yielding a distribution that’s sharper than the prior but not as sharp as the maximum likelihood would suggest.
+
+4. **This approach scales well**:  
+   The same logic applies whether you're flipping a coin, testing an email subject line, or modeling click-through rates. That’s why Beta-Binomial updates are widely used in **A/B testing**, **online learning**, and **Bayesian filtering**.
+
 
 ---
 
@@ -847,39 +963,159 @@ Where:
 
 ---
 
-### GP Regression Intuition
 
-Given observed data points $$D = \{(x_i, y_i)\}_{i=1}^n$$, we assume:
+### Gaussian Process Regression: Intuition
+
+Let us consider a regression problem where we are given a dataset of $$n$$ observed input-output pairs:
 
 $$
-y_i = f(x_i) + \epsilon, \quad \epsilon \sim \mathcal{N}(0, \sigma_n^2)
+D = \{(x_i, y_i)\}_{i=1}^n
 $$
 
-The GP regression model gives us a **posterior distribution** over functions that agree with the observed data and generalize smoothly to new points, with uncertainty increasing away from observed inputs.
+We assume the outputs are generated from an **unknown latent function** $$f(x)$$ with added Gaussian noise:
+
+$$
+y_i = f(x_i) + \epsilon_i, \quad \epsilon_i \sim \mathcal{N}(0, \sigma_n^2)
+$$
+
+Our goal is to learn about $$f(x)$$ — not as a fixed parametric model, but as a **distribution over possible functions**. This is where **Gaussian Processes** come into play.
+
+A **Gaussian Process (GP)** is a prior over functions such that any finite collection of function values follows a multivariate Gaussian distribution:
+
+$$
+f(x) \sim \mathcal{GP}(m(x), k(x, x'))
+$$
+
+Here:
+
+- $$m(x) = \mathbb{E}[f(x)]$$ is the **mean function**, often set to zero for simplicity.
+- $$k(x, x') = \mathbb{E}[(f(x) - m(x))(f(x') - m(x'))]$$ is the **kernel** or covariance function.
+
+Given training inputs $$X = [x_1, ..., x_n]$$ and outputs $$\mathbf{y} = [y_1, ..., y_n]^T$$, and test inputs $$X_*$$, the GP framework models the joint distribution of training and test outputs as:
+
+$$
+\begin{bmatrix}
+\mathbf{y} \\
+\mathbf{f}_*
+\end{bmatrix}
+\sim \mathcal{N} \left(
+\begin{bmatrix}
+\mathbf{0} \\
+\mathbf{0}
+\end{bmatrix},
+\begin{bmatrix}
+K(X, X) + \sigma_n^2 I & K(X, X_*) \\
+K(X_*, X) & K(X_*, X_*)
+\end{bmatrix}
+\right)
+$$
+
+Where:
+
+- $$K(X, X)$$ is the $$n \times n$$ covariance matrix for training inputs.
+- $$K(X, X_*)$$ is the $$n \times m$$ cross-covariance between training and test inputs.
+- $$K(X_*, X_*)$$ is the $$m \times m$$ covariance of the test inputs.
+- $$\sigma_n^2 I$$ adds noise to the diagonal (due to the assumed observational noise).
+
+The **posterior predictive distribution** for the function values at test points is then given by:
+
+$$
+\mathbf{f}_* \mid X, \mathbf{y}, X_* \sim \mathcal{N}(\mu_*, \Sigma_*)
+$$
+
+Where:
+
+- **Posterior mean**:
+
+  $$
+  \mu_* = K(X_*, X)[K(X, X) + \sigma_n^2 I]^{-1} \mathbf{y}
+  $$
+
+- **Posterior covariance**:
+
+  $$
+  \Sigma_* = K(X_*, X_*) - K(X_*, X)[K(X, X) + \sigma_n^2 I]^{-1} K(X, X_*)
+  $$
+
+This formulation gives us both predictions (mean) and uncertainty (variance) at any set of new inputs.
 
 ---
 
-### The Kernel Function
+### The Role of the Kernel Function
 
-The **kernel** (covariance function) encodes assumptions about function smoothness, periodicity, or linearity. Common choices include:
+The **kernel function** $$k(x, x')$$ defines the covariance structure between the function values at different inputs. It encodes prior assumptions about the function’s properties — smoothness, periodicity, linearity, etc. The choice of kernel is crucial as it **determines the shape of the functions the GP considers likely**.
 
-- **RBF (Gaussian) kernel**:
-
-  $$
-  k(x, x') = \exp\left(-\frac{(x - x')^2}{2\ell^2}\right)
-  $$
-
-- **Matern kernel**
-- **Dot product kernel**
-- **Periodic kernel**
-
-The kernel determines how points influence each other — and thus shapes the prior over functions.
+Here are some commonly used kernels:
 
 ---
 
-### Python Code and Visualization
+#### 1. **Radial Basis Function (RBF) or Squared Exponential Kernel**
 
-Let’s walk through a simple 1D regression example using scikit-learn.
+This is the most widely used kernel due to its universal approximation properties and smoothness:
+
+$$
+k(x, x') = \exp\left(-\frac{(x - x')^2}{2\ell^2}\right)
+$$
+
+- $$\ell$$ is the **length scale**, controlling how quickly the function varies.
+- Encourages **infinitely differentiable**, smooth functions.
+- Implies that points closer in input space have highly correlated function values.
+
+---
+
+#### 2. **Matern Kernel**
+
+A generalization of the RBF kernel that allows for less smoothness:
+
+$$
+k_\nu(r) = \frac{2^{1-\nu}}{\Gamma(\nu)} \left( \frac{\sqrt{2\nu}r}{\ell} \right)^\nu K_\nu \left( \frac{\sqrt{2\nu}r}{\ell} \right)
+$$
+
+- $$r = |x - x'|$$
+- $$\nu$$ controls smoothness: e.g., $$\nu = 1/2$$ gives exponential kernel, $$\nu \to \infty$$ recovers RBF.
+- Suitable for modeling rougher, more realistic functions in real-world applications.
+
+---
+
+#### 3. **Dot Product (Linear) Kernel**
+
+Used when the function is expected to be linear:
+
+$$
+k(x, x') = x^T x'
+$$
+
+- Equivalent to Bayesian linear regression.
+- Doesn’t model nonlinearity unless combined with other kernels.
+
+---
+
+#### 4. **Periodic Kernel**
+
+Models functions with known repeating structure:
+
+$$
+k(x, x') = \exp\left(-\frac{2 \sin^2(\pi |x - x'| / p)}{\ell^2}\right)
+$$
+
+- $$p$$ controls the period, $$\ell$$ controls smoothness.
+- Ideal for seasonal data, time series, and cyclic behaviors.
+
+---
+
+### Why Kernels Matter in Practice
+
+The **kernel acts as a prior over function space**, shaping not only the kinds of functions the model will favor but also how information propagates across the input domain. Inference in a GP is guided entirely by the covariance implied by the kernel.
+
+Choosing a kernel is a modeling decision — like choosing a neural network architecture or a basis function family — but in GPs, it’s **probabilistically grounded**. And importantly, it’s **differentiable and tunable**: you can learn kernel parameters (like $$\ell$$) by maximizing the marginal likelihood.
+
+---
+
+### Visualization
+
+To illustrate how **Gaussian Processes** model distributions over functions, let’s walk through a simple 1D regression example using scikit-learn. We’ll fit a GP to a **small set of noisy training points**, allowing it to not only predict the mean function but also provide a **confidence interval** that reflects its uncertainty. The GP is equipped with an **RBF (Radial Basis Function)** kernel, which assumes smoothness in the underlying function.
+
+This example visually demonstrates one of the GP's most powerful features: it can interpolate sparse data while expressing its uncertainty about regions it has not seen.
 
 ```python
 import numpy as np
@@ -914,6 +1150,59 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 ```
+
+<div style="text-align: center; margin: 2rem 0;">
+  {% include figure.liquid 
+      path="assets/img/probstat3_6.png" 
+      class="img-fluid rounded shadow-sm" 
+      loading="eager" 
+      zoomable=true 
+      alt="Gaussian Process Regression" 
+  %}
+  <p style="font-style: italic; font-size: 0.95rem; color: #666; margin-top: 0.5rem;">
+    Figure: Gaussian Process Regression
+  </p>
+</div>
+
+
+The Plot Shows:
+
+- **Red dots** represent the observed training data points.
+- The **blue line** is the mean prediction of the Gaussian Process at every point in the input space.
+- The **shaded region** corresponds to a 95% confidence interval, calculated as:
+
+  $$
+  \hat{f}(x) \pm 1.96 \cdot \sigma(x)
+  $$
+
+  where $$\hat{f}(x)$$ is the predicted mean and $$\sigma(x)$$ is the standard deviation from the posterior.
+
+---
+
+Insights we can infer from this are
+
+1. **Probabilistic Predictions, Not Just Point Estimates**  
+   Unlike traditional regressors (like polynomial or linear regression), the GP predicts a **distribution over functions**, not a single best fit. For each input $$x$$, it returns a mean prediction **and** a measure of uncertainty.
+
+2. **Uncertainty Reflects Data Coverage**  
+   The model is most confident (i.e., narrowest uncertainty band) **near the observed data points**, and increasingly uncertain as we move away from them. This is especially visible at the edges (near $$x = 0$$ and $$x = 10$$), where the GP hasn’t seen any training data.
+
+3. **The Role of the RBF Kernel**  
+   The **RBF kernel** assumes that points closer in input space produce similar outputs. It’s what gives the GP its smooth, wavy behavior. If a different kernel were used (e.g., linear or periodic), the shape of the mean and uncertainty band would change.
+
+4. **Handling Small Datasets Gracefully**  
+   Despite having only four training points, the GP constructs a smooth function that captures the structure of the underlying sine wave—without overfitting. This makes it particularly useful in low-data regimes like:
+   - Experimental design,
+   - Bayesian optimization,
+   - Medical modeling, where samples are expensive.
+
+5. **Interpretable Uncertainty**  
+   The shaded band gives us a principled way to **quantify model confidence**. Unlike confidence intervals in frequentist regression, which apply to the parameter estimate, the GP’s uncertainty is **pointwise** and interpretable: “Here’s how unsure the model is at this input.”
+
+---
+
+This showcases the core strength of Gaussian Processes: **flexible, non-parametric regression with uncertainty quantification**. By treating the prediction as a distribution over functions, the GP provides not only a best guess but also a principled expression of **how much we trust that guess** at each point. This property is crucial in settings where **uncertainty is as important as accuracy**.
+
 
 This visualization illustrates:
 
