@@ -50,6 +50,8 @@ footer_fixed: true
 search_enabled: true
 posts_in_search: true
 
+enable_search: true
+
 # Dimensions
 max_width: 800px
 

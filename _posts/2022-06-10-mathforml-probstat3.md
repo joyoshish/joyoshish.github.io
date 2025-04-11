@@ -184,51 +184,416 @@ It provides a mathematically sound, interpretable, and adaptive approach to reas
 
 ## Prior, Likelihood, and Posterior
 
-In the Bayesian paradigm, statistical inference is achieved by updating our beliefs about model parameters using observed data. This process is elegantly framed through three key components: the **prior**, the **likelihood**, and the **posterior**.
+In the Bayesian framework, statistical inference is built on the principle of updating **beliefs about parameters** based on observed data. This belief is represented mathematically using probability distributions and updated using **Bayes’ Theorem**. The process relies on three central components:
 
-Let us denote the unknown parameter of interest by $$\theta$$, and the observed data by $$D$$. The core idea is that we begin with a belief about $$\theta$$ (the prior), update it with evidence from $$D$$ (via the likelihood), and arrive at a new belief (the posterior).
+- The **prior**: our belief about the parameter before seeing data,
+- The **likelihood**: the probability of observing the data given a specific value of the parameter,
+- The **posterior**: the revised belief after combining the prior and the likelihood.
 
----
-
-### Prior Distribution
-
-The **prior distribution** $$P(\theta)$$ encodes our knowledge or assumption about the parameter $$\theta$$ before seeing the data. This distribution may be:
-
-- **Informative**: When prior domain knowledge is available.
-- **Uninformative or weakly informative**: When we wish to remain neutral and let the data dominate.
-- **Subjective**: Reflecting expert belief or empirical intuition.
-
-For example, suppose we are interested in estimating the probability of success for a new drug. If previous drugs in this class have a success rate around 70%, we might encode this belief using a **Beta distribution** such as $$\text{Beta}(\alpha = 7, \beta = 3)$$.
-
----
-
-### Likelihood Function
-
-The **likelihood function** $$P(D \mid \theta)$$ is the probability of the observed data given the parameter $$\theta$$. It captures how plausible the data is for each possible value of $$\theta$$.
-
-Mathematically, if the data $$D = \{x_1, x_2, ..., x_n\}$$ consists of independent and identically distributed (i.i.d.) observations, then the likelihood becomes:
-
-$$
-P(D \mid \theta) = \prod_{i=1}^n P(x_i \mid \theta)
-$$
-
-Unlike the prior, which represents a belief, the likelihood comes directly from a probabilistic model of the data-generating process (e.g., Bernoulli, Binomial, Gaussian).
-
----
-
-### Posterior Distribution
-
-The **posterior distribution** $$P(\theta \mid D)$$ is our updated belief about the parameter $$\theta$$ after observing data $$D$$. It combines the prior and the likelihood using **Bayes’ Theorem**:
+Let us denote the unknown parameter by $$\theta$$, and the observed data by $$D = \{x_1, x_2, \dots, x_n\}$$. Then:
 
 $$
 P(\theta \mid D) = \frac{P(D \mid \theta) \cdot P(\theta)}{P(D)}
 $$
 
-The denominator $$P(D)$$ is called the **marginal likelihood** or **evidence** and ensures that the posterior integrates to 1:
+This is Bayes' Theorem applied to parameter estimation, where:
+
+- $$P(\theta)$$ is the **prior** distribution,
+- $$P(D \mid \theta)$$ is the **likelihood**,
+- $$P(D)$$ is the **marginal likelihood** or **evidence**,
+- $$P(\theta \mid D)$$ is the **posterior**.
+
+---
+
+### Prior Distribution
+
+The **prior distribution** $$P(\theta)$$ expresses our belief or uncertainty about the parameter $$\theta$$ before observing any data. Mathematically, the prior is a probability density function (pdf) over the domain of $$\theta$$:
+
+$$
+\int P(\theta) \, d\theta = 1
+$$
+
+This prior may be:
+
+- **Informative**: When strong domain knowledge is available.
+- **Uninformative or weakly informative**: To allow data to dominate inference.
+- **Subjective**: Based on expert intuition or empirical insight.
+
+The specific form of the prior depends on the nature of the parameter:
+
+#### ▸ Beta Prior (for probabilities $$\theta \in [0, 1]$$):
+
+$$
+P(\theta) = \frac{1}{B(\alpha, \beta)} \theta^{\alpha - 1}(1 - \theta)^{\beta - 1}
+$$
+
+Where $$\alpha, \beta > 0$$ are shape parameters, and $$B(\alpha, \beta)$$ is the **Beta function**:
+
+$$
+B(\alpha, \beta) = \int_0^1 \theta^{\alpha - 1} (1 - \theta)^{\beta - 1} \, d\theta
+$$
+
+This distribution is commonly used as a prior for binary outcomes and proportions. Its mean and variance are:
+
+$$
+\mathbb{E}[\theta] = \frac{\alpha}{\alpha + \beta}, \quad
+\text{Var}(\theta) = \frac{\alpha \beta}{(\alpha + \beta)^2 (\alpha + \beta + 1)}
+$$
+
+#### ▸ Gaussian Prior (for real-valued $$\theta$$):
+
+$$
+P(\theta) = \frac{1}{\sqrt{2\pi \sigma^2}} \exp\left( -\frac{(\theta - \mu)^2}{2\sigma^2} \right)
+$$
+
+Used in models like Bayesian linear regression or Gaussian processes, this prior expresses belief that $$\theta$$ is centered around $$\mu$$ with spread controlled by variance $$\sigma^2$$.
+
+#### ▸ Uniform Prior (non-informative):
+
+If nothing is known about $$\theta$$ within an interval $$[a, b]$$:
+
+$$
+P(\theta) = \frac{1}{b - a}, \quad \text{for } \theta \in [a, b]
+$$
+
+This flat prior assumes all values in $$[a, b]$$ are equally likely.
+
+---
+
+
+
+### Likelihood Function
+
+The **likelihood function** $$P(D \mid \theta)$$ represents how plausible the observed data is for different values of the parameter $$\theta$$. While the prior is independent of the data and reflects belief, the likelihood is derived from a **data-generating model**—a statistical assumption about how the data arises conditional on $$\theta$$.
+
+Formally, if the data consists of independent and identically distributed (i.i.d.) samples:
+
+$$
+D = \{x_1, x_2, \dots, x_n\}, \quad x_i \sim P(x \mid \theta)
+$$
+
+Then the likelihood becomes:
+
+$$
+P(D \mid \theta) = \prod_{i=1}^n P(x_i \mid \theta)
+$$
+
+This is **not** a probability distribution over $$\theta$$, but a function of $$\theta$$ with data held fixed.
+
+---
+
+#### ▸ Example: Bernoulli/Binomial Likelihood
+
+Suppose each observation is a binary outcome (success/failure), modeled as a Bernoulli trial:
+
+$$
+x_i \sim \text{Bernoulli}(\theta), \quad \text{so } P(x_i \mid \theta) = \theta^{x_i} (1 - \theta)^{1 - x_i}
+$$
+
+If we observe $$k$$ successes in $$n$$ trials, then:
+
+$$
+P(D \mid \theta) = \prod_{i=1}^n \theta^{x_i} (1 - \theta)^{1 - x_i}
+= \theta^k (1 - \theta)^{n - k}
+$$
+
+This expression is the **likelihood function**, which evaluates how consistent various $$\theta$$ values are with the observed success/failure count.
+
+---
+
+### Posterior Distribution
+
+The **posterior** distribution $$P(\theta \mid D)$$ combines the **prior** and **likelihood** using Bayes' Theorem:
+
+$$
+P(\theta \mid D) = \frac{P(D \mid \theta) \cdot P(\theta)}{P(D)}
+$$
+
+Where the denominator is the **marginal likelihood** or **evidence**, ensuring that the posterior integrates to 1:
 
 $$
 P(D) = \int P(D \mid \theta) \cdot P(\theta) \, d\theta
 $$
+
+---
+
+#### ▸ Beta Prior + Binomial Likelihood
+
+Let’s assume:
+
+- Prior: $$P(\theta) = \text{Beta}(\alpha, \beta)$$
+- Likelihood: $$P(D \mid \theta) = \theta^k (1 - \theta)^{n - k}$$
+
+Then:
+
+**Unnormalized posterior**:
+
+$$
+P(\theta \mid D) \propto P(D \mid \theta) \cdot P(\theta) \\
+\propto \theta^k (1 - \theta)^{n - k} \cdot \theta^{\alpha - 1}(1 - \theta)^{\beta - 1} \\
+= \theta^{k + \alpha - 1}(1 - \theta)^{n - k + \beta - 1}
+$$
+
+This is the kernel of a **Beta distribution**:
+
+$$
+P(\theta \mid D) = \text{Beta}(\alpha + k, \beta + n - k)
+$$
+
+This result highlights the convenience of **conjugate priors**: the prior and posterior belong to the same family, simplifying inference.
+
+---
+
+#### ▸ Posterior Summary Statistics - Beta Distribution
+
+
+Based on the posterior:
+
+$$
+\theta \mid D \sim \text{Beta}(\alpha + k, \beta + n - k)
+$$
+
+where:
+
+- $$\alpha$$ and $$\beta$$ are prior parameters,
+- $$k$$ is the number of observed successes,
+- $$n$$ is the total number of observations.
+
+We derive:
+
+
+##### 1. **Posterior Mean**
+
+If:
+
+$$
+\theta \sim \text{Beta}(a, b)
+$$
+
+then the mean is given by:
+
+$$
+\mathbb{E}[\theta] = \frac{a}{a + b}
+$$
+
+In our case, the posterior parameters are:
+
+- $$a = \alpha + k$$  
+- $$b = \beta + n - k$$
+
+So the **posterior mean** is:
+
+$$
+\mathbb{E}[\theta \mid D] = \frac{\alpha + k}{\alpha + \beta + n}
+$$
+
+This is a convex combination of the prior mean and the observed frequency:
+
+- Prior mean: $$\frac{\alpha}{\alpha + \beta}$$
+- Observed frequency: $$\frac{k}{n}$$
+
+As $$n$$ increases, the posterior mean converges toward the sample mean $$k/n$$, and the influence of the prior diminishes.
+
+---
+
+##### 2. **Posterior Variance**
+
+The variance of a Beta distribution $$\text{Beta}(a, b)$$ is:
+
+$$
+\text{Var}[\theta] = \frac{ab}{(a + b)^2 (a + b + 1)}
+$$
+
+Apply this to the posterior:
+
+- $$a = \alpha + k$$
+- $$b = \beta + n - k$$
+
+Then:
+
+$$
+\text{Var}[\theta \mid D] = \frac{(\alpha + k)(\beta + n - k)}{(\alpha + \beta + n)^2 (\alpha + \beta + n + 1)}
+$$
+
+This variance shrinks as $$n$$ increases — reflecting increased confidence in our estimate of $$\theta$$ after observing more data.
+
+---
+
+##### 3. **MAP Estimate (Posterior Mode)**
+
+The **mode** (maximum a posteriori estimate) of a Beta distribution $$\text{Beta}(a, b)$$ is given by:
+
+$$
+\theta_{\text{MAP}} = \frac{a - 1}{a + b - 2}, \quad \text{for } a > 1 \text{ and } b > 1
+$$
+
+Apply to the posterior:
+
+- $$a = \alpha + k$$
+- $$b = \beta + n - k$$
+
+So:
+
+$$
+\hat{\theta}_{\text{MAP}} = \frac{\alpha + k - 1}{\alpha + \beta + n - 2}
+$$
+
+This estimate corresponds to the **mode** of the posterior distribution, and will differ from the mean unless the distribution is symmetric.
+
+---
+
+These quantities are critical in:
+
+- Computing expected outcomes and uncertainty,
+- Constructing Bayesian credible intervals,
+- Making point predictions (e.g., MAP for classification),
+- Visualizing posterior summaries.
+
+
+---
+
+#### ▸ Posterior Derivation: Gaussian Likelihood and Gaussian Prior
+
+In many data science tasks, we assume that the observed data is generated from a continuous process with **Gaussian noise**, and that our prior belief about the parameter is also normally distributed. This leads to one of the most well-known conjugate pairs: **Gaussian-Gaussian** inference (both the **likelihood and prior are Gaussian** — one of the most important and elegant conjugate models in Bayesian inference).
+
+Let us assume:
+
+- The parameter of interest is a real-valued scalar $$\theta$$.
+- The observed data $$D = \{x_1, x_2, \dots, x_n\}$$ are i.i.d. samples from:
+
+  $$
+  x_i \mid \theta \sim \mathcal{N}(\theta, \sigma^2)
+  $$
+
+  where $$\sigma^2$$ is known (observation noise variance).
+
+- The prior belief about $$\theta$$ is:
+
+  $$
+  \theta \sim \mathcal{N}(\mu_0, \tau^2)
+  $$
+
+  where $$\mu_0$$ is the prior mean, and $$\tau^2$$ is the prior variance.
+
+---
+
+##### Step 1: Likelihood Function
+
+Given $$n$$ i.i.d. observations $$x_1, ..., x_n$$, the likelihood of the data given $$\theta$$ is:
+
+$$
+P(D \mid \theta) = \prod_{i=1}^n \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left( -\frac{(x_i - \theta)^2}{2\sigma^2} \right)
+$$
+
+This is the product of Gaussians with the same mean $$\theta$$ and fixed variance $$\sigma^2$$.
+
+Taking the log-likelihood:
+
+$$
+\log P(D \mid \theta) = -\frac{n}{2} \log(2\pi\sigma^2) - \frac{1}{2\sigma^2} \sum_{i=1}^n (x_i - \theta)^2
+$$
+
+Let $$\bar{x} = \frac{1}{n} \sum x_i$$. Then:
+
+$$
+\sum (x_i - \theta)^2 = \sum (x_i - \bar{x} + \bar{x} - \theta)^2 = \sum (x_i - \bar{x})^2 + n(\theta - \bar{x})^2
+$$
+
+So the likelihood becomes:
+
+$$
+P(D \mid \theta) \propto \exp\left( -\frac{n}{2\sigma^2} (\theta - \bar{x})^2 \right)
+$$
+
+Which shows that the likelihood (up to normalization) is itself Gaussian:
+
+$$
+\theta \mid D \propto \mathcal{N}(\bar{x}, \sigma^2 / n)
+$$
+
+---
+
+##### Step 2: Prior
+
+The prior is:
+
+$$
+P(\theta) = \frac{1}{\sqrt{2\pi\tau^2}} \exp\left( -\frac{(\theta - \mu_0)^2}{2\tau^2} \right)
+$$
+
+---
+
+##### Step 3: Posterior Derivation
+
+Bayes’ Theorem gives:
+
+$$
+P(\theta \mid D) \propto P(D \mid \theta) \cdot P(\theta)
+$$
+
+Since both terms are exponentials of quadratics in $$\theta$$, their product is proportional to another Gaussian:
+
+Let’s expand both exponentials:
+
+$$
+\log P(\theta \mid D) \propto -\frac{n}{2\sigma^2} (\theta - \bar{x})^2 - \frac{1}{2\tau^2} (\theta - \mu_0)^2
+$$
+
+Combine terms:
+
+$$
+\log P(\theta \mid D) \propto -\frac{1}{2} \left[ \left( \frac{n}{\sigma^2} + \frac{1}{\tau^2} \right) \theta^2 - 2 \left( \frac{n\bar{x}}{\sigma^2} + \frac{\mu_0}{\tau^2} \right) \theta \right]
+$$
+
+This is the kernel of a Gaussian distribution with:
+
+###### ▸ Posterior Mean:
+
+$$
+\mu_n = \frac{\frac{n}{\sigma^2} \bar{x} + \frac{1}{\tau^2} \mu_0}{\frac{n}{\sigma^2} + \frac{1}{\tau^2}}
+$$
+
+###### ▸ Posterior Variance:
+
+$$
+\sigma_n^2 = \left( \frac{n}{\sigma^2} + \frac{1}{\tau^2} \right)^{-1}
+$$
+
+---
+
+##### Interpretation
+
+- The **posterior mean** $$\mu_n$$ is a **weighted average** of the prior mean and sample mean, where the weights are proportional to their respective precisions (inverse variances).
+- The **posterior variance** $$\sigma_n^2$$ is always **smaller** than either the prior or the sample variance alone, reflecting increased certainty after combining information.
+
+---
+
+This Gaussian-Gaussian model forms the mathematical foundation of many applications:
+
+- **Bayesian Linear Regression**: Each weight in a regression model has a Gaussian prior and is updated analytically with Gaussian likelihoods. This allows regularization and closed-form uncertainty quantification.
+- **Bayesian Updating for Streaming Data**: In online learning, new data incrementally shifts the posterior, making it a new prior — enabling scalable, memory-efficient learning.
+- **Sensor Fusion**: In robotics and control systems, Bayesian Gaussian updates allow combining noisy measurements from multiple sensors to produce more confident estimates.
+- **Kalman Filters**: A specialized form of recursive Bayesian estimation based on Gaussian distributions used in tracking and forecasting.
+
+---
+
+Stepping back from this specific case, the same pattern—prior, likelihood, and posterior—runs through the entire Bayesian approach. 
+
+- The **prior** captures what we know (or assume) before seeing any data.
+- The **likelihood** tells us how compatible the data is with different parameter values.
+- The **posterior** combines both to give us a data-informed belief about the parameter.
+
+In data science, this allows:
+
+- **Incorporating prior knowledge** (from previous experiments, expert belief, or regulatory constraints),
+- **Updating beliefs incrementally** as more data becomes available,
+- **Quantifying uncertainty** through full distributions instead of point estimates.
+
+This foundation underlies a wide range of Bayesian models — from Naive Bayes classifiers and probabilistic graphical models to Gaussian Processes and Bayesian neural networks.
+
+---
+
+
 
 ---
 

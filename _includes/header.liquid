@@ -108,6 +108,14 @@
               {% endif %}
             {% endif %}
           {% endfor %}
+{% if site.enable_search %}
+  <li class="nav-item">
+    <a id="search-button" class="nav-link" href="javascript:void(0)">
+      <i class="ti ti-search"></i>
+      <span class="sr-only">Search</span>
+    </a>
+  </li>
+{% endif %}
           {% if site.enable_darkmode %}
             <!-- Toggle theme mode -->
             <li class="toggle-container">
@@ -130,4 +138,7 @@
       </div>
     </progress>
   {% endif %}
+  {% if site.enable_search %}
+  {% include search.html %}
+{% endif %}
 </header>
