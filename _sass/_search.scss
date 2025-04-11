@@ -2,7 +2,7 @@
 .search-modal {
   display: none;
   position: fixed;
-  z-index: 1000;
+  z-index: 9999;
   top: 0;
   left: 0;
   right: 0;
@@ -209,4 +209,82 @@ body.search-active {
       }
     }
   }
+}
+
+// Mobile-friendly search button
+.mobile-search-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  margin-right: 8px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+  
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .ti-search {
+    font-size: 18px;
+  }
+}
+
+// Make sure search modal works on mobile
+@media (max-width: 768px) {
+  .search-modal {
+    .search-container {
+      margin: 60px 16px;
+      max-width: none;
+      
+      .search-header {
+        padding: 16px;
+        
+        .search-input-container {
+          .search-input {
+            font-size: 16px; // Prevents zoom on iOS
+          }
+        }
+        
+        .search-shortcuts {
+          flex-direction: column;
+          gap: 8px;
+        }
+      }
+      
+      .search-results {
+        max-height: 60vh;
+        
+        .search-results-container {
+          padding: 8px;
+          
+          .search-result-item {
+            padding: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Dark mode for mobile
+.dark .mobile-search-button:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+// Style for keyboard-selected search result
+.search-result-selected {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  border-left: 3px solid var(--global-theme-color) !important;
+  
+  .search-result-preview {
+    color: var(--global-text-color) !important;
+  }
+}
+
+// Dark mode variant
+.dark .search-result-selected {
+  background-color: rgba(255, 255, 255, 0.05) !important;
 }

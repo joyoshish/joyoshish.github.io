@@ -11,6 +11,10 @@ document.addEventListener('DOMContentLoaded', function() {
   let searchIndex = [];
   let searchData = [];
   
+  // Variables to track selected result
+  let selectedIndex = -1;
+  let searchResultItems = [];
+  
   // Function to open search modal
   function openSearchModal() {
     searchModal.style.display = 'block';
@@ -18,6 +22,29 @@ document.addEventListener('DOMContentLoaded', function() {
       searchInput.focus();
     }, 100);
     document.body.classList.add('search-active');
+    resetSelection();
+  }
+
+  // Mobile-friendly search handling
+  function adjustSearchForMobile() {
+    if (window.innerWidth <= 768) {
+      // On mobile, make sure search modal takes full screen height
+      searchModal.style.paddingTop = "0";
+      searchModal.style.paddingBottom = "0";
+      
+      // Prevent scrolling of body behind modal
+      document.body.style.overflow = "hidden";
+      
+      // Ensure input doesn't zoom on iOS
+      searchInput.setAttribute("autocomplete", "off");
+      searchInput.setAttribute("autocorrect", "off");
+      searchInput.setAttribute("autocapitalize", "off");
+      searchInput.setAttribute("spellcheck", "false");
+    } else {
+      // Reset for desktop
+      searchModal.style.paddingTop = "";
+      searchModal.style.paddingBottom = "";
+    }
   }
   
   // Function to close search modal
@@ -26,6 +53,62 @@ document.addEventListener('DOMContentLoaded', function() {
     searchInput.value = '';
     searchResultsContainer.innerHTML = '';
     document.body.classList.remove('search-active');
+    document.body.style.overflow = ""; // Reset body overflow
+    resetSelection();
+  }
+  
+  // Function to handle keyboard navigation
+  function handleKeyboardNavigation(e) {
+    if (!searchModal.style.display || searchModal.style.display === 'none') {
+      return; // Don't do anything if search modal is not visible
+    }
+    
+    searchResultItems = Array.from(searchResultsContainer.querySelectorAll('.search-result-item'));
+    
+    if (searchResultItems.length === 0) {
+      return; // No results to navigate
+    }
+    
+    // Handle arrow up/down navigation
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      selectedIndex = Math.min(selectedIndex + 1, searchResultItems.length - 1);
+      updateSelectedResult();
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      selectedIndex = Math.max(selectedIndex - 1, 0);
+      updateSelectedResult();
+    } else if (e.key === 'Enter' && selectedIndex >= 0) {
+      e.preventDefault();
+      searchResultItems[selectedIndex].click(); // Navigate to the selected result
+    }
+  }
+  
+  // Function to update the selected result styling
+  function updateSelectedResult() {
+    // Remove selected class from all items
+    searchResultItems.forEach((item) => {
+      item.classList.remove('search-result-selected');
+    });
+    
+    // Add selected class to current item
+    if (selectedIndex >= 0 && selectedIndex < searchResultItems.length) {
+      searchResultItems[selectedIndex].classList.add('search-result-selected');
+      // Ensure the selected item is visible
+      searchResultItems[selectedIndex].scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest'
+      });
+    }
+  }
+  
+  // Function to reset selection
+  function resetSelection() {
+    selectedIndex = -1;
+    searchResultItems = Array.from(searchResultsContainer.querySelectorAll('.search-result-item'));
+    searchResultItems.forEach(item => {
+      item.classList.remove('search-result-selected');
+    });
   }
   
   // Keyboard shortcuts
@@ -34,22 +117,37 @@ document.addEventListener('DOMContentLoaded', function() {
     if ((e.ctrlKey && e.key === 'k') || (e.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName))) {
       e.preventDefault();
       openSearchModal();
+      adjustSearchForMobile();
     }
     
     // Escape to close search
     if (e.key === 'Escape' && searchModal.style.display === 'block') {
       closeSearchModal();
     }
+    
+    // Handle arrow key navigation
+    handleKeyboardNavigation(e);
   });
   
   // Click events
-  searchButton.addEventListener('click', openSearchModal);
+  searchButton.addEventListener('click', function() {
+    openSearchModal();
+    adjustSearchForMobile();
+  });
+  
   searchClose.addEventListener('click', closeSearchModal);
   
   // Click outside to close
   window.addEventListener('click', function(e) {
     if (e.target === searchModal) {
       closeSearchModal();
+    }
+  });
+  
+  // Also handle window resize
+  window.addEventListener('resize', function() {
+    if (searchModal.style.display === 'block') {
+      adjustSearchForMobile();
     }
   });
   
@@ -83,6 +181,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Perform search
   searchInput.addEventListener('input', function() {
     const query = this.value.trim();
+    resetSelection(); // Reset selection when input changes
     
     if (!query) {
       searchResultsContainer.innerHTML = '';

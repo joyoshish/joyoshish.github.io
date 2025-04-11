@@ -22,3 +22,11 @@ $max-content-width: {{ site.max_width }};
   "tabler-icons/tabler-icons-outline.scss"
 ;
 @import "search";
+
+// Make sure the search button doesn't get covered by collapsed menu
+@media (max-width: 576px) {
+  .navbar-collapse.show, .navbar-collapse.collapsing {
+    clear: both;
+    margin-top: 10px;
+  }
+}
