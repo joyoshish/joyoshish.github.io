@@ -5,7 +5,7 @@ nav: true
 nav_order: 6
 dropdown: true
 children:
-  - title: Computer Science and Data Science
+  - title: GATE CS / JEE Notes
     permalink: /acadresrc/
   - title: divider
   - title: Random
