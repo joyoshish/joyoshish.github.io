@@ -288,3 +288,13 @@ body.search-active {
 .dark .search-result-selected {
   background-color: rgba(255, 255, 255, 0.05) !important;
 }
+
+@media (max-width: 576px) {
+  .mobile-search-button {
+    margin-left: 8px !important; // creates space between search and hamburger
+  }
+
+  .navbar-toggler {
+    margin-right: 8px !important; // avoid sticking to the edge
+  }
+}

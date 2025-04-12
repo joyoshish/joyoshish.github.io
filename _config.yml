@@ -12,7 +12,7 @@ description: > # the ">" symbol means to ignore newlines until "footer_text:"
 # footer_text: >
 # Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
 # Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
+keywords: joyoshish, joyoshish-saha, joyoshish-portfolio, joyoshish-cv, joyoshish-data-science # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: জ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
@@ -131,7 +131,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: 'Eigenspace' # blog_name will be displayed in your blog page
-blog_description: Fundamental ideas that stay invariant through time, tools, or trends
+blog_description: 
 permalink: /blog/:year/:title/
 
 
@@ -310,8 +310,8 @@ display_categories: ["machine-learning" , "math", "math-for-ml"] # these categor
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  last_name: [Saha]
+  first_name: [Joyoshish]
 
   style: apa
   locale: en
