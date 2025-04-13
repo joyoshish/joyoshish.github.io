@@ -18,9 +18,9 @@ toc:
 
 
 
-Probability distributions are the foundation of machine learning. They shape how we simulate data, quantify uncertainty, and reason about model behavior. Whether you are generating synthetic samples, fitting probabilistic models, or understanding errors, distributions provide the structure for everything that follows.
+Probability distributions shape how we simulate data, quantify uncertainty, and reason about model behavior. Whether you are generating synthetic samples, fitting probabilistic models, or understanding errors, distributions provide the structure for everything that follows.
 
-In this article, we will explore:
+In this post, we will explore:
 
 - Important **discrete and continuous distributions**
 - Concepts around **multivariate distributions**

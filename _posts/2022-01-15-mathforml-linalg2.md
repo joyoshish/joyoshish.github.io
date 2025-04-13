@@ -16,7 +16,7 @@ toc:
 ---
 
 
-In machine learning, the power of matrices is undeniable. Whether you’re manipulating datasets, performing linear transformations in neural networks, or analyzing graph structures, matrices provide a compact and efficient way to represent and process information. In this post, we’ll explore the world of matrices and matrix operations through a problem-driven approach. Each section grounds the math in real ML use cases, walks through the concepts clearly, and wraps up with code and applications.
+In machine learning, whether you’re manipulating datasets, performing linear transformations in neural networks, or analyzing graph structures, matrices provide a compact and efficient way to represent and process information. In this post, we’ll explore the world of matrices and matrix operations through a problem-driven approach. Each section grounds the math in real ML use cases, walks through the concepts clearly, and wraps up with code and applications.
 
 ---
 

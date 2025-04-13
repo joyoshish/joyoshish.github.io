@@ -15,7 +15,6 @@ toc:
   beginning: true
 ---
 
----
 
 Many machine learning tasks boil down to optimizing model parameters that best fit the observed data. For instance, finding the best-fit line in linear regression is equivalent to solving a system of linear equations. In this post, we’ll dive into the mathematics behind solving these systems using multiple methods. We’ll explore row reduction, Gaussian elimination, and Cramer’s Rule—each backed by real-world ML context, intuitive math, and working code.
 
