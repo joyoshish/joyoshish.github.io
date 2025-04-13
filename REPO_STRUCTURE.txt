@@ -1,0 +1,697 @@
+.
+├── .all-contributorsrc
+├── assets
+│   ├── audio
+│   │   └── epicaly-short-113909.mp3
+│   ├── bibliography
+│   │   └── 2018-12-22-distill.bib
+│   ├── css
+│   │   ├── academicons.min.css
+│   │   ├── bootstrap.min.css
+│   │   ├── bootstrap.min.css.map
+│   │   ├── bootstrap-toc.min.css
+│   │   ├── jekyll-pygments-themes-github.css
+│   │   ├── jekyll-pygments-themes-native.css
+│   │   ├── jupyter.css
+│   │   ├── jupyter-grade3.css
+│   │   ├── jupyter-monokai.css
+│   │   ├── main.scss
+│   │   ├── mdb.min.css
+│   │   └── mdb.min.css.map
+│   ├── fonts
+│   │   ├── academicons.ttf
+│   │   ├── academicons.woff
+│   │   ├── tabler-icons-filled.ttf
+│   │   ├── tabler-icons-filled.woff
+│   │   ├── tabler-icons-filled.woff2
+│   │   ├── tabler-icons-outline.ttf
+│   │   ├── tabler-icons-outline.woff
+│   │   ├── tabler-icons-outline.woff2
+│   │   ├── tabler-icons.ttf
+│   │   ├── tabler-icons.woff
+│   │   └── tabler-icons.woff2
+│   ├── html
+│   │   └── relativity.html
+│   ├── img
+│   │   ├── 10.jpg
+│   │   ├── 11.jpg
+│   │   ├── 12.jpg
+│   │   ├── 1.jpg
+│   │   ├── 2.jpg
+│   │   ├── 3.jpg
+│   │   ├── 4.jpg
+│   │   ├── 5.jpg
+│   │   ├── 6.jpg
+│   │   ├── 7.jpg
+│   │   ├── 8.jpg
+│   │   ├── 9.jpg
+│   │   ├── ctscan.jpg
+│   │   ├── glof.jpg
+│   │   ├── kmpp1.webp
+│   │   ├── kmpp2.webp
+│   │   ├── kmpp3.webp
+│   │   ├── kmpp4.webp
+│   │   ├── kmpp.gif
+│   │   ├── linalg_banner.png
+│   │   ├── probstat3_2.png
+│   │   ├── probstat3_3.png
+│   │   ├── probstat3_4.png
+│   │   ├── probstat3_5.png
+│   │   ├── probstat3_6.png
+│   │   ├── prof_picture.jpg
+│   │   ├── publication_preview
+│   │   │   ├── brownian-motion.gif
+│   │   │   └── wave-mechanics.gif
+│   │   └── ss2d.png
+│   ├── js
+│   │   ├── bootstrap.bundle.min.js
+│   │   ├── bootstrap.bundle.min.js.map
+│   │   ├── bootstrap-toc.min.js
+│   │   ├── common.js
+│   │   ├── copy_code.js
+│   │   ├── distillpub
+│   │   │   ├── overrides.js
+│   │   │   ├── template.v2.js
+│   │   │   ├── template.v2.js.map
+│   │   │   ├── transforms.v2.js
+│   │   │   └── transforms.v2.js.map
+│   │   ├── jupyter_new_tab.js
+│   │   ├── lunr.min.js
+│   │   ├── masonry.js
+│   │   ├── no_defer.js
+│   │   ├── search.js
+│   │   ├── theme.js
+│   │   └── zoom.js
+│   ├── json
+│   │   ├── resume.json
+│   │   └── table_data.json
+│   ├── jupyter
+│   │   ├── iframe_figures
+│   │   │   ├── figure_10.html
+│   │   │   ├── figure_11.html
+│   │   │   ├── figure_12.html
+│   │   │   ├── figure_13.html
+│   │   │   ├── figure_14.html
+│   │   │   └── figure_9.html
+│   │   ├── probstat2_1_bernoulli.ipynb
+│   │   ├── probstat2_2_binomial.ipynb
+│   │   └── test_nb.ipynb
+│   ├── pdf
+│   │   └── example_pdf.pdf
+│   ├── plotly
+│   │   └── demo.html
+│   ├── video
+│   │   └── pexels-engin-akyurt-6069112-960x540-30fps.mp4
+│   └── webfonts
+│       ├── fa-brands-400.ttf
+│       ├── fa-brands-400.woff2
+│       ├── fa-regular-400.ttf
+│       ├── fa-regular-400.woff2
+│       ├── fa-solid-900.ttf
+│       ├── fa-solid-900.woff2
+│       ├── fa-v4compatibility.ttf
+│       └── fa-v4compatibility.woff2
+├── _bibliography
+│   └── papers.bib
+├── bin
+│   ├── cibuild
+│   ├── deploy
+│   └── entry_point.sh
+├── _config.yml
+├── _data
+│   ├── coauthors.yml
+│   ├── cv.yml
+│   ├── repositories.yml
+│   └── venues.yml
+├── .devcontainer
+│   └── devcontainer.json
+├── docker-compose-slim.yml
+├── docker-compose.yml
+├── Dockerfile
+├── .dockerignore
+├── Gemfile
+├── Gemfile.lock
+├── .git-blame-ignore-revs
+├── .github
+│   ├── ISSUE_TEMPLATE
+│   │   ├── 1_bug_report.yml
+│   │   ├── 2_feature_request.yml
+│   │   └── config.yml
+│   ├── release.yml
+│   ├── stale.yml
+│   └── workflows
+│       ├── axe.yml
+│       ├── broken-links-site.yml
+│       ├── broken-links.yml
+│       ├── deploy-docker-tag.yml
+│       ├── deploy-image.yml
+│       ├── deploy.yml
+│       ├── docker-slim.yml
+│       ├── lighthouse-badger.yml
+│       ├── prettier-comment-on-pr.yml
+│       └── prettier.yml
+├── .gitignore
+├── _includes
+│   ├── audio.liquid
+│   ├── cv
+│   │   ├── list_groups.liquid
+│   │   ├── list.liquid
+│   │   ├── map.liquid
+│   │   ├── nested_list.liquid
+│   │   └── time_table.liquid
+│   ├── disqus.liquid
+│   ├── figure.liquid
+│   ├── footer.liquid
+│   ├── giscus.liquid
+│   ├── header.liquid
+│   ├── head.liquid
+│   ├── latest_posts.liquid
+│   ├── metadata.liquid
+│   ├── news.liquid
+│   ├── pagination.liquid
+│   ├── projects_horizontal.liquid
+│   ├── projects.liquid
+│   ├── related_posts.liquid
+│   ├── repository
+│   │   ├── repo.liquid
+│   │   ├── repo_trophies.liquid
+│   │   └── repo_user.liquid
+│   ├── resume
+│   │   ├── awards.liquid
+│   │   ├── basics.liquid
+│   │   ├── certificates.liquid
+│   │   ├── education.liquid
+│   │   ├── interests.liquid
+│   │   ├── languages.liquid
+│   │   ├── projects.liquid
+│   │   ├── publications.liquid
+│   │   ├── references.liquid
+│   │   ├── skills.liquid
+│   │   ├── volunteer.liquid
+│   │   └── work.liquid
+│   ├── scripts
+│   │   ├── analytics.liquid
+│   │   ├── badges.liquid
+│   │   ├── bootstrap.liquid
+│   │   ├── chartjs.liquid
+│   │   ├── diff2html.liquid
+│   │   ├── echarts.liquid
+│   │   ├── imageLayouts.liquid
+│   │   ├── jquery.liquid
+│   │   ├── leaflet.liquid
+│   │   ├── masonry.liquid
+│   │   ├── mathjax.liquid
+│   │   ├── mermaid.liquid
+│   │   ├── misc.liquid
+│   │   ├── progressBar.liquid
+│   │   ├── pseudocode.liquid
+│   │   ├── tikzjax.liquid
+│   │   ├── vega.liquid
+│   │   └── wechatModal.liquid
+│   ├── search.html
+│   ├── selected_papers.liquid
+│   ├── social.liquid
+│   └── video.liquid
+├── .jekyll-cache
+│   ├── .gitignore
+│   └── Jekyll
+│       └── Cache
+│           ├── Jekyll--Cache
+│           │   └── b7
+│           │       └── 9606fb3afea5bd1609ed40b622142f1c98125abcfe89a76a661b0e8e343910
+│           └── Jekyll--Converters--Markdown
+│               ├── 06
+│               │   └── fa7327ee26e75edb48d832f4525cac7bcbce19957988024feb214da822aaa3
+│               ├── 0c
+│               │   └── 02ef9f04682e6d193132d965a5d7c485e3644393827d1aeaf723dcd6cb672e
+│               ├── 0d
+│               │   └── a2c06af91bb0ea0a1aabd23fad2a117521fa47dadd19a66251665c4c8d5064
+│               ├── 24
+│               │   └── ca60468234e5b5acd582f8296b694fc4319c142d7746fbb3ee46c7817bfc8e
+│               ├── 3b
+│               │   └── c6aa36de0ec8ac6198728281d4de18c631e135368d26ad420a36f042bf408e
+│               ├── 50
+│               │   └── 232a16eb8f54561cef017ac732a4723e2807d42eff4992977210d8dc2407a6
+│               ├── 58
+│               │   ├── 16cfddafdfa555c09698d3b3b643a4a3e8408164b722822ff1e14e6cae5764
+│               │   └── 4a48f3bac34349303456f8260975885e02a0006e4280d875a08fcd82cd5b30
+│               ├── 5c
+│               │   └── ac669829290aeafe7b796e9f82d2c4b41a576044af6ed2bdccb490b7ef3852
+│               ├── 61
+│               │   └── c1534dc6560f8084d8dbc5533892840acb76431e1db38f4945d399aafed8c1
+│               ├── 66
+│               │   └── 06d54daf36af519aa18c8ddade71a1566530f27655758320f99c75788ef4bf
+│               ├── 7f
+│               │   └── 8300b73cfdc00ba07c736a735ac943b4c0461476a065ea034e72cce9ea4884
+│               ├── 84
+│               │   └── fd95a74ca0e364429349c71718f813a2412cf45fd4b82b65814636b7e55a43
+│               ├── 88
+│               │   └── 858ea56202fb7cef21bc56a36e95a5c5c46682d4d1e4533e0b84c915aa5114
+│               ├── 89
+│               │   └── 52f79ec911b694ddff00ca02521a62cba234b189cafbb25d7da58234f4840b
+│               ├── 92
+│               │   └── ee51476ec671534207b0dfb4408f7614b95e1a1a7ccbbaa5bba100f614a73d
+│               ├── 99
+│               │   └── 6e5808249d248521719ad9de1caa368f066c7d164327f0f9cee7fa7ac4ca16
+│               ├── 9a
+│               │   └── a7ff88306e9911633a0ba9263aa62ab18484dd6f290a4e86a5344f07f7af32
+│               ├── 9d
+│               │   └── 8ccbd7e800d298354b2f5843ecbcd90e3f234bccac6903a6b98f4b955ba6c1
+│               ├── 9f
+│               │   └── e30e4edfb2eb02c778793e6fa37129dca80fcbe55ebcd775bb3e1e34ed5ba8
+│               ├── a0
+│               │   └── 802206e3405f240fdf957e753c03d494a85b446c648a0f7dcffb78b645dc92
+│               ├── a3
+│               │   └── c4c78b73f985cab5578b2eb74a12abaedd20544aef939a1bf5d5017b36f392
+│               ├── a4
+│               │   └── 175eb5fc26b692646f70a61170c4bee2a53d4f03012097651803bb5d72e3a7
+│               ├── ac
+│               │   └── 36afadbeb2b02fca0e072c80ba96333e73597777063a23c11e7ec9f22908a0
+│               ├── ad
+│               │   └── 9582c31d9da10146d514492e57b308b0a9215d8f02e21367ed6a5fce72bc1e
+│               ├── b1
+│               │   └── 1470199981998545bf6a3483cbc81546e429e4a4c83b8d8e0cd78dc0c956fa
+│               ├── b2
+│               │   └── b6d8be39768141a21e87e6d81ba6b9d1a4cc8cbd072c415f5ee8a5451ec85e
+│               ├── be
+│               │   └── 18c8a668a84982c57cf0a8afa7b68a0522d72c5323607c3b868af45a5127f2
+│               ├── c1
+│               │   └── 61b46dcd718f0f2bf0bf4631c534b7563474994aceba8d314b745434b9265e
+│               ├── c8
+│               │   └── c77cdc1fb16f72d85b6c4baa2e6fe9cdd53bb659bcb93750c5534c41e72e46
+│               ├── cb
+│               │   └── 3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b
+│               ├── cd
+│               │   └── aaca45b4497ca6f16e3766d3f3f0d0bc7a211f44cd05b4a12db0b87d536ff2
+│               ├── d5
+│               │   └── 5185f06f9bfe98db69b55b8c08660e84123398996bf35f30f77bbb5ac83b69
+│               ├── e3
+│               │   └── b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+│               ├── ec
+│               │   ├── 71b8b720c2914b9848f56d538c1a0982ba1a858fd18b17304554592e696cc7
+│               │   └── b13ebe0aa583809ae86744159e3cb2fcdb2fa39b06409130ea7feb73726102
+│               ├── f1
+│               │   └── 6e1494ecebb106f2312f6681e10963d95becc75ae31ee67ddd15be69b06fda
+│               ├── f4
+│               │   └── a9dd36ec913f684fe19ef8775067f795d61982bbb8eff8a73cb08a01ec70df
+│               └── f6
+│                   └── 352bb3c6da6cc2f4d88b3e4f9eb8ef8db44c57e70f17255340ba0d1e633f80
+├── _layouts
+│   ├── about.liquid
+│   ├── archive-category.liquid
+│   ├── archive-tag.liquid
+│   ├── archive-year.liquid
+│   ├── bib.liquid
+│   ├── cv.liquid
+│   ├── default.liquid
+│   ├── distill.liquid
+│   ├── none.liquid
+│   ├── page.liquid
+│   ├── post.liquid
+│   └── profiles.liquid
+├── LICENSE
+├── lighthouse_results
+│   ├── desktop
+│   │   ├── alshedivat_github_io_al_folio_.html
+│   │   └── pagespeed.svg
+│   └── mobile
+│       ├── alshedivat_github_io_al_folio_.html
+│       └── pagespeed.svg
+├── _news
+│   ├── announcement_1.md
+│   ├── announcement_2.md
+│   └── announcement_3.md
+├── package.json
+├── package-lock.json
+├── _pages
+│   ├── 404.md
+│   ├── about_einstein.md
+│   ├── about.md
+│   ├── acadresrc.md
+│   ├── blogging.md
+│   ├── blog.md
+│   ├── contact.md
+│   ├── cv.md
+│   ├── dropdown.md
+│   ├── gallery.md
+│   ├── home.md
+│   ├── musings.md
+│   ├── news.md
+│   ├── profiles.md
+│   ├── projects.md
+│   ├── publications.md
+│   ├── repositories.md
+│   ├── research.md
+│   ├── resource.md
+│   ├── rndmresrc.md
+│   ├── scitechblog.md
+│   └── teaching.md
+├── _plugins
+│   ├── cache-bust.rb
+│   ├── details.rb
+│   ├── download-3rd-party.rb
+│   ├── external-posts.rb
+│   ├── file-exists.rb
+│   ├── google-scholar-citations.rb
+│   ├── hide-custom-bibtex.rb
+│   └── remove-accents.rb
+├── _posts
+│   ├── 2022-01-13-mathforml-linalg1.md
+│   ├── 2022-01-15-mathforml-linalg2.md
+│   ├── 2022-01-20-mathforml-linalg3.md
+│   ├── 2022-02-03-mathforml-linalg4.md
+│   ├── 2022-02-07-mathforml-linalg5.md
+│   ├── 2022-04-02-mathforml-linalg6.md
+│   ├── 2022-06-01-mathforml-probstat1.md
+│   ├── 2022-06-05-mathforml-probstat2.md
+│   └── 2022-06-10-mathforml-probstat3.md
+├── .pre-commit-config.yaml
+├── .prettierignore
+├── .prettierrc
+├── _projects
+├── purgecss.config.js
+├── README.md
+├── readme_preview
+│   ├── al-folio-preview.png
+│   ├── blog.png
+│   ├── code.png
+│   ├── cv.png
+│   ├── dark.png
+│   ├── distill.png
+│   ├── jupyter.png
+│   ├── light.png
+│   ├── math.png
+│   ├── people.png
+│   ├── photos-screenshot.png
+│   ├── projects.png
+│   ├── publications.png
+│   └── repositories.png
+├── REPO_STRUCTURE.txt
+├── robots.txt
+├── _sass
+│   ├── _base.scss
+│   ├── _cv.scss
+│   ├── _distill.scss
+│   ├── font-awesome
+│   │   ├── _animated.scss
+│   │   ├── _bordered-pulled.scss
+│   │   ├── brands.scss
+│   │   ├── _core.scss
+│   │   ├── _fixed-width.scss
+│   │   ├── fontawesome.scss
+│   │   ├── _functions.scss
+│   │   ├── _icons.scss
+│   │   ├── _list.scss
+│   │   ├── _mixins.scss
+│   │   ├── regular.scss
+│   │   ├── _rotated-flipped.scss
+│   │   ├── _screen-reader.scss
+│   │   ├── _shims.scss
+│   │   ├── _sizing.scss
+│   │   ├── solid.scss
+│   │   ├── _stacked.scss
+│   │   ├── v4-shims.scss
+│   │   └── _variables.scss
+│   ├── _layout.scss
+│   ├── _search.scss
+│   ├── tabler-icons
+│   │   ├── tabler-icons-filled.scss
+│   │   ├── tabler-icons-outline.scss
+│   │   └── tabler-icons.scss
+│   ├── _themes.scss
+│   └── _variables.scss
+├── search.html
+├── _site
+│   ├── acadresrc
+│   │   └── index.html
+│   ├── assets
+│   │   ├── audio
+│   │   │   └── epicaly-short-113909.mp3
+│   │   ├── bibliography
+│   │   │   └── 2018-12-22-distill.bib
+│   │   ├── css
+│   │   │   ├── academicons.min.css
+│   │   │   ├── bootstrap.min.css
+│   │   │   ├── bootstrap.min.css.map
+│   │   │   ├── bootstrap-toc.min.css
+│   │   │   ├── jekyll-pygments-themes-github.css
+│   │   │   ├── jekyll-pygments-themes-native.css
+│   │   │   ├── jupyter.css
+│   │   │   ├── jupyter-grade3.css
+│   │   │   ├── jupyter-monokai.css
+│   │   │   ├── main.css
+│   │   │   ├── main.css.map
+│   │   │   ├── mdb.min.css
+│   │   │   └── mdb.min.css.map
+│   │   ├── fonts
+│   │   │   ├── academicons.ttf
+│   │   │   ├── academicons.woff
+│   │   │   ├── tabler-icons-filled.ttf
+│   │   │   ├── tabler-icons-filled.woff
+│   │   │   ├── tabler-icons-filled.woff2
+│   │   │   ├── tabler-icons-outline.ttf
+│   │   │   ├── tabler-icons-outline.woff
+│   │   │   ├── tabler-icons-outline.woff2
+│   │   │   ├── tabler-icons.ttf
+│   │   │   ├── tabler-icons.woff
+│   │   │   └── tabler-icons.woff2
+│   │   ├── html
+│   │   │   └── relativity.html
+│   │   ├── img
+│   │   │   ├── 10-1400.webp
+│   │   │   ├── 10-480.webp
+│   │   │   ├── 10-800.webp
+│   │   │   ├── 10.jpg
+│   │   │   ├── 11-1400.webp
+│   │   │   ├── 1-1400.webp
+│   │   │   ├── 11-480.webp
+│   │   │   ├── 11-800.webp
+│   │   │   ├── 11.jpg
+│   │   │   ├── 12-1400.webp
+│   │   │   ├── 12-480.webp
+│   │   │   ├── 12-800.webp
+│   │   │   ├── 12.jpg
+│   │   │   ├── 1-480.webp
+│   │   │   ├── 1-800.webp
+│   │   │   ├── 1.jpg
+│   │   │   ├── 2-1400.webp
+│   │   │   ├── 2-480.webp
+│   │   │   ├── 2-800.webp
+│   │   │   ├── 2.jpg
+│   │   │   ├── 3-1400.webp
+│   │   │   ├── 3-480.webp
+│   │   │   ├── 3-800.webp
+│   │   │   ├── 3.jpg
+│   │   │   ├── 4-1400.webp
+│   │   │   ├── 4-480.webp
+│   │   │   ├── 4-800.webp
+│   │   │   ├── 4.jpg
+│   │   │   ├── 5-1400.webp
+│   │   │   ├── 5-480.webp
+│   │   │   ├── 5-800.webp
+│   │   │   ├── 5.jpg
+│   │   │   ├── 6-1400.webp
+│   │   │   ├── 6-480.webp
+│   │   │   ├── 6-800.webp
+│   │   │   ├── 6.jpg
+│   │   │   ├── 7-1400.webp
+│   │   │   ├── 7-480.webp
+│   │   │   ├── 7-800.webp
+│   │   │   ├── 7.jpg
+│   │   │   ├── 8-1400.webp
+│   │   │   ├── 8-480.webp
+│   │   │   ├── 8-800.webp
+│   │   │   ├── 8.jpg
+│   │   │   ├── 9-1400.webp
+│   │   │   ├── 9-480.webp
+│   │   │   ├── 9-800.webp
+│   │   │   ├── 9.jpg
+│   │   │   ├── ctscan-1400.webp
+│   │   │   ├── ctscan-480.webp
+│   │   │   ├── ctscan-800.webp
+│   │   │   ├── ctscan.jpg
+│   │   │   ├── glof-1400.webp
+│   │   │   ├── glof-480.webp
+│   │   │   ├── glof-800.webp
+│   │   │   ├── glof.jpg
+│   │   │   ├── kmpp-1400.webp
+│   │   │   ├── kmpp1.webp
+│   │   │   ├── kmpp2.webp
+│   │   │   ├── kmpp3.webp
+│   │   │   ├── kmpp-480.webp
+│   │   │   ├── kmpp4.webp
+│   │   │   ├── kmpp-800.webp
+│   │   │   ├── kmpp.gif
+│   │   │   ├── linalg_banner-1400.webp
+│   │   │   ├── linalg_banner-480.webp
+│   │   │   ├── linalg_banner-800.webp
+│   │   │   ├── linalg_banner.png
+│   │   │   ├── probstat3_2-1400.webp
+│   │   │   ├── probstat3_2-480.webp
+│   │   │   ├── probstat3_2-800.webp
+│   │   │   ├── probstat3_2.png
+│   │   │   ├── probstat3_3-1400.webp
+│   │   │   ├── probstat3_3-480.webp
+│   │   │   ├── probstat3_3-800.webp
+│   │   │   ├── probstat3_3.png
+│   │   │   ├── probstat3_4-1400.webp
+│   │   │   ├── probstat3_4-480.webp
+│   │   │   ├── probstat3_4-800.webp
+│   │   │   ├── probstat3_4.png
+│   │   │   ├── probstat3_5-1400.webp
+│   │   │   ├── probstat3_5-480.webp
+│   │   │   ├── probstat3_5-800.webp
+│   │   │   ├── probstat3_5.png
+│   │   │   ├── probstat3_6-1400.webp
+│   │   │   ├── probstat3_6-480.webp
+│   │   │   ├── probstat3_6-800.webp
+│   │   │   ├── probstat3_6.png
+│   │   │   ├── prof_picture-1400.webp
+│   │   │   ├── prof_picture-480.webp
+│   │   │   ├── prof_picture-800.webp
+│   │   │   ├── prof_picture.jpg
+│   │   │   ├── publication_preview
+│   │   │   │   ├── brownian-motion-1400.webp
+│   │   │   │   ├── brownian-motion-480.webp
+│   │   │   │   ├── brownian-motion-800.webp
+│   │   │   │   ├── brownian-motion.gif
+│   │   │   │   ├── wave-mechanics-1400.webp
+│   │   │   │   ├── wave-mechanics-480.webp
+│   │   │   │   ├── wave-mechanics-800.webp
+│   │   │   │   └── wave-mechanics.gif
+│   │   │   ├── ss2d-1400.webp
+│   │   │   ├── ss2d-480.webp
+│   │   │   ├── ss2d-800.webp
+│   │   │   └── ss2d.png
+│   │   ├── js
+│   │   │   ├── bootstrap.bundle.min.js
+│   │   │   ├── bootstrap.bundle.min.js.map
+│   │   │   ├── bootstrap-toc.min.js
+│   │   │   ├── common.js
+│   │   │   ├── copy_code.js
+│   │   │   ├── distillpub
+│   │   │   │   ├── overrides.js
+│   │   │   │   ├── template.v2.js
+│   │   │   │   ├── template.v2.js.map
+│   │   │   │   ├── transforms.v2.js
+│   │   │   │   └── transforms.v2.js.map
+│   │   │   ├── jupyter_new_tab.js
+│   │   │   ├── lunr.min.js
+│   │   │   ├── masonry.js
+│   │   │   ├── no_defer.js
+│   │   │   ├── search.js
+│   │   │   ├── theme.js
+│   │   │   └── zoom.js
+│   │   ├── json
+│   │   │   ├── resume.json
+│   │   │   └── table_data.json
+│   │   ├── jupyter
+│   │   │   ├── iframe_figures
+│   │   │   │   ├── figure_10.html
+│   │   │   │   ├── figure_11.html
+│   │   │   │   ├── figure_12.html
+│   │   │   │   ├── figure_13.html
+│   │   │   │   ├── figure_14.html
+│   │   │   │   └── figure_9.html
+│   │   │   ├── probstat2_1_bernoulli.ipynb.html
+│   │   │   ├── probstat2_2_binomial.ipynb.html
+│   │   │   └── test_nb.ipynb.html
+│   │   ├── pdf
+│   │   │   └── example_pdf.pdf
+│   │   ├── plotly
+│   │   │   └── demo.html
+│   │   ├── video
+│   │   │   └── pexels-engin-akyurt-6069112-960x540-30fps.mp4
+│   │   └── webfonts
+│   │       ├── fa-brands-400.ttf
+│   │       ├── fa-brands-400.woff2
+│   │       ├── fa-regular-400.ttf
+│   │       ├── fa-regular-400.woff2
+│   │       ├── fa-solid-900.ttf
+│   │       ├── fa-solid-900.woff2
+│   │       ├── fa-v4compatibility.ttf
+│   │       └── fa-v4compatibility.woff2
+│   ├── blog
+│   │   ├── 2020
+│   │   │   ├── index.html
+│   │   │   ├── k-means
+│   │   │   │   └── index.html
+│   │   │   └── linear-regression-gradient-descent
+│   │   │       └── index.html
+│   │   ├── 2022
+│   │   │   ├── index.html
+│   │   │   ├── mathforml-linalg1
+│   │   │   │   └── index.html
+│   │   │   ├── mathforml-linalg2
+│   │   │   │   └── index.html
+│   │   │   ├── mathforml-linalg3
+│   │   │   │   └── index.html
+│   │   │   ├── mathforml-linalg4
+│   │   │   │   └── index.html
+│   │   │   ├── mathforml-linalg5
+│   │   │   │   └── index.html
+│   │   │   ├── mathforml-linalg6
+│   │   │   │   └── index.html
+│   │   │   ├── mathforml-probstat1
+│   │   │   │   └── index.html
+│   │   │   ├── mathforml-probstat2
+│   │   │   │   └── index.html
+│   │   │   └── mathforml-probstat3
+│   │   │       └── index.html
+│   │   ├── category
+│   │   │   ├── machine-learning
+│   │   │   │   └── index.html
+│   │   │   ├── math
+│   │   │   │   └── index.html
+│   │   │   └── math-for-ml
+│   │   │       └── index.html
+│   │   └── tag
+│   │       ├── ai
+│   │       │   └── index.html
+│   │       ├── linear-algebra
+│   │       │   └── index.html
+│   │       ├── math
+│   │       │   └── index.html
+│   │       ├── ml
+│   │       │   └── index.html
+│   │       └── probability-statistics
+│   │           └── index.html
+│   ├── blogging
+│   │   ├── index.html
+│   │   └── page
+│   │       ├── 2
+│   │       │   └── index.html
+│   │       └── 3
+│   │           └── index.html
+│   ├── contact
+│   │   └── index.html
+│   ├── cv
+│   │   └── index.html
+│   ├── feed.xml
+│   ├── gallery
+│   │   └── index.html
+│   ├── index.html
+│   ├── news
+│   │   ├── announcement_1
+│   │   │   └── index.html
+│   │   ├── announcement_2
+│   │   │   └── index.html
+│   │   └── announcement_3
+│   │       └── index.html
+│   ├── _pages
+│   │   └── resource
+│   │       └── index.html
+│   ├── projects
+│   │   └── index.html
+│   ├── reserach
+│   │   └── index.html
+│   ├── rndmresrc
+│   │   └── index.html
+│   ├── robots.txt
+│   ├── search_index.json
+│   └── sitemap.xml
+└── .tweet-cache
+    ├── 02b591d77a446cb7531ab71b75d3d2bc.cache
+    └── f18f38b6b6bb712c5873a899905f747c.cache
+
+146 directories, 549 files
