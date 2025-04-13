@@ -167,6 +167,8 @@ projection = proj_scalar * principal_component
 print("Projection of Data Point onto Principal Component:", projection)
 ```
 
+
+
 <div style="display: flex; justify-content: center;">
   <div id="projectionEnhanced"></div>
 </div>
@@ -205,8 +207,8 @@ print("Projection of Data Point onto Principal Component:", projection)
       text: "",
       font: { size: 20 }
     },
-    width: 650,
-    height: 600,
+    width: 400,
+    height: 330,
     showlegend: false,
     plot_bgcolor: "#fcfcfc",
     paper_bgcolor: "#ffffff",

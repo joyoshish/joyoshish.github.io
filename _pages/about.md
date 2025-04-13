@@ -31,4 +31,4 @@ You’ll also stumble upon a collection of my [side projects, Kaggle notebooks, 
 
 In my free time, I’m usually doing things that help me slow down a bit, like experimenting in the kitchen (often with no recipe), rewatching a comfort web series (read: The Big Bang Theory), or getting completely absorbed in a good non-fiction book or documentary.
 
-So, thanks again for stopping by—take a look around, learn something new, or just say hello!
+So, thanks again for stopping by — take a look around, learn something new, or just say hello!

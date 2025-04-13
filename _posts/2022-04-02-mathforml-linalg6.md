@@ -350,7 +350,11 @@ $$
 Then:
 
 $$
-u_2 = v_2 - \langle v_2, q_1 \rangle q_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix} - \frac{1}{\sqrt{2}} \cdot \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 1 \end{bmatrix} = \begin{bmatrix} 1 \\ 0 \end{bmatrix} - \frac{1}{2} \begin{bmatrix} 1 \\ 1 \end{bmatrix} = \begin{bmatrix} \frac{1}{2} \\ -\frac{1}{2} \end{bmatrix}
+u_2 = v_2 - \langle v_2, q_1 \rangle q_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix} - \frac{1}{\sqrt{2}} \cdot \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 1 \end{bmatrix} 
+$$
+
+$$
+= \begin{bmatrix} 1 \\ 0 \end{bmatrix} - \frac{1}{2} \begin{bmatrix} 1 \\ 1 \end{bmatrix} = \begin{bmatrix} \frac{1}{2} \\ -\frac{1}{2} \end{bmatrix}
 $$
 
 Normalize:
@@ -1417,7 +1421,15 @@ $$
 there exists a linear map $$f: \mathbb{R}^d \rightarrow \mathbb{R}^k$$ such that for all $$i, j$$:
 
 $$
-(1 - \epsilon)\|x_i - x_j\|_2^2 \leq \|f(x_i) - f(x_j)\|_2^2 \leq (1 + \epsilon)\|x_i - x_j\|_2^2
+(1 - \epsilon)\|x_i - x_j\|_2^2 
+$$
+
+$$
+\leq \|f(x_i) - f(x_j)\|_2^2 
+$$
+
+$$
+\leq (1 + \epsilon)\|x_i - x_j\|_2^2
 $$
 
 This means that **random projections preserve pairwise distances up to small distortion** with high probability.

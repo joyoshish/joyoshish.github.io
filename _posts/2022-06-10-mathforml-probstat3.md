@@ -85,8 +85,30 @@ We want to compute the probability that a person has the disease given a positiv
 Let $$D$$ denote having the disease, and $$T$$ denote a positive test. Then:
 
 $$
-P(D \mid T) = \frac{P(T \mid D) P(D)}{P(T)} = \frac{0.99 \cdot 0.01}{0.99 \cdot 0.01 + 0.05 \cdot 0.99} \approx 0.167
+P(D \mid T) 
+= \frac{P(T \mid D) P(D)}{P(T)} 
 $$
+
+$$
+= \frac{0.99 \times 0.01}{(0.99 \times 0.01) + (0.05 \times 0.99)}
+$$
+
+$$
+= \frac{0.0099}{0.0099 + 0.0495}
+$$
+
+
+$$
+= \frac{0.0099}{0.0594}
+$$
+
+
+$$
+\approx 0.167
+$$
+
+
+
 
 So despite a highly accurate test, the probability of truly having the disease given a positive test result is only about 16.7%. This demonstrates the importance of the prior (base rate) in interpreting diagnostic results.
 
@@ -329,10 +351,17 @@ Then:
 **Unnormalized posterior**:
 
 $$
-P(\theta \mid D) \propto P(D \mid \theta) \cdot P(\theta) \\
-\propto \theta^k (1 - \theta)^{n - k} \cdot \theta^{\alpha - 1}(1 - \theta)^{\beta - 1} \\
+P(\theta \mid D) \propto P(D \mid \theta) \cdot P(\theta)
+$$
+
+$$
+\propto \theta^k (1 - \theta)^{n - k} \cdot \theta^{\alpha - 1}(1 - \theta)^{\beta - 1}
+$$
+
+$$
 = \theta^{k + \alpha - 1}(1 - \theta)^{n - k + \beta - 1}
 $$
+
 
 This is the kernel of a **Beta distribution**:
 
@@ -496,8 +525,13 @@ $$
 Let $$\bar{x} = \frac{1}{n} \sum x_i$$. Then:
 
 $$
-\sum (x_i - \theta)^2 = \sum (x_i - \bar{x} + \bar{x} - \theta)^2 = \sum (x_i - \bar{x})^2 + n(\theta - \bar{x})^2
+\sum (x_i - \theta)^2 = \sum (x_i - \bar{x} + \bar{x} - \theta)^2
 $$
+
+$$
+= \sum (x_i - \bar{x})^2 + n(\theta - \bar{x})^2
+$$
+
 
 So the likelihood becomes:
 
@@ -542,7 +576,11 @@ $$
 Combine terms:
 
 $$
-\log P(\theta \mid D) \propto -\frac{1}{2} \left[ \left( \frac{n}{\sigma^2} + \frac{1}{\tau^2} \right) \theta^2 - 2 \left( \frac{n\bar{x}}{\sigma^2} + \frac{\mu_0}{\tau^2} \right) \theta \right]
+\log P(\theta \mid D) 
+$$
+
+$$
+\propto -\frac{1}{2} \left[ \left( \frac{n}{\sigma^2} + \frac{1}{\tau^2} \right) \theta^2 - 2 \left( \frac{n\bar{x}}{\sigma^2} + \frac{\mu_0}{\tau^2} \right) \theta \right]
 $$
 
 This is the kernel of a Gaussian distribution with:
@@ -791,6 +829,9 @@ The **MAP estimator** is:
 
 $$
 \hat{\theta}_{\text{MAP}} = \arg\max_\theta \, P(\theta \mid D)
+$$
+
+$$
 = \arg\max_\theta \, P(D \mid \theta) P(\theta)
 $$
 
@@ -826,21 +867,40 @@ This is a **Beta posterior**: $$\text{Beta}(k + \alpha, n - k + \beta)$$.
 To find the MAP estimate (mode of the Beta distribution), we differentiate the log-posterior:
 
 $$
-\log P(\theta \mid D) = (k + \alpha - 1) \log \theta + (n - k + \beta - 1) \log(1 - \theta)
+\log P(\theta \mid D)
+$$
+
+$$
+= (k + \alpha - 1) \log \theta + (n - k + \beta - 1) \log(1 - \theta)
 $$
 
 Take derivative and set to zero:
 
 $$
-\frac{d}{d\theta} \log P(\theta \mid D) =
-\frac{k + \alpha - 1}{\theta} - \frac{n - k + \beta - 1}{1 - \theta} = 0
+\frac{d}{d\theta} \log P(\theta \mid D) 
+$$
+
+$$
+= \frac{k + \alpha - 1}{\theta} - \frac{n - k + \beta - 1}{1 - \theta} 
+$$
+
+$$
+= 0
 $$
 
 Solving:
 
 $$
-\frac{k + \alpha - 1}{\theta} = \frac{n - k + \beta - 1}{1 - \theta}
-\Rightarrow (k + \alpha - 1)(1 - \theta) = (n - k + \beta - 1)\theta
+\frac{k + \alpha - 1}{\theta} 
+$$
+
+$$
+= \frac{n - k + \beta - 1}{1 - \theta}
+\Rightarrow (k + \alpha - 1)(1 - \theta) 
+$$
+
+$$
+= (n - k + \beta - 1)\theta
 $$
 
 Expanding:
@@ -853,6 +913,9 @@ Move terms:
 
 $$
 k + \alpha - 1 = \theta \left[(n - k + \beta - 1) + (k + \alpha - 1)\right]
+$$
+
+$$
 = \theta (n + \alpha + \beta - 2)
 $$
 
@@ -1019,7 +1082,11 @@ When data is scarce (as it often is in real-world applications), the regularizat
 MLE finds weights that minimize the negative log-likelihood. However, MAP estimation adds a prior over the weights (usually Gaussian), which leads to **regularized logistic regression**:
 
 $$
-\hat{w}_{\text{MAP}} = \arg\min_w \left[ \sum_i \log(1 + e^{-y_i x_i^T w}) + \frac{\lambda}{2} \|w\|^2 \right]
+\hat{w}_{\text{MAP}} 
+$$
+
+$$
+= \arg\min_w \left[ \sum_i \log(1 + e^{-y_i x_i^T w}) + \frac{\lambda}{2} \|w\|^2 \right]
 $$
 
 This helps control overfitting, especially in high-dimensional spaces.
@@ -1061,7 +1128,12 @@ A prior distribution $$P(\theta)$$ is said to be **conjugate** to a likelihood f
 That is:
 
 $$
-\text{If } P(\theta) \in \mathcal{F} \text{ and } P(\theta \mid D) \in \mathcal{F} \text{ as well, then } P(\theta) \text{ is conjugate.}
+\text{If } P(\theta) \in \mathcal{F} \text{ and } P(\theta \mid D) \in \mathcal{F} \text{ as well,}
+$$
+
+
+$$
+\text{ then } P(\theta) \text{ is conjugate.}
 $$
 
 Some classic conjugate prior–likelihood pairs include:
@@ -1125,7 +1197,13 @@ Using Bayes’ theorem:
 
 $$
 P(\theta \mid D) \propto P(D \mid \theta) \cdot P(\theta)
+$$
+
+$$
 = \theta^k (1 - \theta)^{n - k} \cdot \theta^{\alpha - 1} (1 - \theta)^{\beta - 1}
+$$
+
+$$
 = \theta^{\alpha + k - 1} (1 - \theta)^{\beta + n - k - 1}
 $$
 
@@ -1399,7 +1477,10 @@ Where:
 - **Posterior covariance**:
 
   $$
-  \Sigma_* = K(X_*, X_*) - K(X_*, X)[K(X, X) + \sigma_n^2 I]^{-1} K(X, X_*)
+  \Sigma_* = K(X_*, X_*) - 
+  $$
+  $$
+  K(X_*, X)[K(X, X) + \sigma_n^2 I]^{-1} K(X, X_*)
   $$
 
 This formulation gives us both predictions (mean) and uncertainty (variance) at any set of new inputs.
