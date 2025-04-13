@@ -6,7 +6,7 @@ description: Linear Algebra 6 - Mathematics for Machine Learning
 tags: ml ai linear-algebra math
 math: true
 categories: machine-learning math math-for-ml
-# thumbnail: assets/img/linalg_banner.png
+thumbnail: assets/img/linalg_banner.png
 giscus_comments: true
 pretty_table: true
 related_posts: true

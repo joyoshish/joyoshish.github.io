@@ -6,7 +6,7 @@ description: Probability & Statistics 3 - Mathematics for Machine Learning
 tags: ml ai probability-statistics math
 math: true
 categories: machine-learning math math-for-ml
-# thumbnail: assets/img/linalg_banner.png
+thumbnail: assets/img/probstat_banner.png
 giscus_comments: true
 pretty_table: true
 related_posts: true
@@ -17,13 +17,48 @@ toc:
 ---
 
 
-<figure style="text-align: center;">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Winslow_Homer_-_The_Gulf_Stream_-_Metropolitan_Museum_of_Art.jpg" alt="The Gulf Stream (painting)" style="max-width: 100%; height: auto;">
-  <figcaption><em>The Gulf Stream – Winslow Homer (1899)</em></figcaption>
-</figure>
+<div style="text-align: center; margin: 2rem 0;">
+  {% include figure.liquid 
+      path="assets/img/probstat3_0.png" 
+      class="img-fluid rounded shadow-sm" 
+      loading="eager" 
+      zoomable=true 
+      alt="" 
+  %}
+</div>
 
 
-In data science, where uncertainty is not an exception but the norm, reasoning under uncertainty becomes a core necessity. While traditional frequentist approaches have long provided a framework for estimating parameters and testing hypotheses, the Bayesian paradigm brings an alternative—and in many ways, more intuitive—framework to model beliefs, incorporate prior knowledge, and update our understanding as new data arrives.
+
+
+## 🧭 A Curious Beginning
+
+In the quiet of 18th-century England, a modest Presbyterian minister named **Thomas Bayes** worked in obscurity. He wasn’t a celebrated scientist of his day. In fact, his only published work during his lifetime was theological. But after his death in 1761, his friend Richard Price discovered among Bayes’ papers an unfinished manuscript containing a radical idea:
+
+> *How can we reason about a cause when all we observe is its effect?*
+
+This single question would lay the foundation for what we now call **Bayesian inference**—a method of updating beliefs in light of new evidence. Price published the work posthumously, and it quietly entered mathematical discourse. It wasn't until **Pierre-Simon Laplace**, decades later, that the idea was fully embraced, extended, and given its modern mathematical form.
+
+Laplace would go on to apply Bayesian reasoning to everything from astronomy to criminal justice. But one of his most famous thought experiments was deeply simple—almost poetic.
+
+He asked: **If the sun has risen every day for as long as we can remember, what is the probability that it will rise again tomorrow?**
+
+Using a now-classic Bayesian formula known as the **rule of succession**, he calculated:
+
+$$
+P(\text{sun rises tomorrow}) = \frac{n + 1}{n + 2}
+$$
+
+If the sun has risen for 10,000 days, this gives a probability of 10,001 / 10,002—astonishingly close to 1, but never quite certain.
+
+> That’s the core of Bayesian thinking: we are never absolutely sure, but we grow more confident with every piece of evidence.
+
+Bayes gave us the structure. Laplace gave us the scale. And what they left behind is more than a formula—it’s a way of seeing the world.
+
+This blog picks up that thread: **how to move from uncertainty to understanding, from prior to posterior, from belief to evidence-backed belief**.
+
+Because in a world where noise is abundant and decisions must be made, Bayesian inference offers more than just math—it offers clarity.
+
+---
 
 Bayesian inference treats unknown parameters as random variables and uses probability distributions to express uncertainty. This philosophical shift opens the door to a rich array of techniques and tools that power everything from spam filters to hyperparameter tuning in deep learning.
 

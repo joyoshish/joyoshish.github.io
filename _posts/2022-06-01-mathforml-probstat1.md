@@ -6,7 +6,7 @@ description: Probability & Statistics 1 - Mathematics for Machine Learning
 tags: ml ai probability-statistics math
 math: true
 categories: machine-learning math math-for-ml
-# thumbnail: assets/img/linalg_banner.png
+thumbnail: assets/img/probstat_banner.png
 giscus_comments: true
 pretty_table: true
 related_posts: true

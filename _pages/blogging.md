@@ -193,7 +193,7 @@ pagination:
 {% include pagination.liquid %}
 {% endif %}
 <p style="text-align: center;">
-  <a href="https://joyoshish.github.io/journal/" target="_blank">You may find my musings here</a>
+  <a href="https://joyoshish.github.io/journal/" target="_blank">Find my musings here</a>
 </p>
 
 </div>
