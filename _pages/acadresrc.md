@@ -7,6 +7,7 @@ nav: false
 nav_order: 
 ---
 
-## GATE CS/IT Notes: [https://gatecsebyjs.github.io/](https://gatecsebyjs.github.io/)
+### 🎓 Study Notes
 
-## IIT-JEE PCM Notes: [https://plustwopcm.blogspot.com/](https://plustwopcm.blogspot.com/)
+- **GATE CS/IT**: [gatecsebyjs.github.io](https://gatecsebyjs.github.io/)
+- **IIT-JEE PCM**: [plustwopcm.blogspot.com](https://plustwopcm.blogspot.com/)

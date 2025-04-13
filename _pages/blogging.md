@@ -22,14 +22,16 @@ pagination:
 {% assign blog_description_size = site.blog_description | size %}
 
 {% if blog_name_size > 0 or blog_description_size > 0 %}
-
-  <div class="header-bar">
-    <h1>{{ site.blog_name }}</h1>
-    <h2>{{ site.blog_description }}</h2>
-
-
+  <div class="header-bar text-center py-4">
+    <h1 class="mb-1 font-weight-bold" style="font-size: 2rem; letter-spacing: -0.5px;">
+      {{ site.blog_name }}
+    </h1>
+    <p class="text-muted" style="font-size: 1.1rem;">
+      {{ site.blog_description }}
+    </p>
   </div>
-  {% endif %}
+{% endif %}
+
 
 {% if site.display_tags or site.display_categories %}
 
