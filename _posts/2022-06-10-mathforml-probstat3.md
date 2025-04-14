@@ -151,7 +151,7 @@ So despite a highly accurate test, the probability of truly having the disease g
 
 ### Python Code for the Example
 
-```Python
+```python
 # Bayesian disease diagnosis
 P_disease = 0.01
 P_pos_given_disease = 0.99

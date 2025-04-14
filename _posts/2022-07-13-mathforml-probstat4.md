@@ -857,7 +857,11 @@ This is widely used in **A/B testing**, where the estimated difference is not en
 Similarly, for comparing proportions (e.g., proportion of users who clicked), the CI for the difference is:
 
 $$
-\text{CI} = (\hat{p}_B - \hat{p}_A) \pm z^* \cdot \sqrt{\frac{\hat{p}_A (1 - \hat{p}_A)}{n_A} + \frac{\hat{p}_B (1 - \hat{p}_B)}{n_B}}
+\text{CI} = (\hat{p}_B - \hat{p}_A) 
+$$
+
+$$
+\pm z^* \cdot \sqrt{\frac{\hat{p}_A (1 - \hat{p}_A)}{n_A} + \frac{\hat{p}_B (1 - \hat{p}_B)}{n_B}}
 $$
 
 This is used in scenarios like:
@@ -1197,7 +1201,7 @@ Typical levels:
 The confidence level determines the critical value used:
 
 | Confidence Level | Z* (approx.) |
-|------------------|--------------|
+|:------------------|--------------:|
 | 90%              | 1.645        |
 | 95%              | 1.960        |
 | 99%              | 2.576        |
@@ -1882,7 +1886,11 @@ Used to compare **two independent groups** when data is not normally distributed
 Let $$R_1$$ be the sum of ranks in group 1 (size $$n_1$$), and $$R_2$$ for group 2 (size $$n_2$$):
 
 $$
-U_1 = R_1 - \frac{n_1(n_1 + 1)}{2} \quad , \quad U_2 = R_2 - \frac{n_2(n_2 + 1)}{2}
+U_1 = R_1 - \frac{n_1(n_1 + 1)}{2} \quad
+$$
+
+$$
+\quad U_2 = R_2 - \frac{n_2(n_2 + 1)}{2}
 $$
 
 The final U-statistic is:
@@ -2175,7 +2183,11 @@ $$
 
 Then the test statistic is:
 $$
--2(\log L_0 - \log L_1) = -2(-120.5 + 110.3) = 20.4
+-2(\log L_0 - \log L_1) 
+$$
+
+$$
+= -2(-120.5 + 110.3) = 20.4
 $$
 
 Compare this to a $$\chi^2$$ distribution with 1 df. If the p-value is below 0.05, conclude that time_spent significantly improves the model.
@@ -2199,7 +2211,11 @@ Suppose your prior belief is that a new campaign’s CTR is around 5%, and you o
 
 Posterior is:
 $$
-\theta \mid x \sim \text{Beta}(2 + 12, 38 + 88) = \text{Beta}(14, 126)
+\theta \mid x \sim \text{Beta}(2 + 12, 38 + 88) 
+$$
+
+$$
+= \text{Beta}(14, 126)
 $$
 
 You can now compute:
@@ -2213,7 +2229,10 @@ Suppose:
 
 Compute likelihood under each:
 - $$P(x \mid H_0) = {100 \choose 12}(0.05)^{12}(0.95)^{88}$$
-- $$P(x \mid H_1) = \int_{0.05}^1 {100 \choose 12} \theta^{12} (1 - \theta)^{88} \cdot \frac{1}{0.95} d\theta$$
+- $$P(x \mid H_1)$$
+
+
+$$= \int_{0.05}^1 {100 \choose 12} \theta^{12} (1 - \theta)^{88} \cdot \frac{1}{0.95} d\theta$$
 
 Then:
 $$
