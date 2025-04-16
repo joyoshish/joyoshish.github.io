@@ -732,13 +732,13 @@ Choose an initial point $$ x^{(0)} $$.
 Use a proposal distribution:  
 $$ x' \sim q(x' \mid x^{(t)}) $$
 
-#### 3. Compute the acceptance probability:
+#### 3. Compute the acceptance probability
 
 $$
 \alpha = \min\left(1, \frac{\tilde{p}(x') \cdot q(x^{(t)} \mid x')}{\tilde{p}(x^{(t)}) \cdot q(x' \mid x^{(t)})}\right)
 $$
 
-#### 4. Accept or reject:
+#### 4. Accept or reject
 
 - With probability $$ \alpha $$, set $$ x^{(t+1)} = x' $$
 - Otherwise, $$ x^{(t+1)} = x^{(t)} $$
@@ -765,7 +765,6 @@ Start at $$ x^{(0)} = 0 $$.
 
 ---
 
-#### Iteration 1
 
 - Propose $$ x' = 2.5 $$
 - Compute:
@@ -845,7 +844,6 @@ Start with $$ x^{(0)} = 0 $$, $$ y^{(0)} = 0 $$
 
 ---
 
-### Iteration 1:
 
 Step 1: Sample $$ x^{(1)} $$ given $$ y^{(0)} = 0 $$
 
