@@ -15,7 +15,6 @@ toc:
   beginning: true
 ---
 
----
 
 ## 1. Introduction
 
