@@ -1,0 +1,33 @@
+{% raw %}
+<!-- Bivariate‑Normal Interactive Plot -->
+<div id="bivGauss"
+     style="width:100%;max-width:750px;margin:2rem auto;"></div>
+
+<script src="https://cdn.plot.ly/plotly-2.27.1.min.js"></script>
+<script>
+function linspace(a,b,n){const h=(b-a)/(n-1);return Array.from({length:n},(_,i)=>a+i*h)}
+function pdf(x,y,r){const d=2*Math.PI*Math.sqrt(1-r*r),
+e=-(x*x-2*r*x*y+y*y)/(2*(1-r*r));return Math.exp(e)/d}
+
+const N=70, X=linspace(-3,3,N), Y=linspace(-3,3,N);
+function makeZ(r){return Y.map(y=>X.map(x=>pdf(x,y,r)))}
+
+Plotly.newPlot('bivGauss',[{
+  z:makeZ(0), x:X, y:Y, type:'heatmap',
+  colorscale:'Viridis', showscale:false, zsmooth:'best'
+}],{
+  title:'Bivariate Normal PDF — drag ρ to tilt the ellipse',
+  xaxis:{title:'X',constrain:'domain'},
+  yaxis:{title:'Y',scaleanchor:'x'},
+  margin:{t:50,l:50,r:20,b:50},
+  sliders:[{
+    pad:{t:30}, currentvalue:{prefix:'ρ = '},
+    steps:linspace(-0.95,0.95,19).map(r=>({
+      label:r.toFixed(2),
+      method:'update',
+      args:[{z:[makeZ(r)]},
+            {title:`Bivariate Normal PDF — ρ = ${r.toFixed(2)}`}]}))
+  }]
+});
+</script>
+{% endraw %}

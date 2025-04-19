@@ -1,0 +1,66 @@
+{% raw %}
+<div id="logNormPlot" style="width:100%;max-width:820px;margin:3rem auto;"></div>
+<script src="https://cdn.plot.ly/plotly-basic-latest.min.js"></script>
+<script>
+// ------- log‑normal sample + density ---------
+(function () {
+  const MU = 1.0, SIG = 0.8, N = 5000;
+
+  // simple Box–Muller
+  function randn () {
+    let u = 0, v = 0;
+    while (u === 0) u = Math.random();
+    while (v === 0) v = Math.random();
+    return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+  }
+  const data = Array.from({ length: N }, () => Math.exp(MU + SIG * randn()));
+
+  // log‑10 bin edges
+  const bins = 60;
+  const logMin = Math.log10(Math.min(...data));
+  const logMax = Math.log10(Math.max(...data));
+  const edges = Array.from({ length: bins + 1 }, (_, i) =>
+    Math.pow(10, logMin + i * (logMax - logMin) / bins)
+  );
+
+  // manual counts
+  const counts = Array(bins).fill(0);
+  data.forEach(x => {
+    const j = Math.min(
+      bins - 1,
+      Math.floor((Math.log10(x) - logMin) / ((logMax - logMin) / bins))
+    );
+    counts[j] += 1;
+  });
+  const widths = edges.slice(1).map((e, i) => e - edges[i]);
+  const density = counts.map((c, i) => c / (N * widths[i]));
+  const mids = edges.slice(1).map((e, i) => (e + edges[i]) / 2);
+
+  // analytic pdf
+  const xs = Array.from({ length: 400 }, (_, i) =>
+    Math.pow(10, logMin + i * (logMax - logMin) / 399)
+  );
+  const ys = xs.map(x =>
+    (1 / (x * SIG * Math.sqrt(2 * Math.PI))) *
+    Math.exp(-(Math.log(x) - MU) ** 2 / (2 * SIG * SIG))
+  );
+
+  Plotly.newPlot('logNormPlot',
+    [
+      { x: mids, y: density, type: 'bar', width: widths,
+        name: 'Empirical', marker: { color: '#1f77b4', opacity: 0.65 } },
+      { x: xs,  y: ys,  mode: 'lines', name: 'PDF',
+        line: { width: 4, color: '#e45756' } }
+    ],
+    {
+      template: 'plotly_dark',
+      title: { text: 'Log‑Normal sample (log‑scaled x)', font: { size: 22 } },
+      xaxis: { type: 'log', title: 'x' },
+      yaxis: { title: 'Density', rangemode: 'tozero' },
+      bargap: 0.04,
+      legend: { orientation: 'h', y: -0.25 }
+    }
+  );
+})();
+</script>
+{% endraw %}
