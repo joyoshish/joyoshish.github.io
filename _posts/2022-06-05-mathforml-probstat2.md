@@ -25,7 +25,6 @@ In this post, we will explore:
 - Important **discrete and continuous distributions**
 - Concepts around **multivariate distributions**
 - Key **applications in machine learning and data science**
-- Demonstrations using **Python and Plotly visualizations**
 
 ---
 
