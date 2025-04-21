@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3D Surface Plot</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <div id="plot" style="width: 100%; height: 100vh;"></div>
+  <script>
+    const x = [], y = [], z = [];
+    const steps = 50;
+    const xMin = -4, xMax = 4;
+    const yMin = -4, yMax = 4;
+
+    for (let i = 0; i < steps; i++) {
+      x[i] = xMin + (xMax - xMin) * i / (steps - 1);
+      y[i] = yMin + (yMax - yMin) * i / (steps - 1);
+    }
+
+    for (let i = 0; i < steps; i++) {
+      const row = [];
+      for (let j = 0; j < steps; j++) {
+        const xVal = x[j];
+        const yVal = y[i];
+        row.push(xVal * xVal + 4 * yVal * yVal);
+      }
+      z.push(row);
+    }
+
+    const data = [{
+      type: 'surface',
+      x: x,
+      y: y,
+      z: z,
+      colorscale: 'Viridis'
+    }];
+
+    const layout = {
+      title: '3D Surface of f(x₁, x₂) = x₁² + 4x₂²',
+      scene: {
+        xaxis: { title: 'x₁' },
+        yaxis: { title: 'x₂' },
+        zaxis: { title: 'f(x₁, x₂)' }
+      },
+      margin: { t: 50, l: 0, r: 0, b: 0 }
+    };
+
+    Plotly.newPlot('plot', data, layout);
+  </script>
+</body>
+</html>

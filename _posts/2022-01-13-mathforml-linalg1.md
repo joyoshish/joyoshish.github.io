@@ -19,7 +19,7 @@ toc:
 
 <div style="text-align: center; margin: 2rem 0;">
   {% include figure.liquid 
-      path="assets/img/linalg1_1.png" 
+      path="assets/img/linalg1_1.jpg" 
       class="img-fluid rounded shadow-sm" 
       loading="eager" 
       zoomable=true 
