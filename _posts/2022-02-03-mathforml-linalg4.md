@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Linear Algebra Basics for ML - Eigenvalues, Eigenvectors, and Singular Value Decomposition
+title: Eigenvalues, Eigenvectors, and Singular Value Decomposition
 date: 2022-02-03
-description: Linear Algebra 4 - Mathematics for Machine Learning
+description: Linear Algebra 4 - Mathematics for Data Science
 tags: ml ai linear-algebra math
 math: true
-categories: machine-learning math math-for-ml
+categories: machine-learning math data-science-math
 thumbnail: assets/img/linalg_banner.png
 giscus_comments: true
 related_posts: true

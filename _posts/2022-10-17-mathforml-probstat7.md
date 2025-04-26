@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Probability & Statistics for Data Science - Information Theory, Correlation & Statistical Learning Theory
+title: Information Theory, Correlation & Statistical Learning Theory
 date: 2022-10-17
-description: Probability & Statistics 7 - Mathematics for Machine Learning
+description: Probability & Statistics 7 - Mathematics for Data Science
 tags: ml ai probability-statistics math
-categories: machine-learning math math-for-ml
+categories: machine-learning math data-science-math
 thumbnail: assets/img/probstat_banner.png
 math: true
 giscus_comments: true

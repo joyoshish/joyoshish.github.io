@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Linear Algebra Basics for ML - Vector Spaces and Transformations
+title: Vector Spaces and Transformations
 date: 2022-02-07
-description: Linear Algebra 5 - Mathematics for Machine Learning
+description: Linear Algebra 5 - Mathematics for Data Science
 tags: ml ai linear-algebra math
 math: true
-categories: machine-learning math math-for-ml
+categories: machine-learning math data-science-math
 thumbnail: assets/img/linalg_banner.png
 giscus_comments: true
 related_posts: true

@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Probability & Statistics for Data Science - Applied Probabilistic Modeling
+title: Applied Probabilistic Modeling
 date: 2023-02-11
-description: Probability & Statistics 9 - Mathematics for Machine Learning
+description: Probability & Statistics 9 - Mathematics for Data Science
 tags: ml ai probability-statistics math
-categories: machine-learning math math-for-ml
+categories: machine-learning math data-science-math
 thumbnail: assets/img/probstat_banner.png
 math: true
 giscus_comments: true

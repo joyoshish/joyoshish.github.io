@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Linear Algebra Basics for ML - Vector Operations, Norms, and Projections
+title: Vector Operations, Norms, and Projections
 date: 2022-01-13
-description: Linear Algebra 1 - Mathematics for Machine Learning
+description: Linear Algebra 1 - Mathematics for Data Science
 tags: ml ai linear-algebra math
 math: true
-categories: machine-learning math math-for-ml
+categories: machine-learning math data-science-math
 thumbnail: assets/img/linalg_banner.png
 giscus_comments: true
 related_posts: true

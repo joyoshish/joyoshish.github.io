@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Probability & Statistics for Data Science - Bayesian Thinking, MLE, MAP & Inference
+title: Bayesian Thinking, MLE, MAP & Inference
 date: 2022-06-10
-description: Probability & Statistics 3 - Mathematics for Machine Learning
+description: Probability & Statistics 3 - Mathematics for Data Science
 tags: ml ai probability-statistics math
 math: true
-categories: machine-learning math math-for-ml
+categories: machine-learning math data-science-math
 thumbnail: assets/img/probstat_banner.png
 giscus_comments: true
 pretty_table: true

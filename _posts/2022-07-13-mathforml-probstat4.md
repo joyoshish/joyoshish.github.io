@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Probability & Statistics for Data Science - Statistical Inference (Sampling, Confidence Intervals & Hypothesis Testing)
+title: Statistical Inference (Sampling, Confidence Intervals & Hypothesis Testing)
 date: 2022-07-13
-description: Probability & Statistics 4 - Mathematics for Machine Learning
+description: Probability & Statistics 4 - Mathematics for Data Science
 tags: ml ai probability-statistics math
 math: true
-categories: machine-learning math math-for-ml
+categories: machine-learning math data-science-math
 thumbnail: assets/img/probstat_banner.png
 giscus_comments: true
 pretty_table: true

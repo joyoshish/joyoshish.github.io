@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Probability & Statistics for Data Science - Foundations of Probability
+title: Foundations of Probability
 date: 2022-06-01
-description: Probability & Statistics 1 - Mathematics for Machine Learning
+description: Probability & Statistics 1 - Mathematics for Data Science
 tags: ml ai probability-statistics math
 math: true
-categories: machine-learning math math-for-ml
+categories: machine-learning math data-science-math
 thumbnail: assets/img/probstat_banner.png
 giscus_comments: true
 pretty_table: true

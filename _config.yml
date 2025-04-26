@@ -161,7 +161,7 @@ giscus:
   lang: en
 
 # Disqus comments (DEPRECATED)
-disqus_shortname: al-folio # put your disqus shortname
+disqus_shortname:  # put your disqus shortname
 # https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
 # External sources.
@@ -302,8 +302,8 @@ jekyll-archives:
     category: "/blog/category/:name/"
  
 
-display_tags: ["ml", "ai", "math", "linear-algebra", "probability-statistics"] # these tags will be displayed on the front page of your blog
-display_categories: ["machine-learning" , "math", "math-for-ml"] # these categories will be displayed on the front page of your blog
+display_tags: ["ml", "ai", "math", "linear-algebra", "probability-statistics", "optimization" , "calculus"] # these tags will be displayed on the front page of your blog
+display_categories: ["machine-learning" , "math", "data-science-math"] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar

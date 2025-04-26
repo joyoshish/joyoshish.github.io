@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Probability & Statistics for Data Science - Probability Distributions
+title: Probability Distributions
 date: 2022-06-05
-description: Probability & Statistics 2 - Mathematics for Machine Learning
+description: Probability & Statistics 2 - Mathematics for Data Science
 tags: ml ai probability-statistics math
 math: true
-categories: machine-learning math math-for-ml
+categories: machine-learning math data-science-math
 thumbnail: assets/img/probstat_banner.png
 giscus_comments: true
 pretty_table: true

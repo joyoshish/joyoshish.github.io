@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Linear Algebra Basics for ML - Advanced Topics
+title: Linear Algebra - Bonus Topics
 date: 2022-02-07
-description: Linear Algebra 6 - Mathematics for Machine Learning
+description: Linear Algebra 6 - Mathematics for Data Science
 tags: ml ai linear-algebra math
 math: true
-categories: machine-learning math math-for-ml
+categories: machine-learning math data-science-math
 thumbnail: assets/img/linalg_banner.png
 giscus_comments: true
 pretty_table: true

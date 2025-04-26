@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Probability & Statistics for Data Science - Markov Chains, Hidden Markov Models & Probabilistic Sequence Modeling
+title: Markov Chains, Hidden Markov Models & Probabilistic Sequence Modeling
 date: 2022-08-03
-description: Probability & Statistics 5 - Mathematics for Machine Learning
+description: Probability & Statistics 5 - Mathematics for Data Science
 tags: ml ai probability-statistics math
-categories: machine-learning math math-for-ml
+categories: machine-learning math data-science-math
 thumbnail: assets/img/probstat_banner.png
 math: true
 giscus_comments: true

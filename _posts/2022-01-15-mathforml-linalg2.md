@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Linear Algebra Basics for ML - Matrices and Matrix Operations
+title: Matrices and Matrix Operations
 date: 2022-01-15
-description: Linear Algebra 2 - Mathematics for Machine Learning
+description: Linear Algebra 2 - Mathematics for Data Science
 tags: ml ai linear-algebra math
 math: true
-categories: machine-learning math math-for-ml
+categories: machine-learning math data-science-math
 thumbnail: assets/img/linalg_banner.png
 giscus_comments: true
 related_posts: true

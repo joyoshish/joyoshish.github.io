@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Probability & Statistics for Data Science - Linear Regression Models
+title: Linear Regression Models
 date: 2022-10-28
-description: Probability & Statistics 8 - Mathematics for Machine Learning
+description: Probability & Statistics 8 - Mathematics for Data Science
 tags: ml ai probability-statistics math
-categories: machine-learning math math-for-ml
+categories: machine-learning math data-science-math
 thumbnail: assets/img/probstat_banner.png
 math: true
 giscus_comments: true

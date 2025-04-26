@@ -144,3 +144,38 @@
 {% if page.tikzjax %}
   <link defer rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
 {% endif %}
+
+
+<style>
+  .simple-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  .simple-table th {
+    background-color: #3f51b5;
+    color: white;
+    padding: 12px;
+    text-align: left;
+  }
+  .simple-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  .simple-table tr:hover td {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Dark mode */
+  @media (prefers-color-scheme: dark) {
+    .simple-table th {
+      background-color: #5c6bc0;
+    }
+    .simple-table td {
+      border-color: #444;
+    }
+    .simple-table tr:hover td {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+  }
+</style>

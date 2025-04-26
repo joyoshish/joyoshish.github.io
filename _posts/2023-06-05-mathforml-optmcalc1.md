@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Optimization & Multivariable Calculus for Data Science - Multivariable Functions & Gradients
+title: Multivariable Functions & Gradients
 date: 2023-06-05
-description: Optimization & Multivariable Calculus 1 - Mathematics for Machine Learning
+description: Optimization & Multivariable Calculus 1 - Mathematics for Data Science
 tags: ml ai optimization calculus math
-categories: machine-learning math math-for-ml
+categories: machine-learning math data-science-math
 thumbnail: assets/img/optmcalc_banner.jpg
 math: true
 giscus_comments: true
@@ -312,6 +312,240 @@ $$
 $$
 
 The learning rate $$\eta$$ controls how far we step, but the direction is always determined by $$\nabla f$$.
+
+---
+
+
+
+## Critical Points and Optima
+
+Once we understand the gradient vector $$\nabla f(x)$$, the natural question is: **where does it vanish?**  
+These locations—where the gradient becomes zero—are called **critical points**.
+
+### What Are Critical Points?
+
+A **critical point** of a function is any point $$x$$ where the gradient vector is zero:
+
+$$
+\nabla f(x) = 0
+$$
+
+Intuitively, at a critical point, the function is locally "flat"—there’s no immediate slope pushing the function higher or lower. These points are where potential **minima**, **maxima**, or **saddle points** could occur.
+
+In optimization, critical points are crucial: they’re the places where we might find the best (or worst) values of our objective function.
+
+---
+
+### Finding Critical Points: A Simple Example
+
+Let’s walk through a basic case.
+
+Suppose:
+
+$$
+f(x, y) = x^2 + y^2
+$$
+
+First, compute the gradient:
+
+$$
+\nabla f(x, y) = 
+\begin{bmatrix}
+\frac{\partial f}{\partial x} \\
+\frac{\partial f}{\partial y}
+\end{bmatrix}
+=
+\begin{bmatrix}
+2x \\
+2y
+\end{bmatrix}
+$$
+
+Now, to find the critical points, we **set the gradient equal to zero**:
+
+$$
+\nabla f(x, y) = 0
+$$
+
+This gives the system:
+
+$$
+2x = 0 \quad \text{and} \quad 2y = 0
+$$
+
+Solving this, we get:
+
+$$
+x = 0, \quad y = 0
+$$
+
+Thus, the critical point is:
+
+$$
+(x, y) = (0, 0)
+$$
+
+---
+
+
+Setting the gradient to zero is a **necessary condition** for a point to be an extremum (minimum, maximum, or saddle point).  
+However, it’s **not sufficient**—not every critical point is a minimum or maximum.
+
+For instance:
+- Some critical points are **local minima** (lowest nearby values).
+- Some are **local maxima** (highest nearby values).
+- Others are **saddle points**, which are minima in one direction and maxima in another.
+
+We’ll see how to classify them shortly when we introduce the Hessian.
+
+---
+
+### Applications in Machine Learning
+
+
+- **Loss minimization**: In linear regression, logistic regression, and deep learning, we minimize a loss function. The optimal weights correspond to critical points where the loss gradient vanishes.
+- **Training stability**: In deep learning, understanding when gradients vanish (or explode) helps in designing better architectures (like ResNets) and choosing appropriate activations.
+
+Every time you run gradient descent, you’re essentially trying to find a critical point where $$\nabla f(x) \approx 0$$.
+
+---
+
+
+
+## Finding Minima Using Gradients
+
+After identifying critical points by setting $$\nabla f(x) = 0$$, the next question is: **how do we actually reach these points in practice?**
+
+In most real-world problems—especially in machine learning—we aren’t handed the critical point on a silver platter. We need an algorithm to *find* it.
+
+This is where **gradient descent** comes in.
+
+---
+
+### The Concept of Minimization
+
+In machine learning, the goal of training models often boils down to **minimizing a loss function**.  
+- In **linear regression**, we minimize the mean squared error.
+- In **logistic regression**, we minimize cross-entropy loss.
+- In **deep learning**, we minimize increasingly complex loss functions designed for classification, generation, or prediction.
+
+The idea is simple: find the parameter values that make the loss function as small as possible.
+
+---
+
+### How Gradient Descent Works
+
+Gradient descent is an iterative optimization algorithm.  
+Starting from an initial guess, it repeatedly updates the variables in the direction of **steepest descent**—that is, **opposite to the gradient**.
+
+At each step:
+
+$$
+\mathbf{x}_{\text{new}} = \mathbf{x} - \eta \nabla f(\mathbf{x})
+$$
+
+where:
+- $$\mathbf{x}$$ is the current point (parameter values),
+- $$\nabla f(\mathbf{x})$$ is the gradient at that point,
+- $$\eta$$ is the **learning rate**, a small positive scalar controlling the step size.
+
+The gradient tells us **which way** is uphill—so moving in the opposite direction takes us downhill, closer to a minimum.
+
+---
+
+### Numerical Demonstration: Simple 2D Function
+
+Let’s revisit our simple function:
+
+$$
+f(x, y) = x^2 + y^2
+$$
+
+Its gradient is:
+
+$$
+\nabla f(x, y) = 
+\begin{bmatrix}
+2x \\
+2y
+\end{bmatrix}
+$$
+
+Suppose we start at:
+
+$$
+(x, y) = (2, 3)
+$$
+
+and use a learning rate $$\eta = 0.1$$.
+
+**First gradient step:**
+
+1. Compute the gradient at (2, 3):
+
+$$
+\nabla f(2, 3) = 
+\begin{bmatrix}
+4 \\
+6
+\end{bmatrix}
+$$
+
+2. Update:
+
+$$
+\begin{bmatrix}
+x_{\text{new}} \\
+y_{\text{new}}
+\end{bmatrix}
+=
+\begin{bmatrix}
+2 \\
+3
+\end{bmatrix}
+-
+0.1 \times
+\begin{bmatrix}
+4 \\
+6
+\end{bmatrix}
+=
+\begin{bmatrix}
+2 - 0.4 \\
+3 - 0.6
+\end{bmatrix}
+=
+\begin{bmatrix}
+1.6 \\
+2.4
+\end{bmatrix}
+$$
+
+**Next steps** would continue similarly—computing the gradient at the new point and updating again.
+
+Each step brings us closer to the critical point (0, 0), which is the global minimum for this function.
+
+---
+
+### Why Gradient Descent Works
+
+At every iteration, gradient descent moves toward regions of **lower function value**.  
+The learning rate controls how aggressively we move:
+- If $$\eta$$ is too large, we might overshoot the minimum.
+- If $$\eta$$ is too small, convergence can be slow.
+
+Choosing the right learning rate and using methods like momentum or adaptive learning rates (e.g., Adam) are key parts of training modern machine learning models.
+
+---
+
+
+Gradient descent is fundamental across ML:
+
+- In **linear regression**, it finds the line (or hyperplane) that best fits the data.
+- In **logistic regression**, it optimizes parameters to correctly classify data.
+- In **deep neural networks**, it tunes millions of parameters to reduce training loss.
+
+Every time a model “learns,” it’s really performing hundreds of thousands—or millions—of tiny gradient descent updates under the hood.
 
 
 
@@ -879,10 +1113,12 @@ $$
 The **Hessian matrix** of $$f$$ at a point $$x$$ is the matrix of all second-order partial derivatives:
 
 $$
-H_f(x) = \begin{bmatrix}
-\frac{\partial^2 f}{\partial x_1^2} & \cdots & \frac{\partial^2 f}{\partial x_1 \partial x_n} \\
-\vdots & \ddots & \vdots \\
-\frac{\partial^2 f}{\partial x_n \partial x_1} & \cdots & \frac{\partial^2 f}{\partial x_n^2}
+H_f(x) =
+\begin{bmatrix}
+\frac{\partial^2 f}{\partial x_1^2} & \frac{\partial^2 f}{\partial x_1 \partial x_2} & \cdots & \frac{\partial^2 f}{\partial x_1 \partial x_n} \\
+\frac{\partial^2 f}{\partial x_2 \partial x_1} & \frac{\partial^2 f}{\partial x_2^2} & \cdots & \frac{\partial^2 f}{\partial x_2 \partial x_n} \\
+\vdots & \vdots & \ddots & \vdots \\
+\frac{\partial^2 f}{\partial x_n \partial x_1} & \frac{\partial^2 f}{\partial x_n \partial x_2} & \cdots & \frac{\partial^2 f}{\partial x_n^2}
 \end{bmatrix}
 $$
 
@@ -1066,8 +1302,6 @@ plt.show()
 
 This plot shows how the **Hessian’s eigenvectors** correspond to the **principal curvature directions**—and their eigenvalues tell us how steeply the function bends in each of those directions.
 
----
-
 ### Why the Hessian Matters in Machine Learning
 
 - **Newton’s method**: Optimization algorithms like Newton’s method use the Hessian to take curvature-aware steps.
@@ -1077,11 +1311,221 @@ This plot shows how the **Hessian’s eigenvectors** correspond to the **princip
 
 ---
 
-The gradient points us toward lower ground. But the Hessian tells us what the ground *feels* like—whether it’s sloping evenly, or bending underfoot, or about to flip from valley to ridge.
+## Classifying Critical Points Using the Hessian
 
-And in deep learning, understanding this second-order behavior can be the difference between fast, stable convergence and slow, unstable wandering.
+Earlier, we learned that **critical points** occur where the gradient of a function vanishes:
+
+$$
+\nabla f(x) = 0
+$$
+
+But just finding critical points is not enough.
+
+A critical point could be:
+- a **local minimum** (lowest nearby point),
+- a **local maximum** (highest nearby point),
+- or a **saddle point** (neither minimum nor maximum; curves up in some directions and down in others).
+
+**Question:**  
+*How do we tell what kind of critical point it is?*
+
+This is where the **Hessian matrix** comes in.
+
+
+The Hessian generalizes the idea of a "second derivative" from single-variable calculus to multiple dimensions.
 
 ---
+
+### Step-by-Step Example
+
+Let’s work through the simple function:
+
+$$
+f(x, y) = x^2 + y^2
+$$
+
+First, compute first-order derivatives (gradient):
+
+$$
+\nabla f(x, y) =
+\begin{bmatrix}
+\frac{\partial f}{\partial x} \\
+\frac{\partial f}{\partial y}
+\end{bmatrix}
+=
+\begin{bmatrix}
+2x \\
+2y
+\end{bmatrix}
+$$
+
+Setting the gradient to zero:
+
+$$
+\nabla f(x, y) = 0 \quad \Rightarrow \quad 2x = 0,\quad 2y = 0
+$$
+
+gives the critical point:
+
+$$
+(x, y) = (0, 0)
+$$
+
+---
+
+Now, compute second-order derivatives for the Hessian:
+
+- $$\frac{\partial^2 f}{\partial x^2} = 2$$
+- $$\frac{\partial^2 f}{\partial y^2} = 2$$
+- $$\frac{\partial^2 f}{\partial x \partial y} = \frac{\partial^2 f}{\partial y \partial x} = 0$$
+
+Thus, the Hessian matrix is:
+
+$$
+H_f(x, y) =
+\begin{bmatrix}
+2 & 0 \\
+0 & 2
+\end{bmatrix}
+$$
+
+This matrix is constant (independent of $$x$$ and $$y$$), because the function is a simple quadratic.
+
+---
+
+### What Does the Hessian Tell Us?
+
+The key is to analyze the **eigenvalues** of the Hessian:
+
+- **If all eigenvalues are positive**, $$H$$ is **positive definite** ➔ **local minimum**.
+- **If all eigenvalues are negative**, $$H$$ is **negative definite** ➔ **local maximum**.
+- **If eigenvalues have mixed signs**, $$H$$ is **indefinite** ➔ **saddle point**.
+
+**In our example:**
+- The eigenvalues of $$\begin{bmatrix} 2 & 0 \\ 0 & 2 \end{bmatrix}$$ are just 2 and 2 (both positive).
+
+So, the critical point at $$(0, 0)$$ is a **local minimum**.
+
+
+---
+
+Specifically:
+
+<table class="simple-table">
+  <thead>
+    <tr>
+      <th>Condition</th>
+      <th>Meaning</th>
+      <th>Surface Behavior</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>All eigenvalues positive</td>
+      <td><strong>Positive definite</strong></td>
+      <td>Curves upward in every direction — local minimum</td>
+    </tr>
+    <tr>
+      <td>All eigenvalues negative</td>
+      <td><strong>Negative definite</strong></td>
+      <td>Curves downward in every direction — local maximum</td>
+    </tr>
+    <tr>
+      <td>Mixed signs (some positive, some negative)</td>
+      <td><strong>Indefinite</strong></td>
+      <td>Curves up in some directions, down in others — saddle point</td>
+    </tr>
+  </tbody>
+</table>
+
+
+---
+
+### Intuitive Picture
+
+Think about standing at a point on a mountain:
+
+- If **in every direction** around you the ground slopes upward (like standing in a valley), you’re at a **local minimum**.
+- If **in every direction** the ground slopes downward (like standing at a mountain peak), you’re at a **local maximum**.
+- If the ground **slopes up in some directions** and **down in others** (like standing on a mountain pass or a saddle), you’re at a **saddle point**.
+
+The Hessian captures exactly this **multi-directional curvature** information through its eigenvalues.
+
+---
+
+### Mathematical Viewpoint
+
+Suppose you take a small step $$\Delta x$$ from the critical point.
+
+Using a Taylor approximation:
+
+$$
+f(x + \Delta x) \approx f(x) + \frac{1}{2} \Delta x^T H \Delta x
+$$
+
+- If $$H$$ is positive definite (all eigenvalues > 0), then $$\Delta x^T H \Delta x > 0$$ for every $$\Delta x \neq 0$$.
+    - This means $$f(x+\Delta x) > f(x)$$, so you're at a **local minimum**.
+- If $$H$$ is negative definite (all eigenvalues < 0), then $$\Delta x^T H \Delta x < 0$$ for every $$\Delta x \neq 0$$.
+    - This means $$f(x+\Delta x) < f(x)$$, so you're at a **local maximum**.
+- If $$H$$ has mixed eigenvalues, depending on the direction you step, $$\Delta x^T H \Delta x$$ can be positive (uphill) or negative (downhill).
+    - This is the **saddle point** situation.
+
+---
+
+
+
+
+### A General Quick Test for 2D Functions
+
+For a $$2 \times 2$$ Hessian:
+
+$$
+H =
+\begin{bmatrix}
+a & b \\
+b & c
+\end{bmatrix}
+$$
+
+you can also classify using determinants:
+
+- If $$\det(H) > 0$$ and $$a > 0$$ ➔ **local minimum**.
+- If $$\det(H) > 0$$ and $$a < 0$$ ➔ **local maximum**.
+- If $$\det(H) < 0$$ ➔ **saddle point**.
+
+(Here, $$\det(H) = ac - b^2$$.)
+
+In our case:
+
+$$
+\det(H) = (2)(2) - (0)^2 = 4 > 0
+$$
+and
+$$
+a = 2 > 0
+$$
+
+Again confirming **local minimum**.
+
+---
+
+### Why It Matters in Machine Learning
+
+When optimizing a loss function, it’s not enough to reach a critical point.  
+You want to know whether it’s actually useful:
+- **Minima** are where learning converges (good).
+- **Saddle points** can trap optimization algorithms, causing slow learning.
+- **Maxima** are typically unstable for loss functions (rarely desirable).
+
+In deep learning especially, loss surfaces are filled with saddle points.  
+Advanced optimizers (like SGD with momentum, Adam) are partly designed to **escape saddle points** rather than getting stuck.
+
+Being able to classify critical points helps you understand why optimization behaves the way it does—and why sometimes, even reaching a gradient near zero isn't the end of the story.
+
+
+
+---
+
 
 ## Applications
 
@@ -1321,7 +1765,42 @@ Even without a closed-form solution, gradient descent works well here, precisely
 
 #### Comparing to Linear Regression
 
-<div style="border-left: 4px solid #2c5282; background: #f7fafc; padding: 1rem; border-radius: 6px; margin: 1rem 0; font-size: 0.95rem;"> <table style="width:100%; border-collapse: collapse; text-align: left;"> <thead style="background: #2c5282; color: white;"> <tr> <th style="padding: 8px;">Feature</th> <th style="padding: 8px;">Linear Regression</th> <th style="padding: 8px;">Logistic Regression</th> </tr> </thead> <tbody> <tr style="border-bottom: 1px solid #ccc;"> <td style="padding: 8px;">Loss Shape</td> <td style="padding: 8px;">Perfect bowl (quadratic)</td> <td style="padding: 8px;">Warped bowl (log-convex)</td> </tr> <tr style="border-bottom: 1px solid #ccc;"> <td style="padding: 8px;">Minimum</td> <td style="padding: 8px;">Closed-form solution</td> <td style="padding: 8px;">Requires numerical optimization</td> </tr> <tr style="border-bottom: 1px solid #ccc;"> <td style="padding: 8px;">Contour Shape</td> <td style="padding: 8px;">Elliptical, symmetric</td> <td style="padding: 8px;">Elliptical-ish, stretched or tilted</td> </tr> <tr style="border-bottom: 1px solid #ccc;"> <td style="padding: 8px;">Gradient Behavior</td> <td style="padding: 8px;">Constant rate of change</td> <td style="padding: 8px;">Varying rates; flatter near optimum</td> </tr> <tr> <td style="padding: 8px;">Optimization Path</td> <td style="padding: 8px;">Direct and steady</td> <td style="padding: 8px;">More sensitive to step size</td> </tr> </tbody> </table> </div>
+<table class="simple-table">
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Linear Regression</th>
+      <th>Logistic Regression</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Loss Shape</td>
+      <td>Perfect bowl (quadratic)</td>
+      <td>Warped bowl (log-convex)</td>
+    </tr>
+    <tr>
+      <td>Minimum</td>
+      <td>Closed-form solution</td>
+      <td>Requires numerical optimization</td>
+    </tr>
+    <tr>
+      <td>Contour Shape</td>
+      <td>Elliptical, symmetric</td>
+      <td>Elliptical-ish, stretched or tilted</td>
+    </tr>
+    <tr>
+      <td>Gradient Behavior</td>
+      <td>Constant rate of change</td>
+      <td>Varying rates; flatter near optimum</td>
+    </tr>
+    <tr>
+      <td>Optimization Path</td>
+      <td>Direct and steady</td>
+      <td>More sensitive to step size</td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 
@@ -1410,41 +1889,38 @@ Layer-by-layer, the gradients are shaped by:
 
 #### Table: What Flows Through the Network?
 
-<div style="border-left: 4px solid #2c5282; background: #f7fafc; padding: 1rem; border-radius: 6px; margin: 1rem 0; font-size: 0.95rem;">
-
-<table style="width:100%; border-collapse: collapse; text-align: left;">
-  <thead style="background: #2c5282; color: white;">
+<table class="simple-table">
+  <thead>
     <tr>
-      <th style="padding: 8px;">Quantity</th>
-      <th style="padding: 8px;">Forward Pass</th>
-      <th style="padding: 8px;">Backward Pass</th>
+      <th>Quantity</th>
+      <th>Forward Pass</th>
+      <th>Backward Pass</th>
     </tr>
   </thead>
   <tbody>
-    <tr style="border-bottom: 1px solid #ccc;">
-      <td style="padding: 8px;">Input</td>
-      <td style="padding: 8px;">$$\mathbf{x}$$</td>
-      <td style="padding: 8px;">–</td>
-    </tr>
-    <tr style="border-bottom: 1px solid #ccc;">
-      <td style="padding: 8px;">Linear transform</td>
-      <td style="padding: 8px;">$$\mathbf{z}^{(l)} = W^{(l)} \mathbf{a}^{(l-1)}$$</td>
-      <td style="padding: 8px;">Multiply by $$\left(W^{(l)}\right)^T$$</td>
-    </tr>
-    <tr style="border-bottom: 1px solid #ccc;">
-      <td style="padding: 8px;">Nonlinearity</td>
-      <td style="padding: 8px;">$$\mathbf{a}^{(l)} = \phi(\mathbf{z}^{(l)})$$</td>
-      <td style="padding: 8px;">Elementwise multiply by $$\phi'(\mathbf{z}^{(l)})$$</td>
+    <tr>
+      <td>Input</td>
+      <td>$$\mathbf{x}$$</td>
+      <td>–</td>
     </tr>
     <tr>
-      <td style="padding: 8px;">Loss</td>
-      <td style="padding: 8px;">$$\hat{y}, \mathcal{L}(\hat{y}, y)$$</td>
-      <td style="padding: 8px;">Start from $$\frac{\partial \mathcal{L}}{\partial \hat{y}}$$ and chain backward</td>
+      <td>Linear transform</td>
+      <td>$$\mathbf{z}^{(l)} = W^{(l)} \mathbf{a}^{(l-1)}$$</td>
+      <td>Multiply by $$\left(W^{(l)}\right)^T$$</td>
+    </tr>
+    <tr>
+      <td>Nonlinearity</td>
+      <td>$$\mathbf{a}^{(l)} = \phi(\mathbf{z}^{(l)})$$</td>
+      <td>Elementwise multiply by $$\phi'(\mathbf{z}^{(l)})$$</td>
+    </tr>
+    <tr>
+      <td>Loss</td>
+      <td>$$\hat{y}, \mathcal{L}(\hat{y}, y)$$</td>
+      <td>Start from $$\frac{\partial \mathcal{L}}{\partial \hat{y}}$$ and chain backward</td>
     </tr>
   </tbody>
 </table>
 
-</div>
 
 ---
 
@@ -1607,28 +2083,25 @@ $$
 
 ##### Final Gradients Summary
 
-<div style="border-left: 4px solid #2c5282; background: #f7fafc; padding: 1rem; border-radius: 6px; margin: 1rem 0; font-size: 0.95rem;">
-
-<table style="width:100%; border-collapse: collapse; text-align: left;">
-  <thead style="background: #2c5282; color: white;">
+<table class="simple-table">
+  <thead>
     <tr>
-      <th style="padding: 8px;">Parameter</th>
-      <th style="padding: 8px;">Gradient</th>
+      <th>Parameter</th>
+      <th>Gradient</th>
     </tr>
   </thead>
   <tbody>
-    <tr style="border-bottom: 1px solid #ccc;">
-      <td style="padding: 8px;">$$W^{[2]}$$</td>
-      <td style="padding: 8px;">$$[0,\ -24]$$</td>
+    <tr>
+      <td>$$W^{[2]}$$</td>
+      <td>$$[0,\ -24]$$</td>
     </tr>
     <tr>
-      <td style="padding: 8px;">$$W^{[1]}$$</td>
-      <td style="padding: 8px;">$$\begin{bmatrix} 0 & 0 \\ 12 & 24 \end{bmatrix}$$</td>
+      <td>$$W^{[1]}$$</td>
+      <td>$$\begin{bmatrix} 0 & 0 \\ 12 & 24 \end{bmatrix}$$</td>
     </tr>
   </tbody>
 </table>
 
-</div>
 
 ---
 
@@ -1749,46 +2222,39 @@ This is much more memory efficient than storing all Jacobians.
 
 #### Table: Jacobians Through Layers
 
-<div style="border-left: 4px solid #2c5282; background: #f7fafc; padding: 1rem; border-radius: 6px; margin: 1rem 0; font-size: 0.95rem;">
-
-<table style="width:100%; border-collapse: collapse; text-align: left;">
-  <thead style="background: #2c5282; color: white;">
+<table class="simple-table">
+  <thead>
     <tr>
-      <th style="padding: 8px;">Operation</th>
-      <th style="padding: 8px;">Forward</th>
-      <th style="padding: 8px;">Jacobian or Gradient</th>
+      <th>Operation</th>
+      <th>Forward</th>
+      <th>Jacobian or Gradient</th>
     </tr>
   </thead>
   <tbody>
-
-    <tr style="background-color: #edf2f7; border-bottom: 1px solid #ccc;">
-      <td style="padding: 8px;"><em>Loss (MSE)</em></td>
-      <td style="padding: 8px;">$$\mathcal{L} = \frac{1}{2} \|\hat{y} - y\|^2$$</td>
-      <td style="padding: 8px;">$$\frac{\partial \mathcal{L}}{\partial \hat{y}} = \hat{y} - y$$</td>
-    </tr>
-
-    <tr style="border-bottom: 1px solid #ccc;">
-      <td style="padding: 8px;">Linear</td>
-      <td style="padding: 8px;">$$\mathbf{z} = W \cdot \mathbf{x}$$</td>
-      <td style="padding: 8px;">$$\mathbb{R}^{\text{out} \times \text{in}}$$</td>
-    </tr>
-
-    <tr style="border-bottom: 1px solid #ccc;">
-      <td style="padding: 8px;">ReLU</td>
-      <td style="padding: 8px;">$$\mathbf{a} = \max(0,\ \mathbf{z})$$</td>
-      <td style="padding: 8px;">$$\text{Diagonal} \in \mathbb{R}^{n \times n}$$</td>
-    </tr>
-
     <tr>
-      <td style="padding: 8px;">Sigmoid</td>
-      <td style="padding: 8px;">$$\sigma(z) = \frac{1}{1 + e^{-z}}$$</td>
-      <td style="padding: 8px;">$$\text{Diagonal: } \sigma(z)(1 - \sigma(z))$$</td>
+      <td><em>Loss (MSE)</em></td>
+      <td>$$\mathcal{L} = \frac{1}{2} \|\hat{y} - y\|^2$$</td>
+      <td>$$\frac{\partial \mathcal{L}}{\partial \hat{y}} = \hat{y} - y$$</td>
     </tr>
-
+    <tr>
+      <td>Linear</td>
+      <td>$$\mathbf{z} = W \cdot \mathbf{x}$$</td>
+      <td>$$\mathbb{R}^{\text{out} \times \text{in}}$$</td>
+    </tr>
+    <tr>
+      <td>ReLU</td>
+      <td>$$\mathbf{a} = \max(0,\ \mathbf{z})$$</td>
+      <td>$$\text{Diagonal} \in \mathbb{R}^{n \times n}$$</td>
+    </tr>
+    <tr>
+      <td>Sigmoid</td>
+      <td>$$\sigma(z) = \frac{1}{1 + e^{-z}}$$</td>
+      <td>$$\text{Diagonal: } \sigma(z)(1 - \sigma(z))$$</td>
+    </tr>
   </tbody>
 </table>
 
-</div>
+
 ---
 
 #### Why This Matters
@@ -1956,34 +2422,31 @@ We’ve reached the **global minimum in one step**.
 
 **Gradient Descent vs. Newton’s Method**
 
-<div style="border-left: 4px solid #2c5282; background: #f7fafc; padding: 1rem; border-radius: 6px; margin: 1rem 0; font-size: 0.95rem;">
-
-<table style="width:100%; border-collapse: collapse; text-align: left;">
-  <thead style="background: #2c5282; color: white;">
+<table class="simple-table">
+  <thead>
     <tr>
-      <th style="padding: 8px;">Method</th>
-      <th style="padding: 8px;">Step Formula</th>
-      <th style="padding: 8px;">Pros</th>
-      <th style="padding: 8px;">Cons</th>
+      <th>Method</th>
+      <th>Step Formula</th>
+      <th>Pros</th>
+      <th>Cons</th>
     </tr>
   </thead>
   <tbody>
-    <tr style="border-bottom: 1px solid #ccc;">
-      <td style="padding: 8px;">Gradient Descent</td>
-      <td style="padding: 8px;">$$x_{t+1} = x_t - \eta \nabla f(x_t)$$</td>
-      <td style="padding: 8px;">Simple, stable, scalable</td>
-      <td style="padding: 8px;">Slow in flat regions; ignores curvature</td>
+    <tr>
+      <td>Gradient Descent</td>
+      <td>$$x_{t+1} = x_t - \eta \nabla f(x_t)$$</td>
+      <td>Simple, stable, scalable</td>
+      <td>Slow in flat regions; ignores curvature</td>
     </tr>
     <tr>
-      <td style="padding: 8px;">Newton’s Method</td>
-      <td style="padding: 8px;">$$x_{t+1} = x_t - H^{-1} \nabla f(x_t)$$</td>
-      <td style="padding: 8px;">Fast (quadratic convergence near min)</td>
-      <td style="padding: 8px;">Requires Hessian and matrix inversion</td>
+      <td>Newton’s Method</td>
+      <td>$$x_{t+1} = x_t - H^{-1} \nabla f(x_t)$$</td>
+      <td>Fast (quadratic convergence near min)</td>
+      <td>Requires Hessian and matrix inversion</td>
     </tr>
   </tbody>
 </table>
 
-</div>
 
 ---
 
