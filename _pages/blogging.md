@@ -192,8 +192,9 @@ pagination:
 {% if page.pagination.enabled %}
 {% include pagination.liquid %}
 {% endif %}
+<!-- 
 <p style="text-align: center;">
   <a href="https://joyoshish.github.io/journal/" target="_blank">Find my musings here</a>
-</p>
+</p> -->
 
 </div>
