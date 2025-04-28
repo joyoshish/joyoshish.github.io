@@ -719,12 +719,33 @@ They are essential tools for shaping the optimization process — for constraini
 
 #### Challenges with Small Datasets
 
-| Challenge | Effect |
-|:---|:---|
-| Few samples per parameter | High risk of memorization |
-| Noise dominates | Easy to overfit to spurious patterns |
-| Lack of diversity | Reduces natural regularization from data itself |
-| Difficult to validate | Small validation sets increase variance in model evaluation |
+<table class="simple-table">
+  <thead>
+    <tr>
+      <th>Challenge</th>
+      <th>Effect</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Few samples per parameter</td>
+      <td>High risk of memorization</td>
+    </tr>
+    <tr>
+      <td>Noise dominates</td>
+      <td>Easy to overfit to spurious patterns</td>
+    </tr>
+    <tr>
+      <td>Lack of diversity</td>
+      <td>Reduces natural regularization from data itself</td>
+    </tr>
+    <tr>
+      <td>Difficult to validate</td>
+      <td>Small validation sets increase variance in model evaluation</td>
+    </tr>
+  </tbody>
+</table>
+
 
 
 ---
