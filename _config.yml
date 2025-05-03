@@ -216,7 +216,7 @@ kramdown:
 # include: ["_pages"]
 include:
   - _pages/about.md
-  - _pages/cv.md
+  # - _pages/cv.md
   - _pages/blogging.md
   # - _pages/projects.md
   - _pages/research.md

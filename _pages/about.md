@@ -31,11 +31,13 @@ In my free time, I’m usually doing things that help me slow down a bit—getti
 
 Thanks again for stopping by — take a look around, learn something new, or just say hello! -->
 
-Hey there — thanks for dropping by! This little space is my digital notebook, a quiet corner where I jot down what I’m learning, exploring, or just thinking about at the moment.
+Hey there — thanks for dropping by! This little space is my digital notebook, where I jot down what I’m learning, exploring, or just thinking about at the moment.
 
-Right now, I work as a Risk Analyst at American Express, where I build Key Risk Indicators (KRIs) to identify risks early — using a mix of statistical modeling, automation, and large-scale data pipelines. Before that, I studied Information Technology at IIEST Shibpur and then went on to do my M.Tech in Computer Science (specializing in Data Science) at ISI Kolkata. If you're curious, you can find some of my old academic research from those years [here](https://joyoshish.github.io/reserach/).
+Right now, I work as a Senior Analyst at American Express, where I build Key Risk Indicators (KRIs) to identify risks early — using a mix of statistical modeling, automation, and large-scale data pipelines, across all Amex Business products in US market. Before that, I studied Information Technology at IIEST Shibpur and then went on to do my M.Tech in Computer Science (specializing in Data Science) at ISI Kolkata. If you're curious, you can find some of my old academic research from those years [here](https://joyoshish.github.io/reserach/).
 
-Most of the writing here centers around Data Science, Machine Learning, and Computer Science — with a mix of practical insights & deep dives. You might enjoy the [blog collection](https://joyoshish.github.io/blogging/index.html), where I try writing down concepts, ideas, and lessons learned along the way. For students and curious learners, there’s also a collection of [notes](https://joyoshish.github.io/acadresrc/) from JEE PCM and GATE CS preparation days — feel free to explore and share. If you’re up for slow reads and thoughtful detours, you might enjoy wandering through the [journal site](https://joyoshish.github.io/journal/) too.
+Most of the writing here centers around Data Science, Machine Learning, and Computer Science — with a mix of practical insights & deep dives. You might enjoy the [blog collection](https://joyoshish.github.io/blogging/index.html), where I try writing down concepts, ideas, and lessons learned along the way. For students and curious learners, there’s also a collection of [notes](https://joyoshish.github.io/acadresrc/) from JEE PCM and GATE CS preparation days — feel free to explore and share. 
+
+<!-- If you’re up for slow reads and thoughtful detours, you might enjoy wandering through the [journal site](https://joyoshish.github.io/journal/) too. -->
 
 In my free time, I’m usually doing things that help me slow down a bit — getting completely absorbed in a good non-fiction book or documentary, rewatching a comfort web series, or experimenting in the kitchen (often with no recipe).
 

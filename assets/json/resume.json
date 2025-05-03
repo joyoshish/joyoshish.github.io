@@ -2,14 +2,14 @@
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "Joyoshish Saha",
-    "label": "Risk Analyst @ American Express || M.Tech. CS (Spec. Data Science) '23 @ ISI Kolkata || B.Tech. IT '21 @ IIEST Shibpur",
+    "label": "Senior Analyst @ American Express || M.Tech. CS (Spec. Data Science) '23 @ ISI Kolkata || B.Tech. IT '21 @ IIEST Shibpur",
     "image": "",
     "email": "joyoshish@protonmail.com",
     "phone": "",
     "url": "",
-    "summary": "As a Risk Analyst at American Express, I specialize in data analysis and decision science, crafting solutions to ensure smooth business operations. With a B.Tech. in Information Technology from IIEST Shibpur and an M.Tech. in Computer Science from ISI Kolkata, I possess strong technical skills and a passion for data-driven insights. I excel in Machine Learning, Deep Learning, and Data Analysis tools, creating robust models for actionable strategies. I enjoy algorithmic problem-solving and thrive on innovative solutions.\n\nOutside of work, I write technical blogs, enjoy culinary adventures, and indulge in web series and non-fiction reads. Let's connect and explore the possibilities of technology and problem-solving together!",
+    // "summary": "As a Risk Analyst at American Express, I specialize in data analysis and decision science, crafting solutions to ensure smooth business operations. With a B.Tech. in Information Technology from IIEST Shibpur and an M.Tech. in Computer Science from ISI Kolkata, I possess strong technical skills and a passion for data-driven insights. I excel in Machine Learning, Deep Learning, and Data Analysis tools, creating robust models for actionable strategies. I enjoy algorithmic problem-solving and thrive on innovative solutions.\n\nOutside of work, I write technical blogs, enjoy culinary adventures, and indulge in web series and non-fiction reads. Let's connect and explore the possibilities of technology and problem-solving together!",
     "location": {
-      "countryCode": "US",
+      "countryCode": "IN",
       "address": "India"
     },
     "profiles": [
@@ -21,22 +21,33 @@
     ]
   },
   "work": [
-    {
-      "name": "American Express",
-      "position": "Risk Analyst",
-      "startDate": "2023",
-      "endDate": "",
-      "highlights": [],
-      "summary": null,
-      "url": "https://www.linkedin.com/company/1277",
-      "location": "India"
-    }
-  ],
+  {
+    "name": "American Express",
+    "position": "Risk Analyst",
+    "startDate": "2023",
+    "endDate": "2025",
+    "highlights": [],
+    "summary": null,
+    "url": "https://www.linkedin.com/company/1277",
+    "location": "India"
+  },
+  {
+    "name": "American Express",
+    "position": "Senior Analyst",
+    "startDate": "2025",
+    "endDate": "",
+    "highlights": [],
+    "summary": null,
+    "url": "https://www.linkedin.com/company/1277",
+    "location": "India"
+  }
+]
+,
   "volunteer": [],
   "education": [
     {
       "institution": "Indian Statistical Institute, Kolkata",
-      "area": "Computer Science",
+      "area": "Computer Science (Spec. Data Science)",
       "studyType": "M.Tech.",
       "startDate": "2021",
       "endDate": "2023",

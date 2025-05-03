@@ -7,7 +7,7 @@ dropdown: true
 children:
   - title: GATE CS / JEE Notes
     permalink: /acadresrc/
-  - title: divider
-  - title: Random
-    permalink: /rndmresrc/
+  # - title: divider
+  # - title: Random
+  #   permalink: /rndmresrc/
 ---
