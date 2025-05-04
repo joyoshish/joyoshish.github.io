@@ -17,47 +17,19 @@ toc:
 
 
 
-<div style="text-align: center; margin: 2rem 0;">
-  {% include figure.liquid 
-      path="assets/img/linalg1_1.jpg" 
-      class="img-fluid rounded shadow-sm" 
-      loading="eager" 
-      zoomable=true 
-      alt="" 
-  %}
-</div>
+In 1854, William Rowan Hamilton made a discovery while walking along the Royal Canal in Dublin. As the story goes, he was so struck by the insight that he carved the core idea into the stone of Broom Bridge:
 
-<p>In Indian Hindu culture, it’s tradition to begin any auspicious journey with a prayer to <strong>Lord Ganesha</strong>, the remover of obstacles. In the spirit of that tradition, as we embark on our journey through the fascinating world of <strong>Linear Algebra</strong>, we begin with our own humble invocation.</p>
+$$
+i^2 = j^2 = k^2 = ijk = -1
+$$
 
-<p>But this time, it’s not to a deity carved in stone — it’s to two giants whose teachings have shaped how we understand the abstract beauty of vectors, matrices, and transformations:</p>
+This marked the formal introduction of quaternions—an early system for handling three-dimensional rotations using algebra. It also helped pave the way for the modern concept of vectors: objects that capture both direction and magnitude, and that allow precise descriptions of motion, force, orientation, and more.
 
-<ul>
-  <li><strong>Gilbert Strang</strong> — the legendary MIT professor whose lectures have brought clarity and structure to thousands of learners around the world.</li>
-  <li><strong>Grant Sanderson</strong> — the mind behind <em>3Blue1Brown</em>, who gave visual intuition to linear algebra through stunning animations and deep insights.</li>
-</ul>
+Over time, vector spaces became foundational in physics, computer graphics, and eventually machine learning. Today, whenever a neural network adjusts its weights, a recommendation engine scores similarity, or an algorithm projects data into fewer dimensions, vector operations are doing the work underneath.
 
-<p>This blog series is a tribute and a continuation — a place where we'll walk step by step through the core concepts, problems, and applications of Linear Algebra with a lens tuned for data science and machine learning.</p>
+This post begins with those fundamentals. Before diving into transformations and matrix mechanics, we’ll look closely at how vectors behave—how they combine, stretch, shrink, align, and relate to each other. These operations form the base for much of data science and machine learning, from gradient descent to PCA to attention mechanisms.
 
-<p>Let's all whisper the sacred mantra that begins all good things:</p>
-
-<p style="text-align: center; font-size: 1.3rem; margin-top: 1rem; margin-bottom: 1rem;">
-  $$ A \mathbf{x} = \mathbf{b} $$
-</p>
-
-<p>May your matrices be full rank,<br>
-May your basis always span,<br>
-And may your inner product bring clarity, not confusion.<br>
-Let the journey begin. </p>
-
-
-
-
----
-
-
-So, with our mathematical minds tuned, let’s begin—not with the heaviest proofs or grand abstractions, but with the smallest steps. 
-
-Linear algebra, like all things sacred and scientific, starts with the humble: a line, a vector, a movement through space. Whether you're adjusting weights in a neural net or calculating embeddings in NLP, you're moving through vector space—scaling, shifting, aligning.
+With that in mind, let’s begin.
 
 
 
