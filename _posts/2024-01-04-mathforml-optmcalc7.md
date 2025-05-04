@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Matrix Calculus for Machine Learning
+title: Matrix Calculus for Data Science
 date: 2024-01-04
 description: Optimization & Multivariable Calculus 7 - Mathematics for Data Science
 tags: ml ai optimization calculus math
