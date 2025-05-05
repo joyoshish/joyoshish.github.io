@@ -2,7 +2,7 @@
 layout: post
 title: Optimization Strategies in Modern Machine Learning (Non-Convexity, Hyperparameters, and Meta-Learning)
 date: 2024-05-22
-description: Optimization & Multivariable Calculus 7 - Mathematics for Data Science
+description: Optimization & Multivariable Calculus 8 - Mathematics for Data Science
 tags: ml ai optimization calculus math
 categories: machine-learning math data-science-math
 thumbnail: assets/img/optmcalc_banner.jpg
