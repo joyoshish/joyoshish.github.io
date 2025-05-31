@@ -1,9 +1,0 @@
-digraph {
-	bgcolor=white
-	node [color="#006699" fillcolor="#3399cc" fontcolor=white fontname="Segoe UI" fontsize=14 shape=ellipse style=filled]
-	D [label=Disease]
-	F [label=Fever]
-	C [label=Cough]
-	D -> F
-	D -> C
-}

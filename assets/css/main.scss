@@ -30,3 +30,100 @@ $max-content-width: {{ site.max_width }};
     margin-top: 10px;
   }
 }
+/* Modern "Show Code" Collapsible UI */
+details.code-toggle-ui {
+  border: none;
+  border-radius: 8px;
+  background-color: var(--code-toggle-bg, #f4f4f4);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin: 1.5rem 0;
+  transition: background 0.3s ease;
+  overflow: hidden;
+}
+
+details.code-toggle-ui summary {
+  cursor: pointer;
+  padding: 0.75rem 1.2rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--code-toggle-text, #222);
+  background-color: var(--code-toggle-header, #e0e0e0);
+  border-radius: 8px;
+  border: 2px solid var(--code-toggle-border, #ccc);
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+details.code-toggle-ui summary:hover {
+  background-color: var(--code-toggle-hover, #d6d6d6);
+  border-color: var(--code-toggle-border-hover, #999);
+}
+
+details.code-toggle-ui[open] summary {
+  border-bottom: 1px solid var(--code-toggle-border, #ccc);
+  border-radius: 8px 8px 0 0;
+  border-color: var(--code-toggle-border-active, #aaa);
+}
+
+details.code-toggle-ui summary::marker,
+details.code-toggle-ui summary::-webkit-details-marker {
+  display: none;
+}
+
+details.code-toggle-ui summary span {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+}
+
+details.code-toggle-ui summary span::after {
+  content: "▼";
+  position: absolute;
+  right: 0;
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+  color: var(--code-toggle-text, #222);
+}
+
+details.code-toggle-ui[open] summary span::after {
+  transform: rotate(180deg);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  details.code-toggle-ui {
+    --code-toggle-bg: #1f1f1f;
+    --code-toggle-header: #2c2c2c;
+    --code-toggle-hover: #3a3a3a;
+    --code-toggle-text: #f0f0f0;
+    --code-toggle-border: #444;
+    --code-toggle-border-hover: #666;
+    --code-toggle-border-active: #555;
+  }
+}
+
+.simple-table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        
+        .simple-table th,
+        .simple-table td {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            text-align: center;
+            white-space: nowrap; /* Prevents text wrapping */
+            min-width: fit-content;
+        }
+        
+        /* Force MathJax elements to not wrap */
+        .simple-table .MathJax,
+        .simple-table .MathJax_Display,
+        .simple-table mjx-container {
+            white-space: nowrap !important;
+            display: inline !important;
+        }
+
