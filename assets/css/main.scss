@@ -104,26 +104,112 @@ details.code-toggle-ui[open] summary span::after {
   }
 }
 
+.simple-table-container {
+  overflow-x: auto;
+  width: 100%;
+}
+
 .simple-table {
-            border-collapse: collapse;
-            width: 100%;
-            margin: 20px 0;
-        }
-        
-        .simple-table th,
-        .simple-table td {
-            border: 1px solid #ddd;
-            padding: 8px 12px;
-            text-align: center;
-            white-space: nowrap; /* Prevents text wrapping */
-            min-width: fit-content;
-        }
-        
-        /* Force MathJax elements to not wrap */
-        .simple-table .MathJax,
-        .simple-table .MathJax_Display,
-        .simple-table mjx-container {
-            white-space: nowrap !important;
-            display: inline !important;
-        }
+  border-collapse: collapse;
+  margin: 20px 0;
+  display: block;            /* enables horizontal scroll */
+  width: max-content;        /* grows to fit content */
+  min-width: 100%;           /* fills full width if content is narrow */
+}
+
+.simple-table th,
+.simple-table td {
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  text-align: center;
+  white-space: nowrap;       /* prevent wrapping */
+}
+
+/* Center-align table headers explicitly */
+.simple-table thead th {
+  text-align: center !important;
+}
+
+/* Ensure MathJax-rendered elements don’t wrap or break layout */
+.simple-table .MathJax,
+.simple-table .MathJax_Display,
+.simple-table mjx-container {
+  white-space: nowrap !important;
+  display: inline !important;
+}
+
+
+
+@import 'starfield';
+
+
+// Base font setup
+html, body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Headings (h1 to h6)
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--heading-color);
+  margin: 1.4em 0 0.6em;
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.875rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.1rem; font-weight: 500; }
+h6 { font-size: 1rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+
+// Paragraphs
+p {
+  margin-bottom: 1.2rem;
+}
+
+// Code blocks
+code, pre {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.95em;
+  background: var(--code-bg);
+  color: var(--code-text);
+}
+
+pre {
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+// Links
+a {
+  color: var(--link-color);
+
+}
+
+:root[data-theme='light'] {
+  --link-color: #0066cc;
+  --link-hover-color: #003366;
+
+  --code-bg: #f4f4f6;        // soft light grey
+  --code-text: #111;         // almost black
+}
+
+
+:root[data-theme='dark'] {
+  --link-color: #8ab4f8;
+  --link-hover-color: #c3dafe;
+
+  --code-bg: #1e1e2f;        // dark background
+  --code-text: #eaeaea;      // light text
+}
 

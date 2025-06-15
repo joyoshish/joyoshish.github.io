@@ -1,0 +1,141 @@
+.starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: var(--starfield-bg);
+  // Color transition for theme switching
+  transition: background 0.4s ease;
+}
+
+.star {
+  position: absolute;
+  background: var(--star-color);
+  border-radius: 50%;
+  animation: twinkle 3s infinite;
+  
+  &.small {
+    width: 1px;
+    height: 1px;
+    animation-duration: 2s;
+  }
+  
+  &.medium {
+    width: 2px;
+    height: 2px;
+    animation-duration: 3s;
+    box-shadow: 0 0 4px var(--star-glow);
+  }
+  
+  &.large {
+    width: 3px;
+    height: 3px;
+    animation-duration: 4s;
+    box-shadow: 0 0 8px var(--star-glow), 0 0 16px var(--star-glow);
+  }
+}
+
+/* --- RESPONSIVE SHOOTING STAR BLOCK --- */
+.shooting-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: var(--star-color);
+  border-radius: 50%;
+  animation: shoot 10s linear infinite; /* Slower - increased from 6s to 10s */
+  opacity: 0;
+  box-shadow: 0 0 6px var(--star-glow);
+  transform-origin: center;
+  
+  /* === TAIL === */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 2px;                        /* starts flush with the dot on the right */
+    width: 60px;                       /* trail length */
+    height: 2px;
+    /* colour near the dot → transparent away from it (tail fades backwards) */
+    background: linear-gradient(to left, var(--star-color), transparent);
+    transform: translateY(-50%);       /* perfectly centred vertically */
+    transform-origin: right center;    /* rotate from the dot end */
+    box-shadow: 0 0 4px var(--star-glow);
+  }
+}
+
+.floating-star {
+  position: absolute;
+  animation: float 15s infinite linear;
+  opacity: 0.4;
+}
+
+// LIGHT/DARK VARIABLES
+:root[data-theme='dark'] {
+  --starfield-bg: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  --star-color: rgba(255, 255, 255, 0.8);
+  --star-glow: rgba(255, 255, 255, 0.5);
+}
+
+:root[data-theme='light'] {
+  .starfield {
+    display: none;
+  }
+}
+
+// Keyframes
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Updated keyframe using CSS custom property for dynamic angle */
+@keyframes shoot {
+  0% {
+    transform: translateX(100vw) translateY(-100vh) rotate(var(--shooting-star-angle, 135deg));
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100vw) translateY(100vh) rotate(var(--shooting-star-angle, 135deg));
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(100vh) translateX(0); opacity: 0.4; }
+  50% { opacity: 0.8; }
+  100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+}
+
+// Responsive & Accessibility
+@media (max-width: 768px) {
+  .star {
+    &.medium { width: 1.5px; height: 1.5px; }
+    &.large { width: 2px; height: 2px; }
+  }
+  
+  .shooting-star::before {
+    width: 40px; /* Slightly longer tail for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .shooting-star::before {
+    width: 30px; /* Shorter tail for very small screens */
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .star,
+  .shooting-star,
+  .floating-star {
+    animation: none;
+  }
+  
+  .star {
+    opacity: 0.6;
+  }
+}
