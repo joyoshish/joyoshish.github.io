@@ -2,10 +2,11 @@
 layout: post
 title: "Data Preprocessing Part 3: Data Transformation in Practice"
 date: 2024-08-24
-description: "How to Scale, Encode, and Prepare Data for Machine Learning"
+description: "Unlock the full power of your machine learning models by mastering data transformation in this practical, end-to-end guide. From scaling and normalization techniques like Z-score, min-max, and power transforms to encoding categorical variables with target encoding, embeddings, and clustering-based binning, this tutorial walks you through everything needed to make your data model-ready. Learn how to parse dates, engineer context-rich features, and preprocess unstructured data like text and images using tokenization, TF-IDF, augmentations, and more. With best practices for building scalable pipelines, avoiding data leakage, and handling real-world edge cases, this blog is your go-to blueprint for transforming raw, messy data into meaningful inputs that drive predictive performance.
+"
 tags: ml ai
 categories: machine-learning data-science-series
-thumbnail: assets/img/ds001_banner.jpg
+thumbnail: 
 math: true
 giscus_comments: true
 related_posts: true

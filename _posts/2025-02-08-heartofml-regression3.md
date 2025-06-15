@@ -2,10 +2,11 @@
 layout: post
 title: "Generalized Linear Models: A Unified Framework for Modern Regression"
 date: 2025-02-08
-description: Heart of ML — Regression E03
+description: "Discover how Generalized Linear Models (GLMs) extend the power of linear regression into a flexible, unified framework for modeling a wide variety of response variables. This comprehensive guide unpacks the core components of GLMs—the random component, linear predictor, and link function—while grounding them in the exponential family of distributions. Learn to choose the right link functions for different tasks, and explore popular models like logistic regression, Poisson regression, multinomial regression, and more advanced variants like the negative binomial. Dive deep into maximum likelihood estimation, IRLS optimization, and diagnostic tools like deviance, AIC, and residual analysis. Whether you're modeling count data, probabilities, or non-Gaussian responses, this blog equips you with both theoretical intuition and practical know-how to use GLMs effectively in modern data science.
+"
 tags: ml ai regression
 categories: machine-learning heart-of-ml
-thumbnail: assets/img/regression03_banner.png
+thumbnail: 
 math: true
 giscus_comments: true
 related_posts: true

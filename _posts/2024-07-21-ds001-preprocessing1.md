@@ -2,10 +2,10 @@
 layout: post
 title: "Data Preprocessing Part 1: Exploring, Profiling, and Collecting Data the Right Way"
 date: 2024-07-21
-description: "From Raw to Ready: A Deep Dive into Data Collection and Understanding"
+description: "Start your data journey the right way with this foundational guide to data exploration, profiling, and collection. Learn how to gather high-quality, representative data across diverse formats—structured tables, text, images, time-series, and geo-spatial sources—while navigating domain nuances and ethical considerations. Master the art of Exploratory Data Analysis (EDA), from univariate summaries and multivariate insights to domain-specific diagnostics and statistical validation. Whether you're detecting missingness, uncovering bias, analyzing drift, or preparing streaming data windows, this blog equips you with the tools and frameworks needed to understand your data deeply before modeling begins. Packed with practical tips, checklists, and real-world context, it's your essential first step toward building smarter, more trustworthy ML systems."
 tags: ml ai
 categories: machine-learning data-science-series
-thumbnail: assets/img/ds001_banner.jpg
+thumbnail: 
 math: true
 giscus_comments: true
 related_posts: true

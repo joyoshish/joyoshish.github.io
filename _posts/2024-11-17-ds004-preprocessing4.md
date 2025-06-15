@@ -2,10 +2,10 @@
 layout: post
 title: "Data Preprocessing Part 4: Feature Engineering"
 date: 2024-11-17
-description: "Feature Engineering Unleashed: Selecting and Creating Powerful ML Features"
+description: "Learn the art and science of feature engineering in machine learning with this deep-dive, hands-on guide. Whether you're cleaning messy data or crafting domain-smart variables, this tutorial covers it all—feature selection techniques like Chi-squared, mutual information, RFE, Lasso, and tree-based methods, along with feature creation strategies including polynomial terms, time-based aggregations, and interaction effects. Explore powerful tools for text data like TF-IDF, word embeddings, and BERT, and learn when and how to discretize features through binning. With practical workflows, pipeline integration, automation strategies, and domain-driven insights, you'll walk away ready to design high-impact features that make your models smarter, faster, and more robust in the real world."
 tags: ml ai
 categories: machine-learning data-science-series
-thumbnail: assets/img/ds001_banner.jpg
+thumbnail: 
 math: true
 giscus_comments: true
 related_posts: true

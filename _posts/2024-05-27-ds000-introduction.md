@@ -2,10 +2,10 @@
 layout: post
 title: "Your First Step into Data Science: Terminologies, Pipelines, and Beyond"
 date: 2024-05-27
-description: What You Should Know Before Starting in Data Science
+description: "Take your first confident step into the world of data science with this foundational guide that demystifies the entire ML-AI ecosystem. From understanding the difference between AI, ML, Deep Learning, and Data Science to tracing their historical evolution—from expert systems to modern neural networks—this blog builds a complete conceptual map for beginners and transitioning professionals alike. Explore learning paradigms like supervised, unsupervised, reinforcement, and self-supervised learning, and dive into model categories from regression and classification to clustering and recommendation systems. Understand key theoretical distinctions—parametric vs. non-parametric, probabilistic vs. deterministic, and generative vs. discriminative models—and get fluent in essential terminologies, data formats, and ML pipeline stages. Whether you're decoding buzzwords or preparing to build your first model, this blog equips you with the clarity, language, and structure to navigate data science with purpose."
 tags: ml ai
 categories: machine-learning data-science-series
-thumbnail: assets/img/ds000_banner0.jpg
+thumbnail: 
 math: true
 giscus_comments: true
 related_posts: true
