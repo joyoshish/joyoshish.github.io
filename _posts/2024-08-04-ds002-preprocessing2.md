@@ -2,8 +2,8 @@
 layout: post
 title: "Data Preprocessing Part 2: Mastering the Mess with Effective Data Cleaning"
 date: 2024-08-04
-description: "Clean data, clear insights—this comprehensive guide to data cleaning in machine learning shows you how to turn messy, inconsistent, and incomplete data into reliable inputs for modeling. Learn how to enforce data quality with structural checks, eliminate duplicates, and validate consistency across features. Master missing value treatment with strategies ranging from simple imputation to advanced methods like KNN, iterative models, and time-series interpolation. Discover powerful outlier detection techniques—Z-score, IQR, Isolation Forest—and how to handle anomalies without biasing your model. You’ll also get hands-on techniques for fixing inconsistent text, consolidating categories, and maintaining semantic integrity across datasets. Packed with decision frameworks, production-ready tips, and real-world applications, this blog equips you with everything you need to clean data effectively and responsibly."
-tags: ml ai
+description: "A detailed guide to data cleaning for machine learning—covering structural validation, missing value imputation, outlier detection, text normalization, and categorical consolidation. Learn how to transform messy data into reliable, model-ready inputs with practical strategies and real-world techniques."
+tags: ml ai data-preprocessing
 categories: machine-learning data-science-series
 thumbnail: 
 math: true

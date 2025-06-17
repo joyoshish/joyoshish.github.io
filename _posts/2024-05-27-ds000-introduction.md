@@ -2,7 +2,7 @@
 layout: post
 title: "Your First Step into Data Science: Terminologies, Pipelines, and Beyond"
 date: 2024-05-27
-description: "Take your first confident step into the world of data science with this foundational guide that demystifies the entire ML-AI ecosystem. From understanding the difference between AI, ML, Deep Learning, and Data Science to tracing their historical evolution—from expert systems to modern neural networks—this blog builds a complete conceptual map for beginners and transitioning professionals alike. Explore learning paradigms like supervised, unsupervised, reinforcement, and self-supervised learning, and dive into model categories from regression and classification to clustering and recommendation systems. Understand key theoretical distinctions—parametric vs. non-parametric, probabilistic vs. deterministic, and generative vs. discriminative models—and get fluent in essential terminologies, data formats, and ML pipeline stages. Whether you're decoding buzzwords or preparing to build your first model, this blog equips you with the clarity, language, and structure to navigate data science with purpose."
+description: "A comprehensive introduction to data science and machine learning, covering the evolution of AI, key differences between ML, DL, and AI, types of learning paradigms, model categories, theoretical distinctions, and core pipeline stages—built to establish a strong conceptual foundation."
 tags: ml ai
 categories: machine-learning data-science-series
 thumbnail: 

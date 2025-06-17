@@ -2,10 +2,9 @@
 layout: post
 title: Beyond OLS — A Deep Dive into Ridge, Lasso, and Elastic Net
 date: 2025-01-26
-description: "Go beyond Ordinary Least Squares and uncover the power of regularization with this comprehensive guide to Ridge, Lasso, and Elastic Net regression. Learn why regularization is essential for tackling multicollinearity, overfitting, and high-dimensional feature spaces. Dive deep into the mathematics behind each method—Ridge’s stability-inducing shrinkage, Lasso’s sparsity-enforcing soft-thresholding, and Elastic Net’s elegant balance of both. Explore closed-form derivations, coordinate descent algorithms, and numerical examples that walk you through each step of the solution. Gain geometric intuition through constraint visualizations and learn when to use each model based on bias–variance tradeoffs, feature correlation, and model interpretability. Packed with practical tips, visualizations, and side-by-side comparisons, this blog is your ultimate guide to mastering modern linear regression techniques.
-"
-tags: ml ai regression
-categories: machine-learning heart-of-ml
+description: "A complete guide to Ridge, Lasso, and Elastic Net regression—explaining their mathematical foundations, optimization techniques, and use cases. Learn how regularization addresses multicollinearity and overfitting, with visualizations, derivations, and practical model comparisons."
+tags: ml ai 
+categories: machine-learning heart-of-ml data-science-series
 thumbnail: 
 math: true
 giscus_comments: true

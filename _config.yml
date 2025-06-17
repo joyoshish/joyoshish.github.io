@@ -302,7 +302,7 @@ jekyll-archives:
     category: "/blog/category/:name/"
  
 
-display_tags: ["regression", "linear-algebra", "probability-statistics", "optimization" , "calculus"] # these tags will be displayed on the front page of your blog
+display_tags: ["data-preprocessing", "linear-algebra", "probability-statistics", "optimization" , "calculus"] # these tags will be displayed on the front page of your blog
 display_categories: ["machine-learning" , "data-science-math", "heart-of-ml"] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------

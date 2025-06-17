@@ -2,10 +2,9 @@
 layout: post
 title: "Linear Regression Explained: From Normal Equations to Residual Diagnostics"
 date: 2025-01-12
-description: "Unravel the fundamentals of linear regression in this rigorous yet intuitive guide, starting from the normal equation and stretching all the way to advanced residual diagnostics. Learn how ordinary least squares (OLS) works, both algebraically and geometrically, and explore the conditions under which it's the best linear unbiased estimator (BLUE) via the Gauss-Markov theorem. Follow step-by-step derivations, real-world examples, and 3D visualizations that bring projections and linear modeling to life. Then shift gears to dive deep into model diagnostics—residual plots, Q-Q analysis, Durbin–Watson test, leverage points, Cook’s distance, and DFBETAs—so you can detect violations of assumptions, assess model quality, and identify influential data points. Whether you're new to regression or refining your statistical intuition, this blog equips you to fit, interpret, and validate linear models with clarity and confidence.
-"
-tags: ml ai regression
-categories: machine-learning heart-of-ml
+description: "A detailed guide to linear regression using OLS—covering the normal equation, Gauss-Markov assumptions, geometric intuition, and residual diagnostics like Q-Q plots, Cook’s distance, and DFBETAs. Learn to fit, interpret, and validate regression models with mathematical depth and practical insight."
+tags: ml ai 
+categories: machine-learning heart-of-ml data-science-series
 thumbnail: 
 math: true
 giscus_comments: true

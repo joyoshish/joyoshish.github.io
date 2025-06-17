@@ -2,8 +2,8 @@
 layout: post
 title: "Data Preprocessing Part 5: Handling Imbalanced Data"
 date: 2024-11-23
-description: "Learn how to handle imbalanced datasets in machine learning with this comprehensive, beginner-friendly guide. Explore real-world examples from fraud detection to medical diagnostics, and master powerful techniques like SMOTE, class weighting, ensemble models, and evaluation metrics like PR-AUC and F1-score. Whether you're a data science student or a working professional, this tutorial walks you through data-level, algorithm-level, and advanced solutions to build reliable models on skewed data distributions."
-tags: ml ai
+description: "A complete guide to handling imbalanced datasets in machine learning—covering SMOTE, class weighting, ensemble methods, and metrics like PR-AUC and F1-score. Learn practical strategies to build reliable models on skewed class distributions across real-world use cases."
+tags: ml ai data-preprocessing
 categories: machine-learning data-science-series
 thumbnail: 
 math: true

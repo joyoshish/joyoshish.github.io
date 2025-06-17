@@ -2,8 +2,8 @@
 layout: post
 title: "Data Preprocessing Part 1: Exploring, Profiling, and Collecting Data the Right Way"
 date: 2024-07-21
-description: "Start your data journey the right way with this foundational guide to data exploration, profiling, and collection. Learn how to gather high-quality, representative data across diverse formats—structured tables, text, images, time-series, and geo-spatial sources—while navigating domain nuances and ethical considerations. Master the art of Exploratory Data Analysis (EDA), from univariate summaries and multivariate insights to domain-specific diagnostics and statistical validation. Whether you're detecting missingness, uncovering bias, analyzing drift, or preparing streaming data windows, this blog equips you with the tools and frameworks needed to understand your data deeply before modeling begins. Packed with practical tips, checklists, and real-world context, it's your essential first step toward building smarter, more trustworthy ML systems."
-tags: ml ai
+description: "A practical guide to data collection, profiling, and exploratory data analysis (EDA) across formats like text, images, time-series, and geospatial data. Learn how to assess quality, detect bias, handle missingness, and apply domain-aware diagnostics before modeling."
+tags: ml ai data-preprocessing
 categories: machine-learning data-science-series
 thumbnail: 
 math: true
