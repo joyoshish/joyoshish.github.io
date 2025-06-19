@@ -15,7 +15,6 @@ toc:
   beginning: true
 ---
 
-
 ## Why Go Beyond Linear Regression?
 
 Linear regression is one of the most foundational models in statistics and machine learning. It assumes a linear relationship between input features and the output variable, with errors that are normally distributed, independent, and homoscedastic. For many real-world problems, this model serves as a reliable starting point.

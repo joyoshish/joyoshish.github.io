@@ -14,6 +14,7 @@
     {% endif %}
     {% include head.liquid %}
 
+   
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   </head>
@@ -81,8 +82,12 @@
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 
-  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-<script defer src="https://pyscript.net/latest/pyscript.js"></script>
+{% unless page.permalink == "/dsroadmap/" %}
+  <script src="https://pyscript.net/latest/pyscript.js"></script>
+{% endunless %}
+
+<!--   <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+<script defer src="https://pyscript.net/latest/pyscript.js"></script> -->
 
 <script src="{{ '/assets/js/lunr.min.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/search.js' | relative_url }}"></script>

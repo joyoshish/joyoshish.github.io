@@ -15,7 +15,9 @@ toc:
   beginning: true
 ---
 
-
+<nav class="text-sm text-gray-500 mb-4">
+  <a href="/" class="hover:underline">Home</a> → <a href="/ds-roadmap" class="hover:underline">DS Roadmap</a> → <span>Introduction to Data Science</span>
+</nav>
 
 In 2021, a revolution happened in molecular biology — powered not by test tubes or microscopes, but by code.
 

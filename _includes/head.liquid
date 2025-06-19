@@ -179,3 +179,13 @@
     }
   }
 </style>
+
+
+{% if page.layout == "dsroadmap" %}
+  <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+{% endif %}
+
+{% unless page.permalink == "/dsroadmap/" %}
+  {% include scripts/mathjax.liquid %}
+{% endunless %}

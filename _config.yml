@@ -218,6 +218,7 @@ include:
   - _pages/about.md
   # - _pages/cv.md
   - _pages/blogging.md
+  - _pages/ds-roadmap.md
   # - _pages/projects.md
   - _pages/research.md
   - _pages/resource.md
@@ -225,6 +226,7 @@ include:
   - _pages/rndmresrc.md
   # - _pages/gallery.md
   - _pages/contact.md
+
 exclude:
   - _pages/repositories.md
   - bin/
