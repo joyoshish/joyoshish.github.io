@@ -6,8 +6,6 @@ nav: false
 toc: false
 ---
 
-
-
 <style>
 :root {
   --ds-surface: #fff;
@@ -130,27 +128,24 @@ body.dark, html.dark, [data-theme="dark"], body.dark-mode {
 }
 
 .roadmap summary::-webkit-details-marker { display: none; }
+
+/* Fixed dropdown arrow using CSS borders instead of SVG masks */
 .roadmap summary::before {
   content: "";
-  width: 16px; height: 16px;
-  border-radius: 50%;
-  background: linear-gradient(145deg, var(--ds-accent-light), var(--ds-accent) 60%);
-  margin-right: 0.05em;
-  box-shadow: 0 2px 4px rgba(40,120,255,.08);
-  mask-image: url('data:image/svg+xml;utf8,<svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4l4 4-4 4" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
-  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4l4 4-4 4" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
-  mask-repeat: no-repeat; mask-position: center;
-  -webkit-mask-repeat: no-repeat; -webkit-mask-position: center;
-  mask-size: 14px 14px;
-  -webkit-mask-size: 14px 14px;
-  transition: transform .21s cubic-bezier(.4,0,.2,1), box-shadow .21s;
-  background-size: 100% 100%;
+  width: 0;
+  height: 0;
+  border-left: 6px solid var(--ds-accent);
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  margin-right: 0.5rem;
+  transition: transform .21s cubic-bezier(.4,0,.2,1);
   opacity: 0.8;
 }
+
 .roadmap details[open] > summary::before {
-  transform: rotate(90deg) scale(1.13);
+  transform: rotate(90deg);
   opacity: 1;
-  background: linear-gradient(120deg, var(--ds-accent-light), var(--ds-accent));
+  border-left-color: var(--ds-accent-light);
 }
 
 .roadmap summary:hover {
@@ -280,8 +275,6 @@ body.dark, html.dark, [data-theme="dark"], body.dark-mode {
   .roadmap details > ul { padding: 0 1.15rem 1.2rem;}
 }
 </style>
-
-
 
 <center>
   <h2>Data Science Blog Series</h2>
