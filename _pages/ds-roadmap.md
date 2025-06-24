@@ -373,8 +373,9 @@ body.dark, html.dark, [data-theme="dark"], body.dark-mode {
       <li><a href="{{ site.baseurl }}/blog/2025/ds008-heartofml-regression2/">3.1.2 Regularized Linear Models</a></li>
       <li><a href="{{ site.baseurl }}/blog/2025/ds009-heartofml-regression3/">3.1.3 Generalized Linear Models</a></li>
       <li><a href="{{ site.baseurl }}/blog/2025/ds010-heartofml-regression4/">3.1.4 Evaluation Metrics</a></li>
-      <li><em>3.1.5 Robust Regression</em> <span class="status-badge status-upcoming">Soon</span></li>
-      <li><em>3.1.6 Polynomial & Basis-Function Regression</em> <span class="status-badge status-upcoming">Soon</span></li>
+      <li><a href="{{ site.baseurl }}/blog/2025/ds011-heartofml-regression5/">3.1.5 Robust Regression</a></li>
+      <li><a href="{{ site.baseurl }}/blog/2025/ds012-heartofml-regression6/">3.1.6 Capturing Non-Linearity in Regression</a></li>
+      <li><a href="{{ site.baseurl }}/blog/2025/ds013-heartofml-regression7/">3.1.7 Advanced Parametric Regression Techniques</a></li>
       <li><em>3.1.7 Optimization Techniques for Regression</em> <span class="status-badge status-upcoming">Soon</span></li>
     </ul>
   </details></li>
