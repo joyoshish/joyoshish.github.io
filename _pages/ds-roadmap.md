@@ -367,179 +367,181 @@ body.dark, html.dark, [data-theme="dark"], body.dark-mode {
 <ul>
 
   <!-- 3.1 Regression -->
-  <li><details><summary>3.1 Regression</summary>
-    <ul>
-      <li><a href="{{ site.baseurl }}/blog/2025/ds007-heartofml-regression1/">3.1.1 Linear Regression (OLS)</a></li>
-      <li><a href="{{ site.baseurl }}/blog/2025/ds008-heartofml-regression2/">3.1.2 Regularized Linear Models</a></li>
-      <li><a href="{{ site.baseurl }}/blog/2025/ds009-heartofml-regression3/">3.1.3 Generalized Linear Models</a></li>
-      <li><a href="{{ site.baseurl }}/blog/2025/ds010-heartofml-regression4/">3.1.4 Evaluation Metrics</a></li>
-      <li><a href="{{ site.baseurl }}/blog/2025/ds011-heartofml-regression5/">3.1.5 Robust Regression</a></li>
-      <li><a href="{{ site.baseurl }}/blog/2025/ds012-heartofml-regression6/">3.1.6 Capturing Non-Linearity in Regression</a></li>
-      <li><a href="{{ site.baseurl }}/blog/2025/ds013-heartofml-regression7/">3.1.7 Advanced Parametric Regression Techniques</a></li>
-      <li><em>3.1.7 Optimization Techniques for Regression</em> <span class="status-badge status-upcoming">Soon</span></li>
-    </ul>
-  </details></li>
+<li><details><summary>3.1 Regression — Linear, Regularized, Robust & Advanced Parametric Models</summary>
+  <ul>
+    <li><a href="{{ site.baseurl }}/blog/2025/ds007-heartofml-regression1/">3.1.1 Linear Regression (OLS): Foundations, Assumptions, and Interpretation</a></li>
+    <li><a href="{{ site.baseurl }}/blog/2025/ds008-heartofml-regression2/">3.1.2 Regularized Linear Models: Ridge, Lasso, Elastic Net Explained</a></li>
+    <li><a href="{{ site.baseurl }}/blog/2025/ds009-heartofml-regression3/">3.1.3 Generalized Linear Models (GLMs): Logistic, Poisson & Beyond</a></li>
+    <li><a href="{{ site.baseurl }}/blog/2025/ds010-heartofml-regression4/">3.1.4 Evaluation Metrics for Regression: MAE, RMSE, R², and More</a></li>
+    <li><a href="{{ site.baseurl }}/blog/2025/ds011-heartofml-regression5/">3.1.5 Robust Regression: Huber, RANSAC, and Quantile Methods</a></li>
+    <li><a href="{{ site.baseurl }}/blog/2025/ds012-heartofml-regression6/">3.1.6 Capturing Non-Linearity: Polynomial, Splines & Basis Expansions</a></li>
+    <li><a href="{{ site.baseurl }}/blog/2025/ds013-heartofml-regression7/">3.1.7 Advanced Parametric Regression: Bayesian Models, Mixed Effects, GPs</a></li>
+    <li><em>3.1.8 Optimization Techniques for Regression: Gradient Descent, Normal Equations, SGD</em> <span class="status-badge status-upcoming">Soon</span></li>
+  </ul>
+</details></li>
 
-  <!-- 3.2 Classification -->
-  <li><details><summary>3.2 Classification</summary>
-    <ul>
-      <li><em>3.2.1 Foundations & Problem Framing</em> <span class="status-badge status-upcoming">Soon</span></li>
-      <li><em>3.2.2 Classical P1 (Logistic, Naïve Bayes)</em> <span class="status-badge status-upcoming">Soon</span></li>
-      <li><em>3.2.3 Classical P2 (k-NN, SVM)</em> <span class="status-badge status-upcoming">Soon</span></li>
-      <li><em>3.2.4 Advanced P1 (Softmax, LDA)</em> <span class="status-badge status-upcoming">Soon</span></li>
-      <li><em>3.2.5 Advanced P2 (QDA, PGMs)</em> <span class="status-badge status-upcoming">Soon</span></li>
-      <li><em>3.2.6 Evaluation & Diagnostics</em> <span class="status-badge status-upcoming">Soon</span></li>
-      <li><em>3.2.7 Optimization & Training</em> <span class="status-badge status-upcoming">Soon</span></li>
-      <li><em>3.2.8 Deployment & Interpretability</em> <span class="status-badge status-upcoming">Soon</span></li>
-    </ul>
-  </details></li>
 
-  <!-- 3.3 Tree/Ensemble -->
-  <li><details><summary>3.3 Tree-Based & Ensemble Methods</summary>
-    <ul>
-      <li><em>3.3.1 Decision Trees</em> <span class="status-badge status-upcoming">Soon</span></li>
-      <li><em>3.3.2 Random Forests</em> <span class="status-badge status-upcoming">Soon</span></li>
-      <li><em>3.3.3 Boosting Algorithms</em> <span class="status-badge status-upcoming">Soon</span></li>
-    </ul>
-  </details></li>
+ <!-- 3.2 Classification -->
+<li><details><summary>3.2 Classification — Foundations, Algorithms, Evaluation & Deployment</summary>
+  <ul>
+    <li><em>3.2.1 Foundations of Classification: Problem Framing, Data Prep & Label Encoding</em> <span class="status-badge status-upcoming">Soon</span></li>
+    <li><em>3.2.2 Classical Algorithms Part 1: Logistic Regression & Naïve Bayes Classifiers</em> <span class="status-badge status-upcoming">Soon</span></li>
+    <li><em>3.2.3 Classical Algorithms Part 2: k-Nearest Neighbors (k-NN) & Support Vector Machines (SVM)</em> <span class="status-badge status-upcoming">Soon</span></li>
+    <li><em>3.2.4 Advanced Models Part 1: Softmax Regression & Linear Discriminant Analysis (LDA)</em> <span class="status-badge status-upcoming">Soon</span></li>
+    <li><em>3.2.5 Advanced Models Part 2: Quadratic Discriminant Analysis (QDA) & Probabilistic Graphical Models (PGMs)</em> <span class="status-badge status-upcoming">Soon</span></li>
+    <li><em>3.2.6 Model Evaluation & Diagnostics: Confusion Matrix, ROC-AUC, PR Curves</em> <span class="status-badge status-upcoming">Soon</span></li>
+    <li><em>3.2.7 Optimization & Training: Loss Functions, Gradient Descent, Regularization</em> <span class="status-badge status-upcoming">Soon</span></li>
+    <li><em>3.2.8 Real-World Deployment & Interpretability: SHAP, LIME & Model Explainability</em> <span class="status-badge status-upcoming">Soon</span></li>
+  </ul>
+</details></li>
 
-  <!-- 3.4 Unsupervised -->
-  <li><details><summary>3.4 Unsupervised Learning</summary>
-    <ul>
-      <li><em>3.4.1 Clustering</em> <span class="status-badge status-upcoming">Soon</span></li>
-      <li><em>3.4.2 Dimensionality Reduction & Embeddings</em> <span class="status-badge status-upcoming">Soon</span></li>
-      <li><em>3.4.3 Anomaly Detection</em> <span class="status-badge status-upcoming">Soon</span></li>
-      <li><em>3.4.4 Association Rule Learning</em> <span class="status-badge status-upcoming">Soon</span></li>
-      <li><em>3.4.5 Recommender Systems (Bridge)</em> <span class="status-badge status-upcoming">Soon</span></li>
-    </ul>
-  </details></li>
+<!-- 3.3 Tree/Ensemble -->
+<li><details><summary>3.3 Tree-Based & Ensemble Learning — Decision Trees, Bagging, Boosting</summary>
+  <ul>
+    <li><em>3.3.1 Decision Trees Explained: ID3, CART, Gini Index, Entropy</em> <span class="status-badge status-upcoming">Soon</span></li>
+    <li><em>3.3.2 Random Forests for Regression and Classification: Ensemble Bagging Techniques</em> <span class="status-badge status-upcoming">Soon</span></li>
+    <li><em>3.3.3 Boosting Algorithms: AdaBoost, Gradient Boosting, XGBoost, LightGBM, CatBoost</em> <span class="status-badge status-upcoming">Soon</span></li>
+  </ul>
+</details></li>
 
-  <!-- 3.5 Probabilistic -->
-  <li><details><summary>3.5 Probabilistic & Generative Models</summary>
-    <ul>
-      <li><em>3.5.1 MLE & MAP</em> <span class="status-badge status-upcoming">Soon</span></li>
-      <li><em>3.5.2 Expectation-Maximization</em> <span class="status-badge status-upcoming">Soon</span></li>
-      <li><em>3.5.3 Hidden Markov Models</em> <span class="status-badge status-upcoming">Soon</span></li>
-      <li><em>3.5.4 Conditional Random Fields</em> <span class="status-badge status-upcoming">Soon</span></li>
-    </ul>
-  </details></li>
+<!-- 3.4 Unsupervised -->
+<li><details><summary>3.4 Unsupervised Learning — Clustering, Dimensionality Reduction, Anomaly Detection</summary>
+  <ul>
+    <li><em>3.4.1 Clustering Algorithms: k-Means, DBSCAN, Hierarchical Clustering</em> <span class="status-badge status-upcoming">Soon</span></li>
+    <li><em>3.4.2 Dimensionality Reduction & Embeddings: PCA, t-SNE, UMAP</em> <span class="status-badge status-upcoming">Soon</span></li>
+    <li><em>3.4.3 Anomaly Detection Techniques: Statistical, Distance-Based, Isolation Forest</em> <span class="status-badge status-upcoming">Soon</span></li>
+    <li><em>3.4.4 Association Rule Learning: Apriori, FP-Growth, Market Basket Analysis</em> <span class="status-badge status-upcoming">Soon</span></li>
+    <li><em>3.4.5 Recommender Systems (Bridge Topic): Collaborative Filtering & Hybrid Models</em> <span class="status-badge status-upcoming">Soon</span></li>
+  </ul>
+</details></li>
+
+<!-- 3.5 Probabilistic -->
+<li><details><summary>3.5 Probabilistic & Generative Models — MLE, MAP, EM, HMMs, CRFs</summary>
+  <ul>
+    <li><em>3.5.1 Maximum Likelihood & MAP Estimation: Foundations of Probabilistic Modeling</em> <span class="status-badge status-upcoming">Soon</span></li>
+    <li><em>3.5.2 Expectation-Maximization (EM): Latent Variables & Gaussian Mixture Models</em> <span class="status-badge status-upcoming">Soon</span></li>
+    <li><em>3.5.3 Hidden Markov Models (HMM): Sequence Modeling with Forward-Backward Algorithm</em> <span class="status-badge status-upcoming">Soon</span></li>
+    <li><em>3.5.4 Conditional Random Fields (CRF): Structured Prediction for NLP & Vision</em> <span class="status-badge status-upcoming">Soon</span></li>
+  </ul>
+</details></li>
 
 </ul>
 </details>
 
 <!-- 4. Evaluation -->
 <details>
-<summary>4. Model Evaluation, Hyper-parameter Tuning & Experimentation <span class="status-badge status-upcoming">Coming</span></summary>
+<summary>4. Model Evaluation, Hyperparameter Tuning & Experimentation — CV, Metrics, Interpretability, A/B Testing <span class="status-badge status-upcoming">Coming</span></summary>
 <ul>
-  <li><em>4.1 Cross-Validation Strategies</em></li>
-  <li><em>4.2 Metric Selection</em></li>
-  <li><em>4.3 Hyper-parameter Optimization</em></li>
-  <li><em>4.4 Model Interpretability</em></li>
-  <li><em>4.5 A/B Testing & Experimentation</em></li>
-  <li><em>4.6 Fairness & Bias Mitigation</em></li>
+  <li><em>4.1 Cross-Validation Strategies: k-Fold, Time-Series CV, and Nested Validation</em></li>
+  <li><em>4.2 Metric Selection: Evaluation Metrics for Classification, Regression, Ranking, and More</em></li>
+  <li><em>4.3 Hyperparameter Optimization: Grid Search, Bayesian Tuning, AutoML</em></li>
+  <li><em>4.4 Model Interpretability: SHAP, LIME, PDP, Feature Attribution</em></li>
+  <li><em>4.5 A/B Testing & Experimentation: Design, Power Analysis, CUPED</em></li>
+  <li><em>4.6 Fairness & Bias Mitigation: Metrics, Algorithms, and Case Studies</em></li>
 </ul>
 </details>
 
 <!-- 5. Deep Learning -->
 <details>
-<summary>5. Deep Learning <span class="status-badge status-upcoming">Coming</span></summary>
+<summary>5. Deep Learning — Architectures, Generative Models, and Graph ML <span class="status-badge status-upcoming">Coming</span></summary>
 <ul>
 
   <!-- 5.1 Fundamentals -->
-  <li><details><summary>5.1 Neural Network Fundamentals</summary>
+  <li><details><summary>5.1 Neural Network Fundamentals — Architecture, Training & Regularization</summary>
     <ul>
-      <li><em>5.1.1 Perceptron & Feed-Forward NNs</em></li>
-      <li><em>5.1.2 Training Neural Networks</em></li>
-      <li><em>5.1.3 Regularization in NNs</em></li>
-      <li><em>5.1.4 Loss Functions (Cross-Entropy, MSE, Focal)</em></li>
-      <li><em>5.1.5 Code Example: MNIST MLP</em></li>
+      <li><em>5.1.1 Perceptron & Feedforward Neural Networks: Basics of Deep Learning</em></li>
+      <li><em>5.1.2 Training Neural Networks: Backpropagation, Optimizers, Initialization</em></li>
+      <li><em>5.1.3 Regularization in Neural Networks: Dropout, Weight Decay, BatchNorm</em></li>
+      <li><em>5.1.4 Loss Functions: Cross-Entropy, MSE, Focal Loss and Use Cases</em></li>
+      <li><em>5.1.5 Code Walkthrough: MNIST Classification with MLP (PyTorch/Keras)</em></li>
     </ul>
   </details></li>
 
   <!-- 5.2 Architectures -->
-  <li><details><summary>5.2 Deep Learning Architectures</summary>
+  <li><details><summary>5.2 Deep Learning Architectures — CNNs, RNNs, and Transformers</summary>
     <ul>
-      <li><em>5.2.1 Convolutional Neural Networks (CNNs)</em></li>
-      <li><em>5.2.2 Recurrent Neural Networks (RNNs) and Sequence Models</em></li>
-      <li><em>5.2.3 Attention Mechanism & Transformers</em></li>
+      <li><em>5.2.1 Convolutional Neural Networks (CNNs): Vision Models & Feature Hierarchies</em></li>
+      <li><em>5.2.2 Recurrent Neural Networks (RNNs) and Sequence Models: LSTM, GRU, Bidirectional Models</em></li>
+      <li><em>5.2.3 Attention Mechanisms & Transformers: Self-Attention, BERT, GPT</em></li>
     </ul>
   </details></li>
 
   <!-- 5.3 Generative DL -->
-  <li><details><summary>5.3 Generative Deep Learning</summary>
+  <li><details><summary>5.3 Generative Deep Learning — Autoencoders, VAEs, and GANs</summary>
     <ul>
-      <li><em>5.3.1 Autoencoders</em></li>
-      <li><em>5.3.2 Variational Autoencoders (VAE)</em></li>
-      <li><em>5.3.3 Generative Adversarial Networks (GANs)</em></li>
+      <li><em>5.3.1 Autoencoders: Dimensionality Reduction, Denoising, Anomaly Detection</em></li>
+      <li><em>5.3.2 Variational Autoencoders (VAE): Latent Space Learning & Sample Generation</em></li>
+      <li><em>5.3.3 Generative Adversarial Networks (GANs): Image Synthesis & Applications</em></li>
     </ul>
   </details></li>
 
   <!-- 5.4 Graph ML -->
-  <li><em>5.4 Graph Machine Learning</em></li>
+  <li><em>5.4 Graph Machine Learning: GCNs, GraphSAGE, GAT for Networked Data</em></li>
 
 </ul>
 </details>
 
 <!-- 6. Specialized -->
 <details>
-<summary>6. Specialized Topics in Data Science <span class="status-badge status-upcoming">Coming</span></summary>
+<summary>6. Specialized Topics in Data Science — Recommenders, Time Series, NLP, Vision, RL <span class="status-badge status-upcoming">Coming</span></summary>
 <ul>
-  <li><em>6.1 Recommender Systems</em></li>
-  <li><em>6.2 Time-Series & Forecasting</em></li>
-  <li><em>6.3 Bayesian & Probabilistic ML</em></li>
-  <li><em>6.4 Natural Language Processing</em></li>
-  <li><em>6.5 Computer Vision</em></li>
-  <li><em>6.6 Reinforcement Learning & Bandits</em></li>
+  <li><em>6.1 Recommender Systems: Collaborative Filtering, Hybrid Models & Ranking Metrics</em></li>
+  <li><em>6.2 Time-Series Forecasting: ARIMA, XGBoost, LSTM & Transformer-Based Models</em></li>
+  <li><em>6.3 Bayesian & Probabilistic ML: MCMC, Variational Inference, Uncertainty Modeling</em></li>
+  <li><em>6.4 Natural Language Processing (NLP): Embeddings, Transformers & Classification</em></li>
+  <li><em>6.5 Computer Vision: Detection, Segmentation & Transfer Learning</em></li>
+  <li><em>6.6 Reinforcement Learning & Bandits: Q-Learning, PPO, and Exploration Strategies</em></li>
 </ul>
 </details>
 
 <!-- 7. Production -->
 <details>
-<summary>7. Production Deployment & Monitoring <span class="status-badge status-upcoming">Coming</span></summary>
+<summary>7. Production Deployment & Monitoring — Pipelines, Drift, Serving, CI/CD <span class="status-badge status-upcoming">Coming</span></summary>
 <ul>
-  <li><em>7.1 From Prototype to Production</em></li>
-  <li><em>7.2 Pipelines & Serialization</em></li>
-  <li><em>7.3 Deployment Strategies</em></li>
-  <li><em>7.4 Model Serving</em></li>
-  <li><em>7.5 Monitoring & Maintenance</em></li>
-  <li><em>7.6 Scalability & Optimization</em></li>
-  <li><em>7.7 Infrastructure Challenges</em></li>
+  <li><em>7.1 From Prototype to Production: Packaging & Testing ML Models</em></li>
+  <li><em>7.2 Pipelines & Serialization: MLflow, ONNX, Scikit-Learn Pipelines</em></li>
+  <li><em>7.3 Deployment Strategies: REST APIs, Docker, Real-Time vs Batch Inference</em></li>
+  <li><em>7.4 Model Serving: FastAPI, TorchServe, GCP Vertex, AWS SageMaker</em></li>
+  <li><em>7.5 Monitoring & Maintenance: Drift Detection, Retraining, Shadow Testing</em></li>
+  <li><em>7.6 Scalability & Optimization: Distributed Inference, Quantization, ONNX Runtime</em></li>
+  <li><em>7.7 Infrastructure Challenges: DevOps, Cloud Platforms, MLOps Tooling</em></li>
 </ul>
 </details>
 
 <!-- 8. Case Studies -->
 <details>
-<summary>8. Applied ML in Practice & Case Studies <span class="status-badge status-upcoming">Coming</span></summary>
+<summary>8. Applied ML in Practice — End-to-End Projects in Healthcare, Finance & E-commerce <span class="status-badge status-upcoming">Coming</span></summary>
 <ul>
-  <li><em>8.1 End-to-End Project Workflow</em></li>
-  <li><em>8.2 Healthcare — Disease Risk Prediction</em></li>
-  <li><em>8.3 Finance — Fraud Detection</em></li>
-  <li><em>8.4 E-commerce — Recommendation System</em></li>
-  <li><em>8.5 Best Practices & Lessons Learned</em></li>
+  <li><em>8.1 End-to-End Project Workflow: From Problem Framing to Deployment</em></li>
+  <li><em>8.2 Case Study: Healthcare — Disease Risk Prediction Using EHR & Clinical Features</em></li>
+  <li><em>8.3 Case Study: Finance — Real-Time Credit Card Fraud Detection System</em></li>
+  <li><em>8.4 Case Study: E-commerce — Personalized Product Recommender</em></li>
+  <li><em>8.5 Best Practices & Lessons Learned: Simplicity, Interpretability & Domain Knowledge</em></li>
 </ul>
 </details>
 
 <!-- 9. Responsible AI -->
 <details>
-<summary>9. Responsible AI, Ethics, Privacy & Governance <span class="status-badge status-upcoming">Coming</span></summary>
+<summary>9. Responsible AI — Ethics, Fairness, Privacy, Governance & Safety <span class="status-badge status-upcoming">Coming</span></summary>
 <ul>
-  <li><em>9.1 Ethical Considerations & Bias</em></li>
-  <li><em>9.2 Transparency & Explainability</em></li>
-  <li><em>9.3 Accountability</em></li>
-  <li><em>9.4 Privacy & Data Protection</em></li>
-  <li><em>9.5 Security of ML Systems</em></li>
+  <li><em>9.1 Ethical Considerations & Bias: Algorithmic Fairness & Group-Level Equity</em></li>
+  <li><em>9.2 Transparency & Explainability: Model Cards, SHAP, LIME</em></li>
+  <li><em>9.3 Accountability: Human Oversight, Review Loops & Fail-Safe Systems</em></li>
+  <li><em>9.4 Privacy & Data Protection: GDPR, Differential Privacy, Federated Learning</em></li>
+  <li><em>9.5 Security of ML Systems: Adversarial Attacks, Data Poisoning & Model Inversion</em></li>
 </ul>
 </details>
 
 <!-- 10. Emerging Topics -->
 <details>
-<summary>10. Emerging & Advanced Topics <span class="status-badge status-upcoming">Coming</span></summary>
+<summary>10. Emerging & Advanced Topics — Transfer Learning, AutoML, Privacy-Preserving AI <span class="status-badge status-upcoming">Coming</span></summary>
 <ul>
-  <li><em>10.1 Transfer Learning</em></li>
-  <li><em>10.2 Federated & Privacy-Preserving ML</em></li>
-  <li><em>10.3 Automated Machine Learning (AutoML)</em></li>
+  <li><em>10.1 Transfer Learning: Fine-Tuning Pretrained Models like BERT & ResNet</em></li>
+  <li><em>10.2 Federated & Privacy-Preserving ML: Secure Aggregation & Differential Privacy</em></li>
+  <li><em>10.3 Automated Machine Learning (AutoML): Model Search, Tuning, and Deployment</em></li>
 </ul>
 </details>
+
 
 </div>
 
