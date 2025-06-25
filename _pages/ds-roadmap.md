@@ -376,7 +376,7 @@ body.dark, html.dark, [data-theme="dark"], body.dark-mode {
     <li><a href="{{ site.baseurl }}/blog/2025/ds011-heartofml-regression5/">3.1.5 Robust Regression: Huber, RANSAC, and Quantile Methods</a></li>
     <li><a href="{{ site.baseurl }}/blog/2025/ds012-heartofml-regression6/">3.1.6 Capturing Non-Linearity: Polynomial, Splines & Basis Expansions</a></li>
     <li><a href="{{ site.baseurl }}/blog/2025/ds013-heartofml-regression7/">3.1.7 Advanced Parametric Regression: Bayesian Models, Mixed Effects, GPs</a></li>
-    <li><em>3.1.8 Optimization Techniques for Regression: Gradient Descent, Normal Equations, SGD</em> <span class="status-badge status-upcoming">Soon</span></li>
+    <li><a href="{{ site.baseurl }}/blog/2025/ds014-heartofml-regression8/">3.1.8 Optimization Techniques for Regression: Gradient Descent, Normal Equations, SGD and Beyond</a></li>
   </ul>
 </details></li>
 
@@ -547,7 +547,7 @@ body.dark, html.dark, [data-theme="dark"], body.dark-mode {
 
 <div class="roadmap-footer">
   <p>
-    Looking for strict chronology? Head to the <a href="{{ site.baseurl }}/blog/">full blog index</a>.<br>
+    Looking for strict chronology? Head to the <a href="{{ site.baseurl }}/blogging/">full blog index</a>.<br>
     This roadmap updates automatically as new posts go live.
   </p>
 </div>
