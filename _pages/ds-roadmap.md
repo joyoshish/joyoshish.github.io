@@ -398,7 +398,7 @@ body.dark, html.dark, [data-theme="dark"], body.dark-mode {
 <!-- 3.3 Tree/Ensemble -->
 <li><details><summary>3.3 Tree-Based & Ensemble Learning — Decision Trees, Bagging, Boosting</summary>
   <ul>
-    <li><em>3.3.1 Decision Trees Explained: ID3, CART, Gini Index, Entropy</em> <span class="status-badge status-upcoming">Soon</span></li>
+    <li><a href="{{ site.baseurl }}/blog/2025/ds015-heartofml-treeensemble1/">3.3.1 Foundations of Non-Parametric Models: KNN, Decision Tree & the Road to Ensembles</a></li>
     <li><em>3.3.2 Random Forests for Regression and Classification: Ensemble Bagging Techniques</em> <span class="status-badge status-upcoming">Soon</span></li>
     <li><em>3.3.3 Boosting Algorithms: AdaBoost, Gradient Boosting, XGBoost, LightGBM, CatBoost</em> <span class="status-badge status-upcoming">Soon</span></li>
   </ul>
