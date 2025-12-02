@@ -33,7 +33,7 @@ Thanks again for stopping by — take a look around, learn something new, or jus
 
 Hey there — thanks for dropping by! This little space is my digital notebook, where I jot down what I’m learning, exploring, or just thinking about at the moment.
 
-Right now, I work as a Senior Analyst at American Express, where I build Key Risk Indicators to proactively identify risk factors, fraud patterns, and transactional anomalies — using a mix of statistical modeling, automation, and large-scale data pipelines. Before joining Amex, I did my Bachelors in Information Technology at IIEST Shibpur and then went on to do M.Tech. in Computer Science (specializing in Data Science) at ISI Kolkata. If you're interested, you can find some of my old academic research from those years [here](https://joyoshish.github.io/reserach/).
+Right now, I work as a Senior Analyst at American Express. Before joining Amex, I did my Bachelors in Information Technology at IIEST Shibpur and then went on to do M.Tech. in Computer Science (specializing in Data Science) at ISI Kolkata. If you're interested, you can find some of my old academic research from those years [here](https://joyoshish.github.io/reserach/).
 
 Most of the writing here in the [blog collection](https://joyoshish.github.io/blogging/index.html) centers around Data Science, Machine Learning, and Computer Science — with a mix of practical insights & deep dives. For students and curious learners, there’s a collection of [notes](https://joyoshish.github.io/acadresrc/) from my GATE CS and JEE preparation days — feel free to explore and share. 
 
